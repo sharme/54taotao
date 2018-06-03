@@ -63,12 +63,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footdetail-m.less" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footdetail-m.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/home/footdetail-m.less">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="129">
               <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="footDetail.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/views/footDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1528044392000" expanded="false" signature="865:913" placeholder="..." />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -150,7 +164,6 @@
         <option value="$PROJECT_DIR$/public/css/home/footdetail.less" />
         <option value="$PROJECT_DIR$/public/views/ptool/tool.html" />
         <option value="$PROJECT_DIR$/routes/picture.js" />
-        <option value="$PROJECT_DIR$/public/views/footDetail.html" />
         <option value="$PROJECT_DIR$/public/views/tp/css/tp.less" />
         <option value="$PROJECT_DIR$/public/css/default.less" />
         <option value="$PROJECT_DIR$/public/views/account/email_registration.html" />
@@ -174,6 +187,7 @@
         <option value="$PROJECT_DIR$/routes/footsteps.js" />
         <option value="$PROJECT_DIR$/public/views/tp/css/tp-m.less" />
         <option value="$PROJECT_DIR$/public/css/home/footdetail-m.less" />
+        <option value="$PROJECT_DIR$/public/views/footDetail.html" />
       </list>
     </option>
   </component>
@@ -618,12 +632,12 @@
       <workItem from="1527422735654" duration="107000" />
       <workItem from="1527422976673" duration="21945000" />
       <workItem from="1527513576141" duration="38112000" />
-      <workItem from="1528041985355" duration="1716000" />
+      <workItem from="1528041985355" duration="2400000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1124608000" />
+    <option name="totallyTimeSpent" value="1125292000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="74" y="52" width="1335" height="827" extended-state="0" />
@@ -712,13 +726,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/footDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="100" selection-start-line="15" selection-start-column="100" selection-end-line="15" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -1073,6 +1080,18 @@
         <state relative-caret-position="129">
           <caret line="87" column="28" selection-start-line="87" selection-start-column="28" selection-end-line="87" selection-end-column="28" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/footDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1528044392000" expanded="false" signature="865:913" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>

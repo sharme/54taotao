@@ -11,10 +11,10 @@
             <div ng-if="checkUser">
                 <button class="stick_footstep" style={{result.stick_status==1?"background-color:darkgrey;":""}} ng-click="delBtn(foot.fs_id, foot.u_id)">删除</button>
             </div>
-            <div ng-if="!checkUser">
-                <!--<button class="stick_footstep" style={{foot.sticks==1?"background-color:#43c17e;":""}} ng-click="stickBtn(foot.fs_id, foot.u_id)">想去</button>&nbsp;&nbsp;<span class="btnStickNum{{foot.fs_id}}">{{foot.sticks}}</span>-->
-                <button class="like_footstep" style={{foot.likes==1?"background-color:#43c17e;":""}} ng-click="likeBtn(foot.fs_id, foot.u_id)">👍</button>&nbsp;&nbsp;<span class="btnLikeNum{{foot.fs_id}}">{{foot.likes}}</span>
-            </div>
+            <!--<div ng-if="!checkUser">-->
+                <!--&lt;!&ndash;<button class="stick_footstep" style={{foot.sticks==1?"background-color:#43c17e;":""}} ng-click="stickBtn(foot.fs_id, foot.u_id)">想去</button>&nbsp;&nbsp;<span class="btnStickNum{{foot.fs_id}}">{{foot.sticks}}</span>&ndash;&gt;-->
+                <!--<button class="like_footstep" style={{foot.likes==1?"background-color:#43c17e;":""}} ng-click="likeBtn(foot.fs_id, foot.u_id)">👍</button>&nbsp;&nbsp;<span class="btnLikeNum{{foot.fs_id}}">{{foot.likes}}</span>-->
+            <!--</div>-->
             <hr>
             <p>{{foot.fs_des}}</p>
         </div>
