@@ -70,19 +70,17 @@ router.get('/getFootsteps', function(req, res, next) {
         if(err) {
             res.send(err);
         } else {
-            var log = u_id?"用户: " + u_id + " 访问了主页":'游客 访问了主页.';
-            var ipAddress = requestIp.getClientIp(req);
-            var insertLog = mysql.format("insert into jk_logs(lg_content,lg_ip,lg_create_time) values(?,?,?)",[log,ipAddress,date]);
-            connection.query(insertLog, function(err, result){
-                console.log(insertLog);
-                if(err)
-                    console.log(err);
-                else 
-                    console.log(result);
-            });
-
-
-
+            // var log = u_id?"用户: " + u_id + " 访问了主页":'游客 访问了主页.';
+            // var ipAddress = requestIp.getClientIp(req);
+            // var insertLog = mysql.format("insert into jk_logs(lg_content,lg_ip,lg_create_time) values(?,?,?)",[log,ipAddress,date]);
+            // connection.query(insertLog, function(err, result){
+            //     console.log(insertLog);
+            //     if(err)
+            //         console.log(err);
+            //     else 
+            //         console.log(result);
+            // });
+            
             res.send(result);
         }
     })
@@ -135,16 +133,16 @@ router.get('/getFootstepsByTag', function(req, res, next) {
         if(err) {
             res.send(err);
         } else {
-            var log = u_id?"用户: " + u_id + " 访问了主页":'游客 访问了主页.';
-            var ipAddress = requestIp.getClientIp(req);
-            var insertLog = mysql.format("insert into jk_logs(lg_content,lg_ip,lg_create_time) values(?,?,?)",[log,ipAddress,date]);
-            connection.query(insertLog, function(err, result){
-                console.log(insertLog);
-                if(err)
-                    console.log(err);
-                else
-                    console.log(result);
-            });
+            // var log = u_id?"用户: " + u_id + " 访问了主页":'游客 访问了主页.';
+            // var ipAddress = requestIp.getClientIp(req);
+            // var insertLog = mysql.format("insert into jk_logs(lg_content,lg_ip,lg_create_time) values(?,?,?)",[log,ipAddress,date]);
+            // connection.query(insertLog, function(err, result){
+            //     console.log(insertLog);
+            //     if(err)
+            //         console.log(err);
+            //     else
+            //         console.log(result);
+            // });
 
             res.send(result);
         }

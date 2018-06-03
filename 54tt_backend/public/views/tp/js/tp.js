@@ -14,25 +14,10 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
     };
 
     $scope.copyUrl = function (et) {
-
         /* Get the text field */
         $("." + et).select();
-        // alert();
-        /* Select the text field */
-        // copyText.select();
-        /* Copy the text inside the text field */
         document.execCommand("copy");
         alert($("."+ et).val());
-        /* Alert the copied text */
-        // alert("Copied the text: " + copyText.val());
-
-        // var Url = $("." + et).val();
-        // Url.select();
-        // _document.execCommand('Copy');
-        // clipboard.copyText($("." + et).val());
-        // window.clipboardData.setData("Text", $("." + et).val());
-        // this.val("已复制");
-        // alert($("."+ et).val());
     };
 
 
