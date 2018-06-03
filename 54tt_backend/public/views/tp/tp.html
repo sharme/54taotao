@@ -1,0 +1,99 @@
+
+
+<div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2" infinite-scroll-disabled="isbusy" infinite-scroll-immediate-check="false">
+
+    <!--<div class="sponsors_title">Sponsors</div>-->
+    <!--<div class="sponsors">-->
+
+        <!--<div class="sponsor">-->
+            <!--<div>-->
+                <!--<a href="https://fmyoutu.taobao.com/" target="_blank"><img src="img/modeng.jpeg"></a>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;<div>&ndash;&gt;-->
+            <!--&lt;!&ndash;携程网&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+
+    <!--</div>-->
+
+
+    <div class='find'>
+        <input placeholder='快速搜索' type="text" ng-keypress="tpFilter()" class='search_bar' maxlength='-1'/>
+    </div>
+
+    <div class='trip ' ng-repeat="trip in tripList track by $index" >
+        <div class='trip_main bgColorChange{{trip.fs_id}}' ng-click="loginCheck(trip.fs_id)" ng-mouseleave="bgColorRemove(trip.fs_id)" ng-mouseenter="bgColorChange(trip.fs_id)">
+            <div class='trip_main_images'>
+                <div ng-if="trip.fs_disPic">
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="{{trip.u_tag}}" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                        <!--<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>-->
+                    </div>
+                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic}}'></image>
+                </div>
+                <div ng-if="trip.fs_disPic2 && checkMobile()">
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="{{trip.u_tag}}" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                        <!--<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>-->
+                    </div>
+                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic2}}'></image>
+                </div>
+                <div ng-if="trip.fs_disPic3 && checkMobile()">
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="{{trip.u_tag}}" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                        <!--<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>-->
+                    </div>
+                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic3}}'></image>
+                </div>
+                <div ng-if="trip.fs_disPic4 && checkMobile()">
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="{{trip.u_tag}}" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                        <!--<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>-->
+                    </div>
+                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic4}}'></image>
+                </div>
+            </div>
+            <div class='trip_main_title'>
+                <text>{{trip.fs_des}}​​​​</text>
+            </div>
+            <div class="trip_main_price">
+
+                <div class="trip_main_price_l" ng-if="trip.fs_discount">¥ <span style="text-decoration: line-through;">{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>
+                <div class="trip_main_price_l" ng-if="trip.fs_discount === '' ">¥ <span>{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>
+
+                <div class="trip_main_price_r">月销：{{trip.fs_sales}}</div>
+            </div>
+            <div class="trip_main_com">
+                返: ￥{{trip.fs_commission}}
+            </div>
+        </div>
+            <a target="_blank" href="{{trip.fs_promo}}"><div class="trip_main_purchase">
+                去购买
+            </div></a>
+
+        <div class="trip_main_source">
+            <div class="trip_main_source_o">来自: {{trip.fs_platform}}</div>
+            <!--<input type="hidden" class="{{$index}}" value="{{trip.fs_promo}}">-->
+            <div style="margin: 30px 0px 10px 0px;
+    color: darkgrey;">复制分享地址|赚佣金</div>
+            <input type="text" placeholder="复制分享赚佣金" value="{{trip.fs_promo}}" class="trip_main_share">
+            <!--<div class="trip_main_share" ng-click="copyUrl($index)">分享赚佣金</div>-->
+        </div>
+
+    </div>
+    <div class="the_end">
+        没有了.
+    </div>
+</div>
