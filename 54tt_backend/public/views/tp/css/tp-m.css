@@ -88,9 +88,6 @@
   float: left;
   width: 100%;
 }
-.trip_main {
-  /* border: solid 1px #AEAEAE; */
-}
 .trip_main_title {
   font-size: 14px;
   /* font-weight: bold; */
@@ -138,6 +135,10 @@
 }
 .trip_main_source {
   text-align: center;
+}
+.trip_main_copy {
+  margin: 15px 0px 10px 0px;
+  color: darkgrey;
 }
 .trip_main_share {
   width: 100%;

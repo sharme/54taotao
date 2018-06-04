@@ -24,11 +24,9 @@
       <file leaf-file-name="tp.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/tp/tp.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-              <folding>
-                <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-              </folding>
+            <state relative-caret-position="225">
+              <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -53,11 +51,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tp-m.less" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tp-m.less" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp-m.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="147">
-              <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
+            <state relative-caret-position="211">
+              <caret line="118" column="27" selection-start-line="118" selection-start-column="27" selection-end-line="118" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tp.less" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp.less">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="301">
+              <caret line="183" column="1" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -73,15 +81,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="footDetail.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="footDetail.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/views/footDetail.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="255">
+              <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
               <folding>
                 <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1528044392000" expanded="false" signature="865:913" placeholder="..." />
+                <marker date="1528076089000" expanded="false" signature="865:913" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -90,7 +98,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
+            <state relative-caret-position="465">
               <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -164,7 +172,6 @@
         <option value="$PROJECT_DIR$/public/css/home/footdetail.less" />
         <option value="$PROJECT_DIR$/public/views/ptool/tool.html" />
         <option value="$PROJECT_DIR$/routes/picture.js" />
-        <option value="$PROJECT_DIR$/public/views/tp/css/tp.less" />
         <option value="$PROJECT_DIR$/public/css/default.less" />
         <option value="$PROJECT_DIR$/public/views/account/email_registration.html" />
         <option value="$PROJECT_DIR$/public/views/account/register.html" />
@@ -174,7 +181,6 @@
         <option value="$PROJECT_DIR$/views/recovery.jade" />
         <option value="$PROJECT_DIR$/routes/api.js" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
-        <option value="$PROJECT_DIR$/public/views/tp/tp.html" />
         <option value="$PROJECT_DIR$/public/views/message/message.html" />
         <option value="$PROJECT_DIR$/public/css/default-m.less" />
         <option value="$PROJECT_DIR$/bin/www" />
@@ -185,9 +191,11 @@
         <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/views/tp/js/tp.js" />
         <option value="$PROJECT_DIR$/routes/footsteps.js" />
-        <option value="$PROJECT_DIR$/public/views/tp/css/tp-m.less" />
         <option value="$PROJECT_DIR$/public/css/home/footdetail-m.less" />
+        <option value="$PROJECT_DIR$/public/views/tp/tp.html" />
+        <option value="$PROJECT_DIR$/public/views/tp/css/tp.less" />
         <option value="$PROJECT_DIR$/public/views/footDetail.html" />
+        <option value="$PROJECT_DIR$/public/views/tp/css/tp-m.less" />
       </list>
     </option>
   </component>
@@ -632,12 +640,12 @@
       <workItem from="1527422735654" duration="107000" />
       <workItem from="1527422976673" duration="21945000" />
       <workItem from="1527513576141" duration="38112000" />
-      <workItem from="1528041985355" duration="2400000" />
+      <workItem from="1528041985355" duration="4699000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1125292000" />
+    <option name="totallyTimeSpent" value="1127591000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="74" y="52" width="1335" height="827" extended-state="0" />
@@ -726,6 +734,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -733,6 +742,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2505">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -950,13 +960,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="180" column="16" selection-start-line="180" selection-start-column="1" selection-end-line="180" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/message/message.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -1029,28 +1032,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/tp/tp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/tp/js/tp.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4036">
@@ -1067,14 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp-m.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="125" column="15" selection-start-line="125" selection-start-column="15" selection-end-line="125" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/home/footdetail-m.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="129">
@@ -1083,15 +1056,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="127" column="5" selection-start-line="127" selection-start-column="5" selection-end-line="127" selection-end-column="5" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/tp/tp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="88" column="39" selection-start-line="88" selection-start-column="39" selection-end-line="88" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="183" column="1" selection-start-line="183" selection-start-column="1" selection-end-line="183" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/footDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="255">
+          <caret line="84" column="17" selection-start-line="84" selection-start-column="17" selection-end-line="84" selection-end-column="17" />
           <folding>
             <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#1;n#div#0;n#div#0;n#div#4;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1528044392000" expanded="false" signature="865:913" placeholder="..." />
+            <marker date="1528076089000" expanded="false" signature="865:913" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp-m.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="211">
+          <caret line="118" column="27" selection-start-line="118" selection-start-column="27" selection-end-line="118" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>

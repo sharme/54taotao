@@ -147,6 +147,10 @@
   border: 1px solid whitesmoke;
   padding: 10px;
 }
+.trip_main_copy {
+  margin: 30px 0px 10px 0px;
+  color: darkgrey;
+}
 .trip_main_share {
   text-align: center;
   border: 1px solid whitesmoke;
