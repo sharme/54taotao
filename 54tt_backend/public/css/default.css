@@ -127,6 +127,7 @@ button {
   bottom: 0;
   position: fixed;
   z-index: 1000;
+  opacity: 0.9;
 }
 .message {
   margin: 50px 10%;
