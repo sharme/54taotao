@@ -18,9 +18,9 @@
   width: 100%;
   height: 100px;
   float: left;
+  padding: 0px 5%;
 }
 .sponsors .sponsor {
-  width: 100px;
   height: 80px;
   float: left;
   margin-right: 5px;
@@ -28,6 +28,17 @@
 .sponsors .sponsor img {
   width: 100px;
   height: 80px;
+}
+.sponsors .sponsor .sponsor_categories {
+  height: 60px;
+  border: 1px solid red;
+  text-align: center;
+  width: 60px;
+  float: left;
+  margin-right: 20px;
+  line-height: 4;
+  background-color: palevioletred;
+  color: white;
 }
 .header-homepage {
   width: 100px;

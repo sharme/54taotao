@@ -165,6 +165,8 @@ buybsControllers.controller('FootstepsListCtrl', ['$scope', '$http', '$cookies',
   $('.view-container').css('display','none');
 
 
+
+
   // deprecated
   $scope.countryFilter = function(element, fs_from){
     $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{fs_from: fs_from,u_id: $cookies.get('u_id')}})
@@ -1513,6 +1515,29 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $window.location.href = '#';
     $window.location.reload();
   };
+
+  $scope.colorChangeTaotao = function () {
+
+    $(".taotao").css("background-color", "coral");
+    $(".taotao").css("height", "60px");
+
+    $(".comm").css("background-color", "darkgrey");
+    $(".comm").css("height", "45px");
+
+  };
+
+
+  $scope.colorChangeComm = function () {
+
+    $(".taotao").css("background-color", "darkgrey");
+    $(".taotao").css("height", "45px");
+
+    $(".comm").css("background-color", "coral");
+    $(".comm").css("height", "60px");
+
+  };
+
+
 
   $http({method: 'GET', url: ipAddress + '/notifications/getNotifications', params:{u_id: $cookies.get('u_id')}})
       .success(function(data){
