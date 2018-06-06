@@ -31,43 +31,39 @@
         <div class='trip_main bgColorChange{{trip.fs_id}}' ng-click="loginCheck(trip.fs_id)" ng-mouseleave="bgColorRemove(trip.fs_id)" ng-mouseenter="bgColorChange(trip.fs_id)">
             <div class='trip_main_images'>
                 <div ng-if="trip.fs_disPic">
-                    <!--<div style="position: absolute;" ng-if="trip.fs_discount">-->
-                        <!--<img src="{{trip.u_tag}}" style="width: 25px;-->
-    <!--height: 25px;-->
-    <!--border-radius: 50%;-->
-    <!--margin: 5px;">-->
-                        <!--&lt;!&ndash;<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>&ndash;&gt;-->
-                    <!--</div>-->
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="../../img/taotao.png" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                    </div>
                     <image class='trip_main_images_image' ng-src='{{trip.fs_disPic}}'></image>
                 </div>
                 <div ng-if="trip.fs_disPic2 && checkMobile()">
-                    <!--<div style="position: absolute;" ng-if="trip.fs_discount">-->
-                        <!--<img src="{{trip.u_tag}}" style="width: 25px;-->
-    <!--height: 25px;-->
-    <!--border-radius: 50%;-->
-    <!--margin: 5px;">-->
-                        <!--&lt;!&ndash;<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>&ndash;&gt;-->
-                    <!--</div>-->
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="../../img/taotao.png" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                    </div>
                     <image class='trip_main_images_image' ng-src='{{trip.fs_disPic2}}'></image>
                 </div>
                 <div ng-if="trip.fs_disPic3 && checkMobile()">
-                    <!--<div style="position: absolute;" ng-if="trip.fs_discount">-->
-                        <!--<img src="{{trip.u_tag}}" style="width: 25px;-->
-    <!--height: 25px;-->
-    <!--border-radius: 50%;-->
-    <!--margin: 5px;">-->
-                        <!--&lt;!&ndash;<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>&ndash;&gt;-->
-                    <!--</div>-->
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="../../img/taotao.png" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                    </div>
                     <image class='trip_main_images_image' ng-src='{{trip.fs_disPic3}}'></image>
                 </div>
                 <div ng-if="trip.fs_disPic4 && checkMobile()">
-                    <!--<div style="position: absolute;" ng-if="trip.fs_discount">-->
-                        <!--<img src="{{trip.u_tag}}" style="width: 25px;-->
-    <!--height: 25px;-->
-    <!--border-radius: 50%;-->
-    <!--margin: 5px;">-->
-                        <!--&lt;!&ndash;<div class="next_pic" style="float: right; margin-left: 10px; padding: 3px 10px; background-color: darkgray; cursor: pointer;" ng-click="nextPic(foot.fs_id)">下一张图</div>&ndash;&gt;-->
-                    <!--</div>-->
+                    <div style="position: absolute;" ng-if="trip.fs_discount">
+                        <img src="../../img/taotao.png" style="width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 5px;">
+                    </div>
                     <image class='trip_main_images_image' ng-src='{{trip.fs_disPic4}}'></image>
                 </div>
             </div>

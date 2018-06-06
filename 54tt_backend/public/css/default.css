@@ -7,9 +7,6 @@
 .community {
   display: none;
 }
-.tuyou {
-  display: none;
-}
 #login-content {
   display: none;
 }
@@ -81,7 +78,6 @@ button {
 #header .header-div-style {
   width: 90px;
   height: 45px;
-  /* border-radius: 20%; */
   color: white;
   background-color: darkgrey;
   text-align: center;
