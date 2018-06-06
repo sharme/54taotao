@@ -6,7 +6,6 @@ var buybs = angular.module('jk_backend', [
   'ngRoute',
   'buybsControllers',
     'ngCookies',
-    'ngSanitize',
     'infinite-scroll',
     'angularCSS'
 ]).value("THROTTLE_MILLISECONDS", 3000);
