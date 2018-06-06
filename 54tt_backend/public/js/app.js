@@ -25,15 +25,11 @@ buybs.config(function($routeProvider, $cssProvider){
 
     angular.extend($cssProvider.defaults, {
 
-
-
         breakpoints: {
             mobile: '(max-width: 550px)',
             desktop: '(min-width: 600px)'
         }
     });
-    
-    
 
     $routeProvider.
     when('/', {
@@ -334,45 +330,6 @@ buybs.config(function($routeProvider, $cssProvider){
                 breakpoint: 'mobile'
             }, {
                 href: '../css/community/community.css',
-                breakpoint: 'desktop'
-            }
-        ]
-    }).
-    when('/tuyou/index',{
-        templateUrl: 'views/tuyou/index.html',
-        controller: 'tuyouCtrl',
-        css: [
-            {
-                href: '../css/tuyou/tuyou-m.css',
-                breakpoint: 'mobile'
-            }, {
-                href: '../css/tuyou/tuyou.css',
-                breakpoint: 'desktop'
-            }
-        ]
-    }).
-    when('/adv/index',{
-        templateUrl: 'views/adv/index.html'
-        // ,
-        // css: [
-        //     {
-        //         href: '../css/tuyou/tuyou-m.css',
-        //         breakpoint: 'mobile'
-        //     }, {
-        //         href: '../css/tuyou/tuyou.css',
-        //         breakpoint: 'desktop'
-        //     }
-        // ]
-    }).
-    when('/tuyou/match',{
-        templateUrl: 'views/tuyou/match.html',
-        controller: 'matchCtrl',
-        css: [
-            {
-                href: '../css/tuyou/tuyou-m.css',
-                breakpoint: 'mobile'
-            }, {
-                href: '../css/tuyou/tuyou.css',
                 breakpoint: 'desktop'
             }
         ]

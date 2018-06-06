@@ -44,8 +44,7 @@ function addEvent($http, $window, u_id, at_id, nf_to, tp_id, c_id, reload){
             $window.location.reload();
         }
     }
-
-
+    
 }
 
 
@@ -145,9 +144,6 @@ community.controller('CommunityCtrl', ['$scope', '$cookies', '$window', '$http',
     };
 
     $scope.topicLoginCheck = function(tp_id) {
-        // if($cookies.get('u_id') == undefined){
-        //   $window.location.href = '#/login';
-        // } else {
         var click = {
             tp_id: tp_id,
             u_id: $cookies.get('u_id')
@@ -167,7 +163,6 @@ community.controller('CommunityCtrl', ['$scope', '$cookies', '$window', '$http',
         }, function(error){
             console.log(error);
         });
-        // }
     };
 
     $scope.addLoginCheck = function() {
@@ -244,15 +239,12 @@ community.controller('TopicCtrl', ['$scope', '$cookies', '$window', '$http','$ro
         });
     };
 
-
     $scope.editBtn = function(tp_id) {
 
         $window.location.href = '#/community/topics/editTopic?tp_id=' + tp_id;
         $window.location.reload();
     };
-
-
-
+    
     $scope.submit = function(){
 
         if($cookies.get('u_id') == undefined){
@@ -294,7 +286,6 @@ community.controller('TopicCtrl', ['$scope', '$cookies', '$window', '$http','$ro
             return true;
         }
     };
-
 
 }]);
 
@@ -354,8 +345,6 @@ community.controller('AddTopicCtrl', ['$scope', '$cookies', '$window', '$http','
             $('.topic_add_msg').html('内容不能为空!');
             return;
         }
-
-
 
         var req = {
             method: 'POST',
@@ -439,8 +428,6 @@ community.controller('editTopicCtrl', ['$scope', '$cookies', '$window', '$http',
             },
             data: JSON.stringify(replayData)
         };
-
-        // console.log("topic comments replied : " + JSON.stringify(replayData));
 
         $http(req).success(function(result){
             if(result.errno) {

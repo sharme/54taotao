@@ -138,21 +138,7 @@ function displayPosition(miles, top){
 
   },miles);
 
-  // $('.view-container').css('display', 'block');
-
 }
-
-
-
-//deprecated
-function dynamicallyCSS(mobileSize, defaultCSS, mobileCSS, cssObj) {
-  if($(window).width() < mobileSize - 100) {
-    cssObj.add(mobileCSS);
-  } else {
-    cssObj.add(defaultCSS);
-  }
-}
-
 
 var initTimer;
 /* Get footsteps list */
@@ -163,22 +149,6 @@ buybsControllers.controller('FootstepsListCtrl', ['$scope', '$http', '$cookies',
   }, 500);
 
   $('.view-container').css('display','none');
-
-
-
-
-  // deprecated
-  $scope.countryFilter = function(element, fs_from){
-    $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{fs_from: fs_from,u_id: $cookies.get('u_id')}})
-        .success(function(data){
-          $scope.footsteps = data;
-          displayPosition(500,20);
-          // $scope.number = data.length;
-        }, function(error){
-          $scope.error = error;
-        });
-  };
-  
 
   $scope.tag = '';
   // $scope.tagFilter = function(element, fs_from){
@@ -430,9 +400,6 @@ buybsControllers.controller('FootDetailCtrl', ['$scope', '$routeParams', '$http'
                   $scope.error = error;
                 });
 
-
-
-
           } else {
             $(".next_pic").html("没有了");
           }
@@ -586,22 +553,6 @@ buybsControllers.controller('FootDetailCtrl', ['$scope', '$routeParams', '$http'
         console.log(error);
       });
     
-  };
-
-  $scope.downloadBtn = function(url,u_id) {
-    if($cookies.get('u_id') == undefined){
-      $window.location.href = '#/login';
-      return;
-    }
-
-    var x=new XMLHttpRequest();
-    x.open("GET", url, true);
-    x.responseType = 'blob';
-    x.onload=function(e){download(x.response, u_id, "image/jpg" ); }
-    x.send();
-
-    // download(url, null, "img/jpg");
-
   };
   
 
@@ -941,9 +892,6 @@ buybsControllers.controller('ProfileController', ['$scope', '$http', '$window','
       }
     }
 
-
-
-
   };
 
   $scope.loginCheck = function(fs_id) {
@@ -1037,14 +985,6 @@ buybsControllers.controller('ProfileController', ['$scope', '$http', '$window','
 
 
 buybsControllers.controller('pixelController', ['$scope', '$cookies', '$window', '$http','$css', function($scope, $cookies, $window, $http, $css){
-
-  // deprecated
-  // $http({method: 'GET', url: ipAddress + '/countries/getCountries'})
-  //     .success(function(data){
-  //       $scope.countries = data;
-  //     }, function(error){
-  //       $scope.error = error;
-  //     });
 
   $scope.closeBtn = function() {
     $window.location.href = '#/profile?u_id=' + $cookies.get('u_id');
@@ -1208,8 +1148,6 @@ buybsControllers.controller('pixelController', ['$scope', '$cookies', '$window',
   $scope.switchPic = function(pic) {
     $('.present_picture').attr('src', pic);
   };
-
-
 
 }]);
 
@@ -1406,102 +1344,9 @@ buybsControllers.controller('ProfileEditController', ['$scope', '$cookies', '$wi
 
 }]);
 
-// Controller for other features.
-buybsControllers.controller('WelcomeCtrl', ['$scope', '$cookies', '$window','$css', function($scope, $cookies, $window, $css){
-
-  $scope.isMobile = function (){
-    if($(".view-container").width() < (mobileSize - 100)){
-      return true;
-    }
-  };
-
-  if($(".view-container").width() < (mobileSize - 100)){
-
-    $scope.items = [{
-      src: 'http://o99spo2ev.bkt.clouddn.com/images/big/21/1473346832363.jpg',
-      title: "分享图片, 交流经验, 寻找伙伴",
-      content: "上传，管理，分享，评论，社区，图友约伴一体化，这里是旅行爱好者的大本营. ",
-      position: "-220px",
-      padding: "30% 30% 10% 9%",
-      color: 'white'
-    },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/images/big/21/1473335616052.jpeg',
-        title: "分享图片",
-        content: "" +
-        "" +
-        "图友社区汇聚了世界各地的旅行目的地图片, 通过快速搜素，图友社区将为你展示最丰富，最全面，最值得去的旅行目的地. ",
-        position: "-220px",
-        padding: "30% 30% 10% 9%",
-        color: 'crimson'
-      },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/images/big/21/1473346609808.jpg',
-        title: "交流经验",
-        content: "图友社区汇聚了世界各地的旅行经验分享与常见问题解决方案, 图友们相互分享，相互交流，让彼此的旅行变的更容易，让旅行体验最大化.",
-        position: "-220px",
-        padding: "30% 30% 10% 9%",
-        color: ''
-      },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/images/big/47/1473604143983.JPG',
-        title: "寻找伙伴",
-        content: "让旅行不再孤单. 图友约伴将根据你的所在位置，停留时间去匹配同样时间，同样地点的图友. 让约伴更容易, 让旅行不再孤单. ",
-        position: "-220px",
-        padding: "30% 30% 10% 9%",
-        color: 'white'
-      },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/images/big/47/1474806207636.jpeg',
-        title: "图友社区",
-        content: "汇聚每一个爱旅行的人，构建一个绿色，和谐，友爱的社区, 彼此交流，分享，让旅行变的更容易. ",
-        position: "-220px",
-        padding: "30% 30% 10% 9%",
-        color: 'lawngreen'
-      }
-    ];
-  } else {
-
-    $scope.items = [{
-      src: 'http://o99spo2ev.bkt.clouddn.com/wel-header.jpg',
-      title: "分享图片, 交流经验, 寻找伙伴",
-      content: "上传，管理，分享，评论，社区，图友约伴一体化，这里是旅行爱好者的大本营. ",
-      color: 'white',
-      style: 'height: 100%; color: white; text-align: center; padding: 40px; background-position-y: -200px;'
-    },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/wel_image5.JPG',
-        title: "分享图片",
-        content: "图友社区汇聚了世界各地的旅行目的地图片, 通过快速搜素，图友社区将为你展示最丰富，最全面，最值得去的旅行目的地. ",
-        color: 'crimson'
-      },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/wel_image3.JPG',
-        title: "交流经验",
-        content: "图友社区汇聚了世界各地的旅行经验分享与常见问题解决方案, 图友们相互分享，相互交流，让彼此的旅行变的更容易，让旅行体验最大化.",
-        color: 'white'
-      },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/wel_image4.JPG',
-        title: "寻找伙伴",
-        content: "让旅行不再孤单. 图友约伴将根据你的所在位置，停留时间去匹配同样时间，同样地点的图友. 让约伴更容易, 让旅行不再孤单. ",
-        color: ''
-      },
-      {
-        src: 'http://o99spo2ev.bkt.clouddn.com/wel_image2.JPG',
-        title: "图友社区",
-        content: "汇聚每一个爱旅行的人，构建一个绿色，和谐，友爱的社区, 彼此交流，分享，让旅行变的更容易. ",
-        color: ''
-      }
-    ];
-  }
-
-}]);
-
 buybsControllers.controller('headerController', ['$scope', '$cookies', '$window','$http', function($scope, $cookies, $window,$http){
 
   $scope.homepageBtn = function() {
-    // $('.view-frame').css('display','none');
     $window.location = '#/foot/';
 
   };
@@ -1537,23 +1382,18 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
 
   };
 
-
-
   $http({method: 'GET', url: ipAddress + '/notifications/getNotifications', params:{u_id: $cookies.get('u_id')}})
       .success(function(data){
         $scope.notifications = data;
         var newmsgShow = false;
         $scope.notifications.forEach(function (item, index) {
-          // alert(item);
           for(var key in item) {
-            // alert(key + " ; " + item[key]);
             if(key === 'nf_status' && item[key] == 0){
               newmsgShow = true;
               return;
             }
           }
         });
-        // alert(newmsgShow);
         if(newmsgShow) {
           $('.newmsg').css("display","block");
         }else{
@@ -1575,18 +1415,12 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
         }, function(error){
           $scope.error = error;
         });
-
   };
 
 
 }]);
 
 buybsControllers.controller('MessageController', ['$scope', '$cookies', '$window', '$http', '$css', function($scope, $cookies, $window, $http, $css){
-
-  // if($cookies.get('u_id') == undefined){
-  //   $window.location.href = '#/login';
-  //   return;
-  // }
 
   $scope.message = {
     u_id: $cookies.get('u_id'),
@@ -1612,19 +1446,11 @@ buybsControllers.controller('MessageController', ['$scope', '$cookies', '$window
     });
   };
 
-
   $scope.closeTopic = function() {
     $window.history.back();
   };
-
-
+  
 }]);
-
-buybsControllers.controller('AboutController', ['$scope', '$cookies', '$window', '$http', '$css', function($scope, $cookies, $window, $http, $css){
-
-}]);
-
-
 
 
 

@@ -1,12 +1,9 @@
 'use strict';
 
-
 var account = angular.module('buybsControllers');
 
 // var ipAddress = 'http://180.76.152.112';
-
 // Controllers for registered or account by email address.
-
 account.controller('EmailRegistrationCtrl', ['$scope', '$cookies', '$window','$http','$css', function($scope, $cookies, $window,$http, $css){
 
     $scope.user = {
@@ -51,8 +48,7 @@ account.controller('EmailRegistrationCtrl', ['$scope', '$cookies', '$window','$h
             console.log(error);
         });
     };
-
-
+    
 }]);
 
 account.controller('EmailLoginCtrl', ['$scope', '$cookies', '$window','$http','$css', function($scope, $cookies, $window,$http, $css){
@@ -105,13 +101,11 @@ account.controller('EmailLoginCtrl', ['$scope', '$cookies', '$window','$http','$
                     } else {
                         $(".validation_msg").html("用户名或密码不正确, 请正确输入.");
                     }
-
                 }
             }, function (error) {
                 console.log(error);
             });
         }
-
 
 }]);
 
@@ -149,7 +143,6 @@ account.controller('EmailRecoveryPwdCtrl', ['$scope', '$cookies', '$window','$ht
             });
         }
     };
-
 
 }]);
 
@@ -194,7 +187,6 @@ account.controller('EmailResetCtrl', ['$scope', '$cookies', '$window','$http','$
             });
         }
     };
-
 
 }]);
 
