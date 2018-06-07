@@ -40,6 +40,9 @@ var rotateDegree =0;
 var waterMark = '';
 var folder = 0;
 var color = '';
+var smallFolderPath = '';
+var miniFolderPath = '';
+var originalFolderPath = '';
 // Upload file and response back.
 router.post('/uploadPhotos', function(req, res) {
 
@@ -67,9 +70,12 @@ router.post('/uploadPhotos', function(req, res) {
 
             filename = new Date().getTime() + filename.substr(filename.lastIndexOf("."));
 
-            var originalFolderPath = __dirname.substr(0, __dirname.length - 7) + "/public/images/original/" + folder;
+            originalFolderPath = __dirname.substr(0, __dirname.length - 7) + "/public/images/original/" + folder;
             var customFolderPath = __dirname.substr(0, __dirname.length - 7) + "/public/images/custom/" + folder;
             var bigFolderPath = __dirname.substr(0, __dirname.length - 7) + "/public/images/big/" + folder;
+            smallFolderPath = __dirname.substr(0, __dirname.length - 7) + "/public/images/small/" + folder;
+            miniFolderPath = __dirname.substr(0, __dirname.length - 7) + "/public/images/mini/" + folder;
+
 
             console.log("original: " + originalFolderPath);
             console.log("original: " + customFolderPath);
@@ -124,11 +130,13 @@ router.post('/uploadPhotos', function(req, res) {
     });
 });
 
+
+
+
 function resize(filename, folder, customFolderPath, originalFolderPath, bigFolderPath, res, widthPixel, heightPixel) {
 
     console.log('resize');
-
-
+    
     easyimg.resize({
         src: originalFolderPath + "/" + filename, dst: customFolderPath + "/" + filename, width: widthPixel, height: heightPixel, ignoreAspectRatio: true
     }).then(
@@ -154,14 +162,9 @@ function resize(filename, folder, customFolderPath, originalFolderPath, bigFolde
                                 .fill('#9E9E9E')
                                 .drawText(0, 0, waterMark, 'SouthEast')
                                 .write(customFolderPath + "/" + filename, function (err) {
-    
                                     console.log('watermark done: ' + err);
-                                    // uploadFileToQiniu(folder, "images/custom/" + folder + "/" + filename, customFolderPath + "/" + filename, "images/original/" + folder + "/" + filename, originalFolderPath + "/" + filename, res);
                                 });
-                        } else {
-                            // uploadFileToQiniu(folder, "images/custom/" + folder + "/" + filename, customFolderPath + "/" + filename, "images/original/" + folder + "/" + filename, originalFolderPath + "/" + filename, res);
                         }
-    
                     }
                 );
             } else {
@@ -182,18 +185,11 @@ function resize(filename, folder, customFolderPath, originalFolderPath, bigFolde
                                 .drawText(10, 0, waterMark, 'SouthEast')
                                 .write(customFolderPath + "/" + filename, function (err) {
                                     console.log('watermark done');
-                                    // uploadFileToQiniu(folder, "images/custom/" + folder + "/" + filename, customFolderPath + "/" + filename, "images/original/" + folder + "/" + filename, originalFolderPath + "/" + filename, res);
-    
                                 });
-                        } else {
-                            // uploadFileToQiniu(folder, "images/custom/" + folder + "/" + filename, customFolderPath + "/" + filename, "images/original/" + folder + "/" + filename, originalFolderPath + "/" + filename, res);
                         }
-    
                     }
                 );
             }
-    
-    
         }
     
     );
@@ -262,11 +258,59 @@ function resize(filename, folder, customFolderPath, originalFolderPath, bigFolde
                     }
                 );
             }
+        }
+    );
 
+    easyimg.resize({
+        src: originalFolderPath + "/" + filename, dst: smallFolderPath + "/" + filename, width: 200, height: 200, ignoreAspectRatio: true
+    }).then(
 
+        function (image) {
+            console.log('resize small image width: ' + image.width + " , height: " + image.height);
+            if(waterMark != ''){
+                gm(smallFolderPath + "/" + filename)
+                    .stroke("#F08080")
+                    .encoding("Latin 2")
+                    .font('Arial')
+                    .fontSize(14)
+                    .fill('#9E9E9E')
+                    .drawText(10, 0, waterMark, 'SouthEast')
+                    .write(smallFolderPath + "/" + filename, function (err) {
+                        console.log('watermark done');
+                        updateSmallFileQiniu("images/small/" + folder + "/" + filename, smallFolderPath + "/" + filename);
+                    });
+            } else {
+                updateSmallFileQiniu("images/small/" + folder + "/" + filename, smallFolderPath + "/" + filename);                
+            }
         }
 
     );
+
+    easyimg.resize({
+        src: originalFolderPath + "/" + filename, dst: miniFolderPath + "/" + filename, width: 100, height: 100, ignoreAspectRatio: true
+    }).then(
+        function (image) {
+            console.log('resize mini image width: ' + image.width + " , height: " + image.height);
+            if(waterMark != ''){
+                gm(miniFolderPath + "/" + filename)
+                    .stroke("#F08080")
+                    .encoding("Latin 2")
+                    .font('Arial')
+                    .fontSize(14)
+                    .fill('#9E9E9E')
+                    .drawText(10, 0, waterMark, 'SouthEast')
+                    .write(miniFolderPath + "/" + filename, function (err) {
+                        console.log('watermark done');
+                        updateMiniFileQiniu("images/mini/" + folder + "/" + filename, miniFolderPath + "/" + filename);
+                    });
+            } else {
+                updateMiniFileQiniu("images/mini/" + folder + "/" + filename, miniFolderPath + "/" + filename);
+            }
+        }
+    );
+    
+    
+    
 }
 
 
@@ -293,11 +337,7 @@ function uploadFileToQiniu (folder, targetCloudFolder, customPath, originalCloud
                 // 上传成功， 处理返回值
                 console.log(ret.hash, ret.key, ret.persistentId);
 
-                // if(customPath == null || originalPath == null){
-                    // res.send("http://o99spo2ev.bkt.clouddn.com/" + targetCloudFolder);
-                // } else {
-                    updateBigFileQiniu(folder, originalCloudFolder, originalPath, res, "http://p9g6q4qna.bkt.clouddn.com/" + ret.key);
-                // }
+                updateBigFileQiniu(folder, originalCloudFolder, originalPath, res, "http://p9g6q4qna.bkt.clouddn.com/" + ret.key);
 
             } else {
                 // 上传失败， 处理返回代码
@@ -336,11 +376,6 @@ function updateBigFileQiniu (folder, targetCloudFolder, path, res, customImg) {
             if(!err) {
                 // 上传成功， 处理返回值
                 console.log(ret.hash, ret.key, ret.persistentId);
-
-                // var data = {
-                //     "originalImg": "http://p9g6q4qna.bkt.clouddn.com/" + key,
-                //     "customImg": customImg
-                // };
                 
                 var data = {
                     "customImg": "http://p9g6q4qna.bkt.clouddn.com/" + ret.key,
@@ -363,9 +398,70 @@ function updateBigFileQiniu (folder, targetCloudFolder, path, res, customImg) {
             }
         });
     }
-
 }
 
+
+function updateSmallFileQiniu (targetCloudFolder, path) {
+    //构建上传策略函数
+    function uptoken(bucket, targetCloudFolder) {
+        var putPolicy = new qiniu.rs.PutPolicy(bucket+":"+targetCloudFolder);
+        return putPolicy.token();
+    }
+
+    //生成上传 Token
+    token = uptoken(bucket, targetCloudFolder);
+    //要上传文件的本地路径
+    filePath = path;
+    //调用uploadFile上传
+    uploadFile(token, targetCloudFolder, filePath);
+    //构造上传函数
+    function uploadFile(uptoken, targetCloudFolder, localFile) {
+        var extra = new qiniu.io.PutExtra();
+        qiniu.io.putFile(uptoken, targetCloudFolder, localFile, extra, function(err, ret) {
+            if(!err) {
+                // 上传成功， 处理返回值
+                console.log(ret.hash, ret.key, ret.persistentId);
+                var data = {
+                    "smallImg": "http://p9g6q4qna.bkt.clouddn.com/" + ret.key
+                };
+                console.log('uploaded = ' + JSON.stringify(data));
+            } else {
+                console.log(err);
+            }
+        });
+    }
+}
+
+function updateMiniFileQiniu (targetCloudFolder, path) {
+    //构建上传策略函数
+    function uptoken(bucket, targetCloudFolder) {
+        var putPolicy = new qiniu.rs.PutPolicy(bucket+":"+targetCloudFolder);
+        return putPolicy.token();
+    }
+
+    //生成上传 Token
+    token = uptoken(bucket, targetCloudFolder);
+    //要上传文件的本地路径
+    filePath = path;
+    //调用uploadFile上传
+    uploadFile(token, targetCloudFolder, filePath);
+    //构造上传函数
+    function uploadFile(uptoken, targetCloudFolder, localFile) {
+        var extra = new qiniu.io.PutExtra();
+        qiniu.io.putFile(uptoken, targetCloudFolder, localFile, extra, function(err, ret) {
+            if(!err) {
+                // 上传成功， 处理返回值
+                console.log(ret.hash, ret.key, ret.persistentId);
+                var data = {
+                    "miniImg": "http://p9g6q4qna.bkt.clouddn.com/" + ret.key
+                };
+                console.log('uploaded = ' + JSON.stringify(data));
+            } else {
+                console.log(err);
+            }
+        });
+    }
+}
 
 
 
