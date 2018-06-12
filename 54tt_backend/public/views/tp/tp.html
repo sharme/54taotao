@@ -37,7 +37,8 @@
     border-radius: 50%;
     margin: 5px;">
                     </div>
-                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic}}'></image>
+                    <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','small')}}"></image>
+		<image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','mini')}}"></image>
                 </div>
                 <div ng-if="trip.fs_disPic2 && checkMobile()">
                     <div style="position: absolute;" ng-if="trip.fs_discount">
@@ -46,7 +47,7 @@
     border-radius: 50%;
     margin: 5px;">
                     </div>
-                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic2}}'></image>
+                    <image class='trip_main_images_image' ng-src="{{trip.fs_disPic2.replace('custom','mini')}}"></image>
                 </div>
                 <div ng-if="trip.fs_disPic3 && checkMobile()">
                     <div style="position: absolute;" ng-if="trip.fs_discount">
@@ -55,7 +56,7 @@
     border-radius: 50%;
     margin: 5px;">
                     </div>
-                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic3}}'></image>
+                    <image class='trip_main_images_image' ng-src="{{trip.fs_disPic3.replace('custom', 'mini')}}"></image>
                 </div>
                 <div ng-if="trip.fs_disPic4 && checkMobile()">
                     <div style="position: absolute;" ng-if="trip.fs_discount">
@@ -64,7 +65,7 @@
     border-radius: 50%;
     margin: 5px;">
                     </div>
-                    <image class='trip_main_images_image' ng-src='{{trip.fs_disPic4}}'></image>
+                    <image class='trip_main_images_image' ng-src="{{trip.fs_disPic4.replace('custom','mini')}}"></image>
                 </div>
             </div>
             <div class='trip_main_title'>
