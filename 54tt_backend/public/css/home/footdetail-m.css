@@ -59,6 +59,7 @@
 .foot_wrapper .foot_wrapper-main .foot_wrapper-comment {
   float: left;
   margin-bottom: 100px;
+  width: 100%;
 }
 .foot_wrapper .foot_wrapper-main .foot_wrapper-main_profile {
   margin-top: 10px;

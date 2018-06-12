@@ -29,11 +29,14 @@
   <script src="../js/controllers/community-controller.js"></script>
   <script src="../views/tp/js/tp.js"></script>
   <script src="../js/filters/filters.js"></script>
-  <script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>
-  <!--<script src="../js/ckeditor/ckeditor.js"></script>-->
-<!--<script>-->
-    <!--CKEDITOR.timestamp = 'ABCD';-->
-<!--</script>-->
+  <!--<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>-->
+  <script src="../js/ckeditor/ckeditor.js"></script>
+
+
+
+<script>
+  CKEDITOR.timestamp = 'ABCD';
+</script>
 
 </head>
 <body>
@@ -90,7 +93,6 @@
 <script>
   $(document).ready(function () {
 
-
     if($(window).width() < 800){
         $('.user-avatar').click(function(){
             if($('.notification').css('display') === 'block'){
@@ -102,7 +104,6 @@
             }
         });
     } else {
-
         $('.user-avatar').mouseenter(function () {
             $('.notification').css('display', 'block');
         }).mouseout(function () {
@@ -114,10 +115,7 @@
         }).mouseleave(function () {
             $('.notification').css('display', 'none');
         });
-
     }
-
-
   });
 
 </script>

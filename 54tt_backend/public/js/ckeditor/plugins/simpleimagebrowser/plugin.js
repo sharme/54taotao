@@ -144,7 +144,7 @@ var uploadFile = function(file) {
     form_data.append("file", file_data);
 
     $.ajax({
-        url: "http://127.0.0.1:8090" + "/api/uploadPhotos",
+        url: "http://180.76.152.112:8090" + "/api/uploadPhotos",
         contentType: false,
         data: form_data,
         processData: false,
