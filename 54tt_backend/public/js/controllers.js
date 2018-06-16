@@ -974,15 +974,15 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
 
   $scope.colorChangeTaotao = function () {
     $(".taotao").css("background-color", "coral");
-    $(".taotao").css("height", "60px");
+    $(".taotao").css("height", "50px");
     $(".comm").css("background-color", "darkgrey");
-    $(".comm").css("height", "45px");
+    $(".comm").css("height", "35px");
   };
   $scope.colorChangeComm = function () {
     $(".taotao").css("background-color", "darkgrey");
-    $(".taotao").css("height", "45px");
+    $(".taotao").css("height", "35px");
     $(".comm").css("background-color", "coral");
-    $(".comm").css("height", "60px");
+    $(".comm").css("height", "50px");
   };
   $http({method: 'GET', url: ipAddress + '/notifications/getNotifications', params:{u_id: $cookies.get('u_id')}})
       .success(function(data){

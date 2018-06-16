@@ -16,7 +16,7 @@
 }
 .sponsors {
   width: 100%;
-  height: 100px;
+  height: 65px;
   float: left;
   padding: 0px 5%;
 }
@@ -60,7 +60,7 @@
 }
 .trip {
   min-height: 260px;
-  margin-top: 80px;
+  margin-top: 30px;
   cursor: pointer;
   border: 1px solid #e2e2e9;
   width: 221px;

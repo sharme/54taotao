@@ -68,7 +68,7 @@ button {
 }
 #header .header-div-style {
   width: 90px;
-  height: 45px;
+  height: 35px;
   color: white;
   background-color: darkgrey;
   text-align: center;
@@ -175,7 +175,7 @@ button {
 .nav_pages {
   float: left;
   width: 98%;
-  height: 120px;
+  height: 80px;
   background-color: rebeccapurple;
   margin-bottom: 20px;
 }
