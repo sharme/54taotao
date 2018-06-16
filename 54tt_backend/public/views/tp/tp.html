@@ -1,24 +1,13 @@
 <div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2" infinite-scroll-disabled="isbusy" infinite-scroll-immediate-check="false">
-    <!--<div class="sponsors_title">Sponsors</div>-->
     <div class="sponsors">
         <div class="sponsor">
-            <div class="sponsor_categories">
-                女装尖货
-            </div>
-            <div class="sponsor_categories">
-                超值9块9
-            </div>
-            <div class="sponsor_categories">
-                酷动城
-            </div>
-            <div class="sponsor_categories">
-                淘宝DIY
-            </div>
+            <div class="sponsor_categories">女装尖货</div>
+            <div class="sponsor_categories">超值9块9</div>
+            <div class="sponsor_categories">酷动城</div>
+            <div class="sponsor_categories">淘宝DIY</div>
         </div>
     </div>
-    <div class='find'>
-        <input placeholder='快速搜索' type="text" ng-keypress="tpFilter()" class='search_bar' maxlength='-1'/>
-    </div>
+    <div class='find'><input placeholder='快速搜索' type="text" ng-keypress="tpFilter()" class='search_bar' maxlength='-1'/></div>
     <div class='trip ' ng-repeat="trip in tripList track by $index" >
         <div class='trip_main bgColorChange{{trip.fs_id}}' ng-click="loginCheck(trip.fs_id)" ng-mouseleave="bgColorRemove(trip.fs_id)" ng-mouseenter="bgColorChange(trip.fs_id)">
             <div class='trip_main_images'>
@@ -27,29 +16,19 @@
                         <img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;">
                     </div>
                     <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','small')}}"></image><image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','mini')}}"></image></div><div ng-if="trip.fs_disPic2 && checkMobile()"><div style="position: absolute;" ng-if="trip.fs_discount"><img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;"></div><image class='trip_main_images_image' ng-src="{{trip.fs_disPic2.replace('custom','mini')}}"></image></div><div ng-if="trip.fs_disPic3 && checkMobile()"><div style="position: absolute;" ng-if="trip.fs_discount"><img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;"></div><image class='trip_main_images_image' ng-src="{{trip.fs_disPic3.replace('custom', 'mini')}}"></image></div><div ng-if="trip.fs_disPic4 && checkMobile()"><div style="position: absolute;" ng-if="trip.fs_discount"><img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;"></div><image class='trip_main_images_image' ng-src="{{trip.fs_disPic4.replace('custom','mini')}}"></image></div></div>
-            <div class='trip_main_title'>
-                <text>{{trip.fs_des}}​​​​</text>
-            </div>
+            <div class='trip_main_title'><text>{{trip.fs_des}}​​​​</text></div>
             <div class="trip_main_price">
                 <div class="trip_main_price_l" ng-if="trip.fs_discount">¥ <span style="text-decoration: line-through;">{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>
                 <div class="trip_main_price_l" ng-if="trip.fs_discount === '' ">¥ <span>{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>
                 <div class="trip_main_price_r">月销：{{trip.fs_sales}}</div>
             </div>
-            <div class="trip_main_com">
-                返: ￥{{trip.fs_commission}}
-            </div>
+            <div class="trip_main_com">返: ￥{{trip.fs_commission}}</div>
         </div>
-            <a target="_blank" href="{{trip.fs_promo}}"><div class="trip_main_purchase">
-                去购买
-            </div></a>
+            <a target="_blank" href="{{trip.fs_promo}}"><div class="trip_main_purchase">去购买</div></a>
         <div class="trip_main_source">
             <div class="trip_main_source_o">来自: {{trip.fs_platform}}</div>
             <div class="trip_main_copy"><a href='#/community/topics/53' target='#'>如何返佣</a></div>
-        <!--    <input type="text" placeholder="复制分享赚佣金" value="{{trip.fs_promo}}" class="trip_main_sha
-        -->
 	</div>
     </div>
-    <div class="the_end">
-        没有了.
-    </div>
+    <div class="the_end">没有了.</div>
 </div>

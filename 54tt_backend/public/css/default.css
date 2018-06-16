@@ -36,15 +36,6 @@ button {
   width: 35px;
   border-radius: 50%;
 }
-.newmsg {
-  top: 0px;
-  position: absolute;
-  width: 8px;
-  height: 8px;
-  left: 30px;
-  background: url(../img/msg.png);
-  display: none;
-}
 .trip_list {
   display: none;
 }
@@ -159,55 +150,6 @@ button {
   cursor: pointer;
   border: solid 1px;
   border-radius: 15px;
-}
-.notification {
-  background-color: white;
-  position: absolute;
-  width: 30%;
-  margin: 35px 0px 0px 67%;
-  border: solid 1px #eee;
-  height: 350px;
-  display: none;
-  z-index: 20;
-  font-size: 12px;
-}
-.notification hr {
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.notification .notification-profile-edit {
-  margin: 10px 10px;
-  float: right;
-}
-.notification .notification-msg-title {
-  padding: 10px;
-  font-size: 16px;
-}
-.notification .notification-msg-content {
-  padding: 20px 15px;
-  overflow: overlay;
-  height: 250px;
-  width: 100%;
-}
-.notification .notification-msg-content .notification-msg-content-time {
-  color: grey;
-  font-size: 9px;
-}
-.notification .notification-msg-all {
-  height: 35px;
-  text-align: center;
-  font-size: 18px;
-  line-height: 2;
-}
-.share {
-  position: absolute;
-  width: 26px;
-  padding: 5px;
-  margin: 30px 10px;
-  background-color: #43c17e;
-  font-size: 16px;
-  cursor: pointer;
-  display: none;
 }
 .about {
   float: right;
