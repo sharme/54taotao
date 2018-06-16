@@ -31,22 +31,16 @@
   <script src="../js/filters/filters.js"></script>
   <!--<script src="https://cdn.ckeditor.com/4.9.2/standard/ckeditor.js"></script>-->
   <script src="../js/ckeditor/ckeditor.js"></script>
-
-
-
 <script>
   CKEDITOR.timestamp = 'ABCD';
 </script>
-
 </head>
 <body>
-
 <div id="header" class="header" ng-controller="headerController">
   <div class="header-site">54淘淘</div>
   <div class="header_slogo">
       淘国内, 淘国外 省钱还能返现
   </div>
-
     <div class="header-right" ng-controller="LoginController">
         <div class="header-right-logout">
         <span id="login_username"></span><span style="line-height: 2;"> <a ng-click="logout()" href="javascript: void(0);">登出</a></span>
@@ -58,13 +52,10 @@
         </span>
         </div>
     </div>
-
-
     <div class="nav_pages">
         <a href="#/" href="javascript: void(0);" class="header-homepage"><div class="header-div-style taotao" ng-click="colorChangeTaotao()">淘淘国内</div></a>
         <a href="#/community/index" class="header-homepage" ng-click="msgShow()"><div class="header-div-style comm" ng-click="colorChangeComm()">淘客交流</div></a>
     </div>
-
     <div class="notification">
         <div class="notification-profile-edit"><a href="#/profile/edit">修改个人信息</a></div>
         <div class="notification-msg-content">
@@ -76,9 +67,7 @@
         </div>
         <div style="margin-top: 30px; float: right;">点击头像关闭</div>
     </div>
-
 </div>
-
 <div class="view-container">
   <div ng-view class="view-frame"></div>
 </div>
@@ -89,10 +78,8 @@
     <div style="font-size: 14px; float: right; color: #AEAEAE;
     text-align: center;">54淘淘&nbsp;|&nbsp; 沪ICP备16054913号-2</div>
 </div>
-
 <script>
   $(document).ready(function () {
-
     if($(window).width() < 800){
         $('.user-avatar').click(function(){
             if($('.notification').css('display') === 'block'){
@@ -109,7 +96,6 @@
         }).mouseout(function () {
             $('.notification').css('display', 'none');
         });
-
         $('.notification').mouseover(function () {
             $('.notification').css('display', 'block');
         }).mouseleave(function () {
@@ -117,10 +103,6 @@
         });
     }
   });
-
 </script>
-
-
 </body>
-
 </html>

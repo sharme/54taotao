@@ -21,7 +21,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
     };
 
 
-    $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{index_start: 0, count: 12, u_id: $cookies.get('u_id')}})
+    $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{index_start: 0, count: 8, u_id: $cookies.get('u_id')}})
         .success(function(data){
             $scope.tripList = data;
         },function(error){
