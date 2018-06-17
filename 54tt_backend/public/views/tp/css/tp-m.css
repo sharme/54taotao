@@ -32,15 +32,16 @@
   height: 60px;
 }
 .sponsors .sponsor .sponsor_categories {
-  height: 60px;
+  height: 35px;
   border: 1px solid red;
   text-align: center;
-  width: 60px;
+  min-width: 60px;
   float: left;
   margin-right: 8px;
-  line-height: 4;
+  line-height: 2;
   background-color: palevioletred;
   color: white;
+  cursor: pointer;
 }
 .trip_list {
   margin: 5px 2% 0px 2%;

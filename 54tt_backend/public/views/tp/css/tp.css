@@ -30,7 +30,7 @@
   padding: 0px 2.5%;
 }
 .sponsors .sponsor {
-  height: 80px;
+  height: 50px;
   float: left;
   margin-right: 5px;
 }
@@ -42,12 +42,13 @@
   height: 40px;
   border: 1px solid red;
   text-align: center;
-  width: 60px;
+  min-width: 60px;
   float: left;
   margin-right: 5px;
   line-height: 2;
   background-color: palevioletred;
   color: white;
+  cursor: pointer;
 }
 .header-homepage {
   width: 100px;
