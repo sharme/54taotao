@@ -1,10 +1,19 @@
 .search_bar {
   border: solid 1px #AEAEAE;
-  width: 100%;
-  height: 30px;
+  width: 60%;
+  height: 45px;
   text-align: center;
-  border-radius: 5px;
-  margin: 20px 0% 0px 0%;
+  margin: 0px 0px 20px 20%;
+  float: left;
+}
+.search_btn {
+  height: 45px;
+  width: 80px;
+  float: left;
+  text-align: center;
+  line-height: 3;
+  background-color: palevioletred;
+  cursor: pointer;
 }
 .find {
   padding: 0px 25px;
@@ -16,9 +25,9 @@
 }
 .sponsors {
   width: 100%;
-  height: 65px;
+  height: 50px;
   float: left;
-  padding: 0px 5%;
+  padding: 0px 2.5%;
 }
 .sponsors .sponsor {
   height: 80px;
@@ -30,13 +39,13 @@
   height: 80px;
 }
 .sponsors .sponsor .sponsor_categories {
-  height: 60px;
+  height: 40px;
   border: 1px solid red;
   text-align: center;
   width: 60px;
   float: left;
-  margin-right: 20px;
-  line-height: 4;
+  margin-right: 5px;
+  line-height: 2;
   background-color: palevioletred;
   color: white;
 }
@@ -148,8 +157,11 @@
   border: 1px solid whitesmoke;
   padding: 10px;
 }
+.trip_main_source .trip_main_source_o {
+  float: left;
+}
 .trip_main_copy {
-  margin: 30px 0px 10px 0px;
+  margin: 12px 0px 10px 0px;
   color: darkgrey;
 }
 .trip_main_share {
