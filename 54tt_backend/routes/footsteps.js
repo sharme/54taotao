@@ -93,29 +93,66 @@ router.get('/getFootstepsByTag', function(req, res, next) {
     var criteriaSQL = "";
     if(req.param('tag')) {
 
-        criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des,fs_from," +
-            "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
-            "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
-            "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
-            "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
-            "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_avatar," +
-            "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_name," +
-            "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content," +
-            "fs_create_time " +
-            " from jk_footsteps as jkf where jkf.fs_status=1 and jkf.fs_des like '%" + req.param('tag') + "%' or jkf.fs_from like '%" + req.param('tag') + "%'";
+        
+        if(req.param('filter')) {
+            criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des,fs_from," +
+                "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
+                "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
+                "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
+                "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
+                "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_avatar," +
+                "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_name," +
+                "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content," +
+                "fs_create_time " +
+                " from jk_footsteps as jkf where jkf.fs_status=1 and jkf.fs_des like '%" + req.param('tag') + "%' or jkf.fs_from like '%" + req.param('tag') + "%' and fs_from like '%" + req.param('filter') +"%'";
 
+
+        } else  {
+            criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des,fs_from," +
+                "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
+                "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
+                "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
+                "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
+                "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_avatar," +
+                "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_name," +
+                "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content," +
+                "fs_create_time " +
+                " from jk_footsteps as jkf where jkf.fs_status=1 and jkf.fs_des like '%" + req.param('tag') + "%' or jkf.fs_from like '%" + req.param('tag') + "%'";
+            
+        }
+        
+        
+        
+        
 
     } else {
-        criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des, fs_from," +
-            "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
-            "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
-            "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
-            "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
-            "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_avatar," +
-            "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_name," +
-            "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content," +
-            "fs_create_time " +
-            " from jk_footsteps as jkf where jkf.fs_status=1 ";
+        
+        if(req.param('filter')) {
+
+            criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des, fs_from," +
+                "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
+                "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
+                "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
+                "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
+                "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_avatar," +
+                "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_name," +
+                "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content," +
+                "fs_create_time " +
+                " from jk_footsteps as jkf where jkf.fs_status=1 and fs_from like '%" + req.param('filter') + "%'";
+            
+        } else {
+
+            criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des, fs_from," +
+                "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
+                "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
+                "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
+                "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
+                "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_avatar," +
+                "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc where jkc.fs_id=jkf.fs_id limit 1) as u_name," +
+                "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content," +
+                "fs_create_time " +
+                " from jk_footsteps as jkf where jkf.fs_status=1 ";
+        }
     }
 
     if(req.param('fs_from')){

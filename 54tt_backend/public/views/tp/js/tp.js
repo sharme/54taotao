@@ -26,7 +26,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
             $http({
                 method: 'GET',
                 url: ipAddress + '/footsteps/getFootstepsByTag',
-                params: {index_start: $scope.tripList.length, count: 3,tag: $scope.tag}
+                params: {index_start: $scope.tripList.length, count: 3,tag: $scope.tag, filter: $scope.filter}
             }).success(function (data) {
                 if (data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
@@ -48,19 +48,35 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
     $scope.bgColorRemove = function (divkey) {
         $(".bgColorChange" + divkey).css("background-color",'white');
     };
+    $scope.filter = '';
     $scope.tpFilter = function(){
-    $scope.tag = $('.search_bar').val();
-    $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
-        params:{tag: $scope.tag, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
-    })
-        .success(function(data){
-            if(!data.errno){
-                $scope.tripList = data;
-                $scope.isbusy = false;
-            }
-        }, function(error){
-            $scope.error = error;
-        });
+        $scope.tag = $('.search_bar').val();
+        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
+            params:{tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
+        })
+            .success(function(data){
+                if(!data.errno){
+                    $scope.tripList = data;
+                    $scope.isbusy = false;
+                }
+            }, function(error){
+                $scope.error = error;
+            });
+    };
+    $scope.btnFilter = function (btn) {
+        $scope.filter = $("."+btn).val();
+        $scope.tag = $('.search_bar').val();
+        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
+            params:{tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
+        })
+            .success(function(data){
+                if(!data.errno){
+                    $scope.tripList = data;
+                    $scope.isbusy = false;
+                }
+            }, function(error){
+                $scope.error = error;
+            });
     };
     $scope.stickBtn = function(id, u_id){
         if($cookies.get('u_id') == undefined){
