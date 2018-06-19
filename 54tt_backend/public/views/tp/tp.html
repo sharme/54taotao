@@ -25,12 +25,12 @@
                 <div class="trip_main_price_l" ng-if="trip.fs_discount === '' ">¥ <span>{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>
                 <div class="trip_main_price_r">月销：{{trip.fs_sales}}</div>
             </div>
-            <div class="trip_main_com">返: ￥{{trip.fs_commission}}</div>
+            <div class="trip_main_com">红包: ￥{{trip.fs_commission}}</div>
         </div>
             <a target="_blank" href="{{trip.fs_promo}}"><div class="trip_main_purchase">去购买</div></a>
         <div class="trip_main_source">
             <div class="trip_main_source_o"><img src="../../img/platform_taobao.png" ng-if="trip.fs_platform == '淘宝'"><span ></span></div>
-            <div class="trip_main_copy"><a href='#/community/topics/53' target='#'>如何返佣</a></div>
+            <div class="trip_main_copy"><a href='#/community/topics/53' target='#'>如何获取红包</a></div>
 	</div>
     </div>
     <div class="the_end">没有了.</div>
