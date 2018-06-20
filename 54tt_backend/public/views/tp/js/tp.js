@@ -52,7 +52,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
     $scope.tpFilter = function(){
         $scope.tag = $('.search_bar').val();
         $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
-            params:{tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
+            params:{fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
         })
             .success(function(data){
                 if(!data.errno){
@@ -67,7 +67,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
         $scope.filter = $("."+btn).val();
         $scope.tag = $('.search_bar').val();
         $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
-            params:{tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
+            params:{fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
         })
             .success(function(data){
                 if(!data.errno){
