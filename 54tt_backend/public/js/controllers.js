@@ -972,18 +972,25 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $window.location.reload();
   };
 
-  $scope.colorChangeTaotao = function () {
-    $(".taotao").css("background-color", "coral");
-    $(".taotao").css("height", "50px");
+  $scope.colorChangeTaotao = function (tao) {
     $(".comm").css("background-color", "darkgrey");
     $(".comm").css("height", "35px");
+    $(tao.target).css("background-color", "coral");
+    $(tao.target).css("height", "50px");
   };
-  $scope.colorChangeComm = function () {
-    $(".taotao").css("background-color", "darkgrey");
-    $(".taotao").css("height", "35px");
-    $(".comm").css("background-color", "coral");
-    $(".comm").css("height", "50px");
+  $scope.colorChangeComm = function (comm) {
+    $(".comm").css("background-color", "darkgrey");
+    $(".comm").css("height", "35px");
+    $(comm.target).css("background-color", "coral");
+    $(comm.target).css("height", "50px");
   };
+  $scope.colorChangeReward = function (reward) {
+    $(".comm").css("background-color", "darkgrey");
+    $(".comm").css("height", "35px");
+    $(reward.target).css("background-color", "coral");
+    $(reward.target).css("height", "50px");
+  };
+
   $http({method: 'GET', url: ipAddress + '/notifications/getNotifications', params:{u_id: $cookies.get('u_id')}})
       .success(function(data){
         $scope.notifications = data;

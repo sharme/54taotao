@@ -3,7 +3,7 @@
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 <head ng-controller="defaultCtrl">
   <title>【54淘淘】淘国内, 淘国外, 省钱返现就上54淘淘.</title>
-  <meta name="description" content="【54淘淘】无论是想购买国内商品还是国外商品, 专业的54淘淘帮你过滤, 挑选最实惠的商品. 每天都有疯狂促销商品, 而且还能有一定额度佣金返现哦. ">
+  <meta name="description" content="【54淘淘】买国内！买国外！所有你想要的商品, 专业的54淘淘帮你精细挑选, 挑选最实惠的商品. 而且每天都有疯狂促销, 实惠省钱就上54淘淘. ">
   <link rel="icon" type="image/gif/png" href="img/taotao.png">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/default.css">
@@ -31,7 +31,7 @@
 <div id="header" class="header" ng-controller="headerController">
   <div class="header-site">54淘淘</div>
   <div class="header_slogo">
-      淘国内, 淘国外, 省钱返现就上54淘淘
+      淘国内, 淘国外, 省钱就上54淘淘
   </div>
     <div class="header-right" ng-controller="LoginController">
         <div class="header-right-logout">
@@ -42,8 +42,9 @@
         </div>
     </div>
     <div class="nav_pages">
-        <a href="#/" href="javascript: void(0);" class="header-homepage"><div class="header-div-style taotao" ng-click="colorChangeTaotao()">淘淘国内</div></a>
-        <a href="#/community/index" class="header-homepage" ng-click="msgShow()"><div class="header-div-style comm" ng-click="colorChangeComm()">淘客交流</div></a>
+        <a href="#/" href="javascript: void(0);" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeTaotao($event)">淘国内</div></a>
+        <a href="#/community/index" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeComm($event)">淘交流</div></a>
+        <a href="#/rewards" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeReward($event)">淘礼品</div></a>
     </div>
 </div>
 <div class="view-container">

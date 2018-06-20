@@ -26,34 +26,36 @@
   width: 100%;
   margin-bottom: 10px;
   float: left;
-  .sponsor {
-    img {
-      width: 60px;
-      height: 60px;
-    }
-    .sponsor_categories {
-      height: 35px;
-      //border: 1px solid red;
-      text-align: center;
-      min-width: 60px;
-      float: left;
-      //margin-right: 8px;
-      line-height: 2;
-      background-color: palevioletred;
-      color: white;
-      cursor: pointer;
-    }
-  }
+}
+.sponsors .sponsor img {
+  width: 60px;
+  height: 60px;
+}
+.sponsors .sponsor .sponsor_categories {
+  height: 35px;
+  text-align: center;
+  min-width: 60px;
+  float: left;
+  line-height: 2;
+  background-color: palevioletred;
+  color: white;
+  cursor: pointer;
 }
 .terms {
-  float: left; width: 100%; color: lightgrey; font-size: 12px; margin-bottom: 15px;
+  float: left;
+  width: 100%;
+  color: lightgrey;
+  font-size: 12px;
+  margin-bottom: 15px;
 }
 .trip_list {
   margin: 5px 2% 0px 2%;
   min-height: 800px;
   display: block;
 }
-.header {height: 40px;}
+.header {
+  height: 40px;
+}
 .add_trip {
   font-size: 24px;
   color: #AEAEAE;
@@ -61,7 +63,11 @@
   float: right;
   text-align: center;
 }
-.trip {min-height: 180px;cursor: pointer; float: left;}
+.trip {
+  min-height: 180px;
+  cursor: pointer;
+  float: left;
+}
 .trip_image {
   border: solid 1px #AEAEAE;
   height: 35px;
@@ -94,28 +100,35 @@
   background-color: red;
   color: white;
 }
-.trip_header {float: left;width: 100%;}
+.trip_header {
+  float: left;
+  width: 100%;
+}
 .trip_main_title {
   font-size: 14px;
   width: 50%;
   float: left;
-  text {color: #AEAEAE;}
+}
+.trip_main_title text {
+  color: #AEAEAE;
 }
 .trip_main_price {
   height: 25px;
   width: 50%;
   float: left;
-  .trip_main_price_l {
-    float: left;
-    font-size: 10px;
-    margin-left: 10px;
-    span {font-size: 18px;}
-  }
-  .trip_main_price_r {
-    font-size: 14px;
-    color: gainsboro;
-    float: right;
-  }
+}
+.trip_main_price .trip_main_price_l {
+  float: left;
+  font-size: 10px;
+  margin-left: 10px;
+}
+.trip_main_price .trip_main_price_l span {
+  font-size: 18px;
+}
+.trip_main_price .trip_main_price_r {
+  font-size: 14px;
+  color: gainsboro;
+  float: right;
 }
 .trip_main_com {
   font-size: 14px;
@@ -129,25 +142,30 @@
   font-size: 16px;
   margin-bottom: 10px;
   float: right;
-  margin-top: 36px;
   text-decoration: underline;
-  span {color: red;}
 }
-.trip_main_source{
+.trip_main_purchase span {
+  color: red;
+}
+.trip_main_source {
   text-align: center;
-  padding-top: 120px;
-  .trip_main_source_o {
-    color: gainsboro;
-    float: left;
-    img {width: 25px;}
-  }
 }
-.trip_main_source {text-align: center;}
+.trip_main_source .trip_main_source_o {
+  color: gainsboro;
+  float: left;
+}
+.trip_main_source .trip_main_source_o img {
+  width: 25px;
+}
+.trip_main_source {
+  text-align: center;
+}
 .trip_main_copy {
   color: darkgrey;
   float: left;
   margin-left: 5px;
   line-height: 2;
+  text-decoration: underline;
 }
 .trip_main_share {
   width: 100%;
@@ -166,7 +184,10 @@
   height: 180px;
   float: left;
 }
-.trip_main_images_image {height: 85px;float: left;}
+.trip_main_images_image {
+  height: 85px;
+  float: left;
+}
 .the_end {
   height: 200px;
   text-align: center;
@@ -183,11 +204,11 @@
   margin-right: 30px;
   color: #AEAEAE;
   font-size: 12px;
-  img {
-    width: 15px;
-    height: 15px;
-    opacity: 0.6;
-  }
+}
+.t_like img {
+  width: 15px;
+  height: 15px;
+  opacity: 0.6;
 }
 .t_comment {
   float: left;
@@ -195,9 +216,9 @@
   margin-right: 30px;
   color: #AEAEAE;
   font-size: 12px;
-  img {
-    opacity: 0.6;
-    width: 15px;
-    height: 15px;
-  }
+}
+.t_comment img {
+  opacity: 0.6;
+  width: 15px;
+  height: 15px;
 }

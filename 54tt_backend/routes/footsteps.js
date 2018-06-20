@@ -58,29 +58,21 @@ router.get('/getFootsteps', function(req, res, next) {
     if(req.param('fs_from')){
         criteriaSQL += " and jkf.fs_from='" + req.param('fs_from') + "'";
     }
+    
+    if(req.param('fs_platform')) {
+        criteriaSQL += " and jkf.fs_platform='" + req.param('fs_platform') + "'";
+    }
+    
     criteriaSQL += " order by fs_create_time desc";
     
     if(req.param('index_start') && req.param('count')) {
         criteriaSQL += " limit " + req.param('index_start') + "," + req.param('count');
     }
-
     console.log(criteriaSQL);
-
     connection.query(criteriaSQL, function(err, result) {
         if(err) {
             res.send(err);
         } else {
-            // var log = u_id?"用户: " + u_id + " 访问了主页":'游客 访问了主页.';
-            // var ipAddress = requestIp.getClientIp(req);
-            // var insertLog = mysql.format("insert into jk_logs(lg_content,lg_ip,lg_create_time) values(?,?,?)",[log,ipAddress,date]);
-            // connection.query(insertLog, function(err, result){
-            //     console.log(insertLog);
-            //     if(err)
-            //         console.log(err);
-            //     else 
-            //         console.log(result);
-            // });
-            
             res.send(result);
         }
     })
@@ -89,11 +81,8 @@ router.get('/getFootsteps', function(req, res, next) {
 router.get('/getFootstepsByTag', function(req, res, next) {
 
     var u_id = req.param('u_id');
-
     var criteriaSQL = "";
     if(req.param('tag')) {
-
-        
         if(req.param('filter')) {
             criteriaSQL = "select fs_id, u_id, fs_price, fs_sales, fs_commission, fs_promo, fs_discount, fs_platform, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des,fs_from," +
                 "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
@@ -120,10 +109,6 @@ router.get('/getFootstepsByTag', function(req, res, next) {
                 " from jk_footsteps as jkf where jkf.fs_status=1 and jkf.fs_des like '%" + req.param('tag') + "%' or jkf.fs_from like '%" + req.param('tag') + "%'";
             
         }
-        
-        
-        
-        
 
     } else {
         
@@ -158,6 +143,9 @@ router.get('/getFootstepsByTag', function(req, res, next) {
     if(req.param('fs_from')){
         criteriaSQL += " and jkf.fs_from='" + req.param('fs_from') + "'";
     }
+    if(req.param('fs_platform')){
+        criteriaSQL += " and jkf.fs_platform='" + req.param('fs_platform') + "'";
+    }
     criteriaSQL += " order by fs_create_time desc";
 
     if(req.param('index_start') && req.param('count')) {
@@ -170,32 +158,13 @@ router.get('/getFootstepsByTag', function(req, res, next) {
         if(err) {
             res.send(err);
         } else {
-            // var log = u_id?"用户: " + u_id + " 访问了主页":'游客 访问了主页.';
-            // var ipAddress = requestIp.getClientIp(req);
-            // var insertLog = mysql.format("insert into jk_logs(lg_content,lg_ip,lg_create_time) values(?,?,?)",[log,ipAddress,date]);
-            // connection.query(insertLog, function(err, result){
-            //     console.log(insertLog);
-            //     if(err)
-            //         console.log(err);
-            //     else
-            //         console.log(result);
-            // });
-
             res.send(result);
         }
     })
 });
 
 router.get('/getFootstepsByUID', function(req, res, next) {
-    // var criteriaSQL = mysql.format("select fs_id,u_id,fs_pic, fs_disPic, fs_des," +
-    //     "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
-    //     "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
-    //     "(select u_avatar from jk_users as jku where jku.u_id=jkf.u_id) as u_tag," +
-    //     "(select count(*) from jk_likes as jkl where jkl.fs_id = jkf.fs_id) as likes," +
-    //     "(select (select u_avatar from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc limit 1) as u_avatar," +
-    //     "(select (select u_name from jk_users as jku where jku.u_id = jkc.u_id) from jk_comments as jkc limit 1) as u_name," +
-    //     "(select cm_content from jk_comments as jkc where jkc.fs_id = jkf.fs_id limit 1) as cm_content, fs_smallImg, fs_bigImg, fs_create_time" +
-    //     " from jk_footsteps as jkf where jkf.u_id = ?",[req.param('u_id')]);
+    
     var criteriaSQL = mysql.format("select fs_id, u_id, fs_disPic, fs_disPic2, fs_disPic3, fs_disPic4, fs_des, fs_from," +
         "(select count(*) from jk_sticks as jks where jks.fs_id = jkf.fs_id) as sticks," +
         "(select count(*) from jk_comments as jkc where jkc.fs_id = jkf.fs_id) as comments," +
@@ -226,7 +195,11 @@ router.get('/getFootstepsByUID', function(req, res, next) {
 });
 
 router.get('/getFootstepsNumber', function(req, res, next) {
-    var criteriaSQL = "select count(*) as number from jk_footsteps;";
+    var criteriaSQL = "select count(*) as number from jk_footsteps as jkf where jkf.fs_status = 1";
+    
+    if(req.param('fs_platform')) {
+        criteriaSQL += " and jkf.fs_platform='" + req.param('fs_platform') + "'";
+    }
 
     connection.query(criteriaSQL, function(err, result) {
         if(err) {

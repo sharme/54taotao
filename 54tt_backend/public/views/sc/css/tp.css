@@ -1,41 +1,50 @@
 .search_bar {
   border: solid 1px #AEAEAE;
-  width: 80%;
-  height: 40px;
+  width: 60%;
+  height: 45px;
   text-align: center;
-  margin: 10px 0% 10px 0%;
+  margin: 0px 0px 20px 20%;
   float: left;
 }
 .search_btn {
-  height: 40px;
-  width: 20%;
+  height: 45px;
+  width: 80px;
   float: left;
   text-align: center;
   line-height: 3;
   background-color: palevioletred;
   cursor: pointer;
-  margin: 10px 0% 10px 0%;
+}
+.find {
+  padding: 0px 25px;
 }
 .sponsors_title {
   color: darkgrey;
   width: 100%;
   height: 50px;
-  font-size: 12px;
 }
 .sponsors {
   width: 100%;
-  margin-bottom: 10px;
+  height: 50px;
   float: left;
+  padding: 0px 2.5%;
+}
+.sponsors .sponsor {
+  height: 50px;
+  float: left;
+  margin-right: 5px;
 }
 .sponsors .sponsor img {
-  width: 60px;
-  height: 60px;
+  width: 100px;
+  height: 80px;
 }
 .sponsors .sponsor .sponsor_categories {
-  height: 35px;
+  height: 40px;
+  border: 1px solid red;
   text-align: center;
   min-width: 60px;
   float: left;
+  margin-right: 5px;
   line-height: 2;
   background-color: palevioletred;
   color: white;
@@ -44,13 +53,16 @@
 .terms {
   float: left;
   width: 100%;
+  padding: 0 2.5%;
   color: lightgrey;
   font-size: 12px;
-  margin-bottom: 15px;
+}
+.header-homepage {
+  width: 100px;
 }
 .trip_list {
-  margin: 5px 2% 0px 2%;
-  min-height: 800px;
+  margin: auto;
+  width: 1019px;
   display: block;
 }
 .header {
@@ -64,9 +76,14 @@
   text-align: center;
 }
 .trip {
-  min-height: 180px;
+  height: 460px;
+  margin-top: 30px;
   cursor: pointer;
+  border: 1px solid #e2e2e9;
+  width: 221px;
+  margin-left: 25px;
   float: left;
+  padding-left: 1px;
 }
 .trip_image {
   border: solid 1px #AEAEAE;
@@ -105,74 +122,60 @@
   width: 100%;
 }
 .trip_main_title {
-  font-size: 14px;
-  width: 50%;
-  float: left;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  margin: 40px 0px 2px 5px;
+  height: 80px;
 }
 .trip_main_title text {
   color: #AEAEAE;
 }
 .trip_main_price {
-  height: 25px;
-  width: 50%;
-  float: left;
+  height: 45px;
 }
 .trip_main_price .trip_main_price_l {
+  width: 50%;
   float: left;
-  font-size: 10px;
+  font-size: 18px;
+  font-family: -webkit-pictograph;
   margin-left: 10px;
 }
 .trip_main_price .trip_main_price_l span {
-  font-size: 18px;
+  font-size: 20px;
 }
 .trip_main_price .trip_main_price_r {
-  font-size: 14px;
+  font-size: 15px;
   color: gainsboro;
-  float: right;
 }
 .trip_main_com {
-  font-size: 14px;
+  text-align: center;
   color: lightcoral;
-  float: left;
-  width: 50%;
-  height: 60px;
 }
 .trip_main_purchase {
   text-align: center;
   font-size: 16px;
   margin-bottom: 10px;
-  float: right;
-  margin-top: 36px;
-  text-decoration: underline;
 }
 .trip_main_purchase span {
   color: red;
 }
 .trip_main_source {
   text-align: center;
-  padding-top: 120px;
+  border: 1px solid whitesmoke;
+  padding: 10px;
 }
 .trip_main_source .trip_main_source_o {
-  color: gainsboro;
   float: left;
-}
-.trip_main_source .trip_main_source_o img {
-  width: 25px;
-}
-.trip_main_source {
-  text-align: center;
 }
 .trip_main_copy {
+  margin: 12px 0px 10px 0px;
   color: darkgrey;
-  float: left;
-  margin-left: 5px;
-  line-height: 2;
 }
 .trip_main_share {
-  width: 100%;
+  text-align: center;
+  border: 1px solid whitesmoke;
   color: orangered;
   padding: 10px;
-  border: 1px solid red;
 }
 .trip_main_desc {
   font-size: 12px;
@@ -180,24 +183,31 @@
   margin: 5px 0px 5px 0px;
 }
 .trip_main_images {
-  margin-top: 5px;
-  width: 50%;
+  margin-top: 2px;
+  width: 220px;
   height: 180px;
-  float: left;
 }
 .trip_main_images_image {
-  height: 85px;
+  width: 212px;
+  margin: 0px 3px 0px 3px;
   float: left;
 }
 .the_end {
   height: 200px;
+  width: 100%;
   text-align: center;
   border-top: solid 1px #AEAEAE;
   margin-top: 50px;
   padding-top: 10px;
   color: #AEAEAE;
-  width: 100%;
   float: left;
+}
+.t_bottom {
+  width: 220px;
+  height: 50px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 16px;
 }
 .t_like {
   float: left;
@@ -219,7 +229,7 @@
   font-size: 12px;
 }
 .t_comment img {
-  opacity: 0.6;
   width: 15px;
   height: 15px;
+  opacity: 0.6;
 }
