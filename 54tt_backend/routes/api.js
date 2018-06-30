@@ -435,6 +435,8 @@ var codeList = [];
 
 var tempCodeList = [];
 
+var ips = [];
+
 var clearTempCodeList = setInterval(function(){
     tempCodeList = [];
 },1000*60);
@@ -442,7 +444,11 @@ var clearTempCodeList = setInterval(function(){
 
 var clearCodeList = setInterval(function(){
     codeList = [];
-},1000*60*5);
+},1000*60*30);
+
+var clearIpsList = setInterval(function(){
+    ips = [];
+},1000*60*30);
 
 var blacklist = [];
 var whitelist = [];
@@ -450,6 +456,12 @@ var whitelist = [];
 router.get('/sendCode', function (req, res, next) {
 
     var to = req.param('to');
+    
+    if(to.length != 11) {
+        res.send("非法请求, 拒绝");
+        return;
+    }
+    
     var ipAddress = req.connection.remoteAddress;
     if(req.header['x-forwarded-for']){
         ipAddress = req.header['x-forwarded-for'];
@@ -457,13 +469,14 @@ router.get('/sendCode', function (req, res, next) {
     }
     var send = true;
     console.log('IP: ' + ipAddress);
+    
+    ips.push({ip: ipAddress});
 
     console.log("tempList: " + JSON.stringify(tempCodeList));
     console.log("codeList: " + JSON.stringify(codeList));
 
     tempCodeList.forEach(function(item, index){
         for (key in item){
-            console.log(key + " ; " + item[key]);
             if(key === "to" && item[key] === to || key === 'ip' && item[key] === ipAddress){
                 console.log("too many sending");
                 send = false;
@@ -475,9 +488,16 @@ router.get('/sendCode', function (req, res, next) {
     var checkCount = 0;
     codeList.forEach(function(item, index){
         for (key in item){
-            console.log(key + " ; " + item[key]);
             if(key === 'ip' && item[key] === ipAddress){
                checkCount++;
+            }
+        }
+    });
+    console.log("IPs: " + JSON.stringify(ips));
+    ips.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                checkCount++;
             }
         }
     });
