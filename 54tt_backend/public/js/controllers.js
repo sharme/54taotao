@@ -974,27 +974,33 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
 
   $scope.colorChangeTaotao = function (tao) {
     $(".comm").css("background-color", "black");
-    $(".comm").css("height", "35px");
+    // $(".comm").css("height", "35px");
     $(tao.target).css("background-color", "coral");
-    $(tao.target).css("height", "50px");
+    // $(tao.target).css("height", "50px");
   };
   $scope.colorChangeComm = function (comm) {
     $(".comm").css("background-color", "black");
-    $(".comm").css("height", "35px");
+    // $(".comm").css("height", "35px");
     $(comm.target).css("background-color", "coral");
-    $(comm.target).css("height", "50px");
+    // $(comm.target).css("height", "50px");
   };
   $scope.colorChangeAmazon = function (amazon) {
     $(".comm").css("background-color", "black");
-    $(".comm").css("height", "35px");
+    // $(".comm").css("height", "35px");
     $(amazon.target).css("background-color", "coral");
-    $(amazon.target).css("height", "50px");
+    // $(amazon.target).css("height", "50px");
   };
   $scope.colorChangeReward = function (reward) {
     $(".comm").css("background-color", "black");
-    $(".comm").css("height", "35px");
+    // $(".comm").css("height", "35px");
     $(reward.target).css("background-color", "coral");
-    $(reward.target).css("height", "50px");
+    // $(reward.target).css("height", "50px");
+  };
+  $scope.colorChangeCoupon = function (coupon) {
+    $(".comm").css("background-color", "black");
+    // $(".comm").css("height", "35px");
+    $(coupon.target).css("background-color", "coral");
+    // $(coupon.target).css("height", "50px");
   };
 
   $http({method: 'GET', url: ipAddress + '/notifications/getNotifications', params:{u_id: $cookies.get('u_id')}})

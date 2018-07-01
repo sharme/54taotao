@@ -70,6 +70,19 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
+    when('/coupon', {
+        templateUrl: 'views/coupon/coupon.html',
+        // controller: 'CouponCtrl',
+        css: [
+            {
+                href: '../views/coupon/css/tp-m.css',
+                breakpoint: 'mobile'
+            }, {
+                href: '../views/coupon/css/tp.css',
+                breakpoint: 'desktop'
+            }
+        ]
+    }).
     when('/foot', {
         templateUrl: 'views/homepage.html',
         controller: 'FootstepsListCtrl',

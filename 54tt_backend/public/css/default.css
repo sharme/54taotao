@@ -73,6 +73,7 @@ button {
   background-color: black;
   text-align: center;
   line-height: 2;
+  margin: 0px 0px 2px 0px;
 }
 #header .header-homepage {
   float: left;
@@ -176,7 +177,7 @@ button {
   width: 98%;
   height: 80px;
   background-color: rebeccapurple;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 input:focus {
   border: solid 1px black;
