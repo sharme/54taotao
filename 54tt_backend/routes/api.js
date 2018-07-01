@@ -457,7 +457,7 @@ router.get('/sendCode', function (req, res, next) {
 
     var to = req.param('to');
     
-    if(to.length != 11 && parseInt(to)) {
+    if(to.length != 11 || !parseInt(to)) {
         res.send("非法请求, 拒绝");
         return;
     }
