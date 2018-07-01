@@ -444,11 +444,11 @@ var clearTempCodeList = setInterval(function(){
 
 var clearCodeList = setInterval(function(){
     codeList = [];
-},1000*60*30);
+},1000*60*60);
 
 var clearIpsList = setInterval(function(){
     ips = [];
-},1000*60*30);
+},1000*60*60);
 
 var blacklist = [];
 var whitelist = [];
@@ -457,7 +457,7 @@ router.get('/sendCode', function (req, res, next) {
 
     var to = req.param('to');
     
-    if(to.length != 11 || !parseInt(to)) {
+    if(to.length != 11 || isNaN(to.toString())) {
         res.send("非法请求, 拒绝");
         return;
     }
@@ -468,10 +468,8 @@ router.get('/sendCode', function (req, res, next) {
         console.log("x-forward-for ip: " + ipAddress)
     }
     var send = true;
-    console.log('IP: ' + ipAddress);
-    
+    console.log('Visitor IP: ' + ipAddress);
     ips.push({ip: ipAddress});
-
     console.log("tempList: " + JSON.stringify(tempCodeList));
     console.log("codeList: " + JSON.stringify(codeList));
     console.log("blackList: " + JSON.stringify(blacklist));
@@ -486,6 +484,7 @@ router.get('/sendCode', function (req, res, next) {
             }
         }
     });
+    
     var checkCount = 0;
     codeList.forEach(function(item, index){
         for (key in item){
@@ -494,6 +493,7 @@ router.get('/sendCode', function (req, res, next) {
             }
         }
     });
+    
     console.log("IPs: " + JSON.stringify(ips));
     ips.forEach(function(item, index){
         for (key in item){
@@ -502,23 +502,22 @@ router.get('/sendCode', function (req, res, next) {
             }
         }
     });
-
-    if(checkCount > 3) {
-        blacklist.push({ip: ipAddress});
-
-    }
     
     blacklist.forEach(function(item, index){
         for (key in item){
-            console.log(key + " ; " + item[key]);
             if(key === 'ip' && item[key] === ipAddress){
                 send = false;
-                console.log("非法请求, IP: " + ipAddress);
+                console.log("拒绝访问, 非法请求, IP: " + ipAddress);
                 res.send('03');
                 return;
             }
         }
     });
+
+    if(checkCount > 3) {
+        blacklist.push({ip: ipAddress});
+
+    }
 
     whitelist.forEach(function(item, index){
         for (key in item){
@@ -533,7 +532,8 @@ router.get('/sendCode', function (req, res, next) {
     console.log("Blacklist: " + JSON.stringify(blacklist));
 
     if(send) {
-        sendSMS(res, to, ipAddress);
+        res.send("Send Msg --------------------------");
+        // sendSMS(res, to, ipAddress);
     }
 
 
@@ -604,14 +604,16 @@ function sendSMS(res, to, ipAddress){
         response.on("data", function(result){
             console.log("API response: " + JSON.parse(result).respCode + ";"  +" result: " + result );
             if("00000" === JSON.parse(result).respCode){
-                codeList.push({to: to, code: code, ip: ipAddress});
-                tempCodeList.push({to: to, code: code, ip: ipAddress});
                 if(res){
+                    codeList.push({to: to, code: code, ip: ipAddress});
+                    tempCodeList.push({to: to, code: code, ip: ipAddress});
                     res.send("01");
                 }
 
             }else{
                 if(res){
+                    codeList.push({to: to, code: code, ip: ipAddress});
+                    tempCodeList.push({to: to, code: code, ip: ipAddress});
                     res.send("00");
                 }
 
