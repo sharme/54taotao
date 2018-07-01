@@ -973,19 +973,25 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
   };
 
   $scope.colorChangeTaotao = function (tao) {
-    $(".comm").css("background-color", "darkgrey");
+    $(".comm").css("background-color", "black");
     $(".comm").css("height", "35px");
     $(tao.target).css("background-color", "coral");
     $(tao.target).css("height", "50px");
   };
   $scope.colorChangeComm = function (comm) {
-    $(".comm").css("background-color", "darkgrey");
+    $(".comm").css("background-color", "black");
     $(".comm").css("height", "35px");
     $(comm.target).css("background-color", "coral");
     $(comm.target).css("height", "50px");
   };
+  $scope.colorChangeAmazon = function (amazon) {
+    $(".comm").css("background-color", "black");
+    $(".comm").css("height", "35px");
+    $(amazon.target).css("background-color", "coral");
+    $(amazon.target).css("height", "50px");
+  };
   $scope.colorChangeReward = function (reward) {
-    $(".comm").css("background-color", "darkgrey");
+    $(".comm").css("background-color", "black");
     $(".comm").css("height", "35px");
     $(reward.target).css("background-color", "coral");
     $(reward.target).css("height", "50px");

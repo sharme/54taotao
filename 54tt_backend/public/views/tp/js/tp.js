@@ -225,6 +225,56 @@ community.controller('RewardCtrl', ['$scope', '$cookies', '$window', '$http', '$
 
 }]);
 
+
+community.controller('AmazonCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
+    $scope.checkMobile = function () {
+        if($(window).width() < mobileSize - 100)
+            return true;
+    };
+    $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{fs_platform: "Amazon", index_start: 0, count: 8, u_id: $cookies.get('u_id')}})
+        .success(function(data){
+            $scope.tripList = data;
+        },function(error){
+            $scope.error = error;
+        });
+    $scope.current_uID = $cookies.get('u_id');
+    $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsNumber', params:{fs_platform: "Amazon"}})
+        .success(function(data){
+            $scope.number = data[0].number;
+        },function(error){
+            $scope.error = error;
+        });
+    $scope.isbusy = false;
+    $scope.loadMore = function() {
+        if($scope.tripList && $scope.number > $scope.tripList.length) {
+            $scope.isbusy = true;
+            $http({
+                method: 'GET',
+                url: ipAddress + '/footsteps/getFootstepsByTag',
+                params: {index_start: $scope.tripList.length, count: 3,tag: $scope.tag, filter: $scope.filter, fs_platform: "Amazon"}
+            }).success(function (data) {
+                if (data.length > 0) {
+                    for (var i = 0; i < data.length; i++) {
+                        $scope.tripList.push(data[i]);
+                    }
+                    $scope.isbusy = false;
+                }
+            }, function (error) {
+                $scope.error = error;
+            });
+        }
+    };
+    $scope.loginCheck = function(fs_id) {
+        $window.location.href = "#/foot/" + fs_id;
+    };
+    $scope.bgColorChange = function (divkey) {
+        $(".bgColorChange"+divkey).css("background-color",'rgba(239,239,239,0.96)');
+    };
+    $scope.bgColorRemove = function (divkey) {
+        $(".bgColorChange" + divkey).css("background-color",'white');
+    };
+}]);
+
 community.controller('TopicCtrl', ['$scope', '$cookies', '$window', '$http','$routeParams','$css','$sce', function($scope, $cookies, $window, $http, $routeParams, $css,$sce){
     $http({method: 'GET', url: ipAddress + '/topics/getTopicsByTPID', params:{tp_id: $routeParams.tp_id}})
         .success(function(data){

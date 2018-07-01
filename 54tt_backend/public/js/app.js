@@ -57,6 +57,19 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
+    when('/amazon', {
+        templateUrl: 'views/amazon/amazon.html',
+        controller: 'AmazonCtrl',
+        css: [
+            {
+                href: '../views/amazon/css/tp-m.css',
+                breakpoint: 'mobile'
+            }, {
+                href: '../views/amazon/css/tp.css',
+                breakpoint: 'desktop'
+            }
+        ]
+    }).
     when('/foot', {
         templateUrl: 'views/homepage.html',
         controller: 'FootstepsListCtrl',
