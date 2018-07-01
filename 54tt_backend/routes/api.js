@@ -532,8 +532,8 @@ router.get('/sendCode', function (req, res, next) {
     console.log("Blacklist: " + JSON.stringify(blacklist));
 
     if(send) {
-        res.send("Send Msg --------------------------");
-        // sendSMS(res, to, ipAddress);
+        // res.send("Send Msg --------------------------");
+        sendSMS(res, to, ipAddress);
     }
 
 
