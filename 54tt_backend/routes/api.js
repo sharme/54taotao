@@ -457,7 +457,7 @@ router.get('/sendCode', function (req, res, next) {
 
     var to = req.param('to');
     
-    if(to.length != 11) {
+    if(to.length != 11 && parseInt(to)) {
         res.send("非法请求, 拒绝");
         return;
     }
@@ -474,6 +474,7 @@ router.get('/sendCode', function (req, res, next) {
 
     console.log("tempList: " + JSON.stringify(tempCodeList));
     console.log("codeList: " + JSON.stringify(codeList));
+    console.log("blackList: " + JSON.stringify(blacklist));
 
     tempCodeList.forEach(function(item, index){
         for (key in item){
@@ -506,13 +507,13 @@ router.get('/sendCode', function (req, res, next) {
         blacklist.push({ip: ipAddress});
 
     }
-
-
+    
     blacklist.forEach(function(item, index){
         for (key in item){
             console.log(key + " ; " + item[key]);
             if(key === 'ip' && item[key] === ipAddress){
                 send = false;
+                console.log("非法请求, IP: " + ipAddress);
                 res.send('03');
                 return;
             }
