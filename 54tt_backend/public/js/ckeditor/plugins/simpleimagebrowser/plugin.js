@@ -37,7 +37,7 @@ CKEDITOR.dialog.add("simpleimagebrowser-dialog",
                             align:"left",
                             id:"descriptionid",
                             style:"position:relative;width:800px;",
-                            html: "<img style='width: 450px; min-height: 300px;' class='create_footstep-info_img'><hr>" +
+                            html:
                             "<div style='position: relative; width: 100%; height: 30px; background-color: #ddd;' id='myProgress'><div id='myBar' style='position: absolute; width: 1%; height: 100%; background-color: #4CAF50; text-align: center; line-height: 2;'></div> </div>"
                         }
                     ]
@@ -58,8 +58,8 @@ CKEDITOR.dialog.add("simpleimagebrowser-dialog",
                     "simpleimagebrowser-dialog"=== b.getName() && $.get(CKEDITOR.config.simpleImageBrowserURL,
                     function(a){
                         var b;
-                        console.log("JSON DATA: " + a);
-                        return console.log(a),b = a, a = "",
+                        // console.log("JSON DATA: " + a);
+                        return b = a, a = "",
                             $.each(b, function(b,c){
                                 a="thumbnails"===CKEDITOR.config.simpleImageBrowserListType?a+ "<div onclick=\"CKEDITOR.tools.simpleimagebrowserinsertpicture('"+c.url+"');\" " +
                                 "style=\"position:relative;width:135px;height: 130px;;display:inline-block;margin:5px;background-image:url('"+c.url+"');background-repeat:no-repeat;background-size:125%;background-position:center center;float:left;\"></div>":"link"}),
@@ -67,7 +67,7 @@ CKEDITOR.dialog.add("simpleimagebrowser-dialog",
                 }),a.addCommand("simpleimagebrowser-start",
                 new CKEDITOR.dialogCommand("simpleimagebrowser-dialog")),
                 CKEDITOR.tools.simpleimagebrowserinsertpicture=function(b){
-                    var c,d;console.log(b),
+                    var c,d;
                         a=CKEDITOR.currentInstance,
                         c=CKEDITOR.dialog.getCurrent(),
                         d='<img src="'+b+'" width="100%" data-cke-saved-src="'+b+'" alt="'+b+'"/>',
@@ -114,7 +114,7 @@ function getCookie(cname) {
 var delPicture = function(url) {
 
     $.ajax({
-        url: "http://localhost:8090" + "/pictures/delete",
+        url: "http://180.76.152.112:8090" + "/pictures/delete",
         contentType: false,
         data: {'bigImg': url},
         processData: false,
@@ -124,7 +124,6 @@ var delPicture = function(url) {
            alert("删除成功");
         },
         error: function(res) {
-            // $('#myBar').text('上传失败!');
             alert("删除失败");
         }
     });
@@ -134,7 +133,7 @@ var delPicture = function(url) {
 
 var uploadFile = function(file) {
 
-    console.log('upload file');
+    // console.log('upload file');
     $('#myBar').width("1%");
     progress = 1;
     setInterval(progressBar, 5);
@@ -144,7 +143,7 @@ var uploadFile = function(file) {
     form_data.append("file", file_data);
 
     $.ajax({
-        url: "http://180.76.152.112:8090" + "/api/uploadPhotos",
+        url: "http://localhost:8090" + "/api/uploadPhotos",
         contentType: false,
         data: form_data,
         processData: false,
@@ -152,8 +151,8 @@ var uploadFile = function(file) {
         type: "POST",
         success: function (res) {
             $('#myBar').width("100%");
-            $('#myBar').text('上传完成!');
-            console.log('successfully uploaded, URL: ' + res);
+            $('#myBar').text('继续上传!');
+            // console.log('successfully uploaded, URL: ' + res);
             $(file).parent().css("min-height", '0px');
             $('.create_footstep-info_img').attr('src', res.bigImg);
             // init(CKEDITOR.currentInstance);
