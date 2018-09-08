@@ -1002,27 +1002,7 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $(coupon.target).css("background-color", "coral");
     // $(coupon.target).css("height", "50px");
   };
-
-  $http({method: 'GET', url: ipAddress + '/notifications/getNotifications', params:{u_id: $cookies.get('u_id')}})
-      .success(function(data){
-        $scope.notifications = data;
-        var newmsgShow = false;
-        $scope.notifications.forEach(function (item, index) {
-          for(var key in item) {
-            if(key === 'nf_status' && item[key] == 0){
-              newmsgShow = true;
-              return;
-            }
-          }
-        });
-        if(newmsgShow) {
-          $('.newmsg').css("display","block");
-        }else{
-          $('.newmsg').css("display","none");
-        }
-      },function(error){
-        $scope.error = error;
-      });
+  
 }]);
 
 buybsControllers.controller('MessageController', ['$scope', '$cookies', '$window', '$http', '$css', function($scope, $cookies, $window, $http, $css){

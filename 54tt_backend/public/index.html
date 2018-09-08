@@ -43,7 +43,6 @@
     </div>
     <div class="nav_pages">
         <a href="#/" href="javascript: void(0);" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeTaotao($event)">淘国内</div></a>
-        <a href="#/amazon" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeAmazon($event)">亚马逊图书</div></a>
         <a href="#/community/index" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeComm($event)">淘交流</div></a>
         <a href="#/rewards" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeReward($event)">淘礼品</div></a>
         <a href="#/coupon" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeCoupon($event)">淘礼券</div></a>
@@ -59,32 +58,33 @@
     <div style="font-size: 14px; float: right; color: #AEAEAE;
     text-align: center;">54淘淘&nbsp;|&nbsp; 沪ICP备16054913号-2</div>
 </div>
-<script>
-  $(document).ready(function () {
-    if($(window).width() < 800){
-        $('.user-avatar').click(function(){
-            if($('.notification').css('display') === 'block'){
-                $('.notification').css('display','none');
-            } else {
-                $('.notification').css('width', '50%');
-                $('.notification').css('margin', '60px 0px 0px 45%');
-                $('.notification').css('display','block');
-            }
-        });
-    } else {
-        $('.user-avatar').mouseenter(function () {
-            $('.notification').css('display', 'block');
-        }).mouseout(function () {
-            $('.notification').css('display', 'none');
-        });
-        $('.notification').mouseover(function () {
-            $('.notification').css('display', 'block');
-        }).mouseleave(function () {
-            $('.notification').css('display', 'none');
-        });
-    }
-  });
-</script>
+
+<!--<script>-->
+  <!--$(document).ready(function () {-->
+    <!--if($(window).width() < 800){-->
+        <!--$('.user-avatar').click(function(){-->
+            <!--if($('.notification').css('display') === 'block'){-->
+                <!--$('.notification').css('display','none');-->
+            <!--} else {-->
+                <!--$('.notification').css('width', '50%');-->
+                <!--$('.notification').css('margin', '60px 0px 0px 45%');-->
+                <!--$('.notification').css('display','block');-->
+            <!--}-->
+        <!--});-->
+    <!--} else {-->
+        <!--$('.user-avatar').mouseenter(function () {-->
+            <!--$('.notification').css('display', 'block');-->
+        <!--}).mouseout(function () {-->
+            <!--$('.notification').css('display', 'none');-->
+        <!--});-->
+        <!--$('.notification').mouseover(function () {-->
+            <!--$('.notification').css('display', 'block');-->
+        <!--}).mouseleave(function () {-->
+            <!--$('.notification').css('display', 'none');-->
+        <!--});-->
+    <!--}-->
+  <!--});-->
+<!--</script>-->
 
 </body>
 </html>

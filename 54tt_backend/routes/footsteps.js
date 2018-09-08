@@ -200,7 +200,36 @@ router.get('/getFootstepsNumber', function(req, res, next) {
     if(req.param('fs_platform')) {
         criteriaSQL += " and jkf.fs_platform='" + req.param('fs_platform') + "'";
     }
+    connection.query(criteriaSQL, function(err, result) {
+        if(err) {
+            res.send("Error: " + err);
+        } else {
+            res.send(result);
+        }
+    })
+});
 
+//select count(*) as number from jk_footsteps as jkf where jkf.fs_status = 1 and jkf.fs_des like '%%' or jkf.fs_from like '%%' and jkf.fs_from like '%小背心/小吊带d jkf.fs_platform = '淘宝'
+//Tag_SQL_READ: select count(*) as number from jk_footsteps as jkf where jkf.fs_status = 1 and jkf.fs_des like '%%' or jkf.fs_from like '%%' and jkf.fs_from like '%女装尖货%' anf.fs_platform = '淘宝'
+
+router.get('/getFootstepsTagNumber', function(req, res, next) {
+    var criteriaSQL = "select count(*) as number from jk_footsteps as jkf where jkf.fs_status = 1 and ";
+
+    if(req.param('fs_platform')) {
+        criteriaSQL += "jkf.fs_platform = ?";
+    }
+    
+    if(req.param('tag')) {
+        criteriaSQL += " and jkf.fs_des like'%" + req.param('tag') + "%'";
+    }
+
+    if(req.param('filter')) {
+        criteriaSQL += " and jkf.fs_from like'%" + req.param('filter') + "%'";
+    }
+    
+    criteriaSQL = mysql.format(criteriaSQL, [req.param("fs_platform")]);
+    
+    console.log("Tag_SQL_READ: " + criteriaSQL);
     connection.query(criteriaSQL, function(err, result) {
         if(err) {
             res.send("Error: " + err);
@@ -379,7 +408,6 @@ router.get('/getPrev', function (req, res, next) {
         }
     })
 });
-
 
 router.get('/getFootstepsByNewest', function (req, res, next) {
 

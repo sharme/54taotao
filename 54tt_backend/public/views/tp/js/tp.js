@@ -6,7 +6,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
         if($(window).width() < mobileSize - 100)
             return true;
     };
-    $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{fs_platform: "淘宝", index_start: 0, count: 8, u_id: $cookies.get('u_id')}})
+    $http({method: 'GET', url: ipAddress + '/footsteps/getFootsteps', params:{fs_platform: "淘宝", index_start: 0, count: 4, u_id: $cookies.get('u_id')}})
         .success(function(data){
             $scope.tripList = data;
         },function(error){
@@ -19,24 +19,24 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
         },function(error){
             $scope.error = error;
         });
-    $scope.isbusy = false;
+    var heightDiv = 800;
     $scope.loadMore = function() {
         if($scope.tripList && $scope.number > $scope.tripList.length) {
-            $scope.isbusy = true;
             $http({
                 method: 'GET',
                 url: ipAddress + '/footsteps/getFootstepsByTag',
-                params: {index_start: $scope.tripList.length, count: 3,tag: $scope.tag, filter: $scope.filter, fs_platform: "淘宝"}
+                params: {index_start: $scope.tripList.length, count: 4,tag: $scope.tag, filter: $scope.filter, fs_platform: "淘宝"}
             }).success(function (data) {
                 if (data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
                         $scope.tripList.push(data[i]);
                     }
-                    $scope.isbusy = false;
                 }
             }, function (error) {
                 $scope.error = error;
             });
+            heightDiv = heightDiv + 400;
+            $(".trip_list").css("height", heightDiv + "px");
         }
     };
     $scope.loginCheck = function(fs_id) {
@@ -51,32 +51,49 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
     $scope.filter = '';
     $scope.tpFilter = function(){
         $scope.tag = $('.search_bar').val();
-        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
-            params:{fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
-        })
+
+        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsTagNumber', params: {fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter}})
             .success(function(data){
+                $scope.number = data[0].number;
+            },function(error){
+                $scope.error = error;
+            });
+
+        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
+            params:{fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 8}
+        }).success(function(data){
                 if(!data.errno){
                     $scope.tripList = data;
-                    $scope.isbusy = false;
                 }
             }, function(error){
                 $scope.error = error;
             });
+        heightDiv = 800;
+        $(".trip_list").css("height", heightDiv + "px");
     };
+
     $scope.btnFilter = function (btn) {
         $scope.filter = $("."+btn).val();
         $scope.tag = $('.search_bar').val();
-        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
-            params:{fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 15}
-        })
+
+        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsTagNumber', params: {fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter}})
             .success(function(data){
+                $scope.number = data[0].number;
+            },function(error){
+                $scope.error = error;
+            });
+
+        $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByTag',
+            params:{fs_platform: "淘宝", tag: $scope.tag, filter: $scope.filter, u_id: $cookies.get('u_id'), index_start: 0, count: 8}
+        }).success(function(data){
                 if(!data.errno){
                     $scope.tripList = data;
-                    $scope.isbusy = false;
                 }
             }, function(error){
                 $scope.error = error;
             });
+        heightDiv = 800;
+        $(".trip_list").css("height", heightDiv + "px");
     };
     $scope.stickBtn = function(id, u_id){
         if($cookies.get('u_id') == undefined){
@@ -224,7 +241,6 @@ community.controller('RewardCtrl', ['$scope', '$cookies', '$window', '$http', '$
 
 
 }]);
-
 
 community.controller('AmazonCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
     $scope.checkMobile = function () {
