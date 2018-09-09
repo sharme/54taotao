@@ -230,3 +230,12 @@
   height: 15px;
   opacity: 0.6;
 }
+.home-coupon {
+  background-color: red;
+}
+.home-share {
+  background-color: black;
+}
+.home-comm {
+  background-color: black;
+}

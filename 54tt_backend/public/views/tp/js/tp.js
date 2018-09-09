@@ -11,21 +11,22 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
             $scope.tripList = data;
         },function(error){
             $scope.error = error;
-        });
+    });
     $scope.current_uID = $cookies.get('u_id');
     $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsNumber', params: {fs_platform: "淘宝"}})
         .success(function(data){
             $scope.number = data[0].number;
         },function(error){
             $scope.error = error;
-        });
-    var heightDiv = 800;
+    });
+    var heightDiv = 0;
     $scope.loadMore = function() {
-        if($scope.tripList && $scope.number > $scope.tripList.length) {
+        $scope.number = $scope.number - 4;
+        if($scope.number > 0) {
             $http({
                 method: 'GET',
                 url: ipAddress + '/footsteps/getFootstepsByTag',
-                params: {index_start: $scope.tripList.length, count: 4,tag: $scope.tag, filter: $scope.filter, fs_platform: "淘宝"}
+                params: {index_start: $scope.tripList.length, count: $scope.number > 4 ?4:$scope.number, tag: $scope.tag, filter: $scope.filter, fs_platform: "淘宝"}
             }).success(function (data) {
                 if (data.length > 0) {
                     for (var i = 0; i < data.length; i++) {
@@ -35,7 +36,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
             }, function (error) {
                 $scope.error = error;
             });
-            heightDiv = heightDiv + 400;
+            heightDiv = heightDiv + 500;
             $(".trip_list").css("height", heightDiv + "px");
         }
     };
@@ -68,7 +69,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
             }, function(error){
                 $scope.error = error;
             });
-        heightDiv = 800;
+        heightDiv = 500;
         $(".trip_list").css("height", heightDiv + "px");
     };
 
@@ -92,7 +93,7 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
             }, function(error){
                 $scope.error = error;
             });
-        heightDiv = 800;
+        heightDiv = 500;
         $(".trip_list").css("height", heightDiv + "px");
     };
     $scope.stickBtn = function(id, u_id){

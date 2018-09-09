@@ -31,7 +31,7 @@
 <div id="header" class="header" ng-controller="headerController">
   <div class="header-site">54淘淘</div>
   <div class="header_slogo">
-      淘国内, 淘国外, 省钱就上54淘淘
+      先 <span style="font-size: 20px; color: red;">领券</span> 再 淘宝, 省的不是一点点, 省钱就上54淘淘
   </div>
     <div class="header-right" ng-controller="LoginController">
         <div class="header-right-logout">
@@ -42,10 +42,10 @@
         </div>
     </div>
     <div class="nav_pages">
-        <a href="#/" href="javascript: void(0);" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeTaotao($event)">淘国内</div></a>
-        <a href="#/community/index" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeComm($event)">淘交流</div></a>
-        <a href="#/rewards" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeReward($event)">淘礼品</div></a>
-        <a href="#/coupon" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeCoupon($event)">淘礼券</div></a>
+        <a href="#/" class="header-homepage"><div class="header-div-style comm home-coupon" ng-click="colorChangeCoupon($event)">领券</div></a>
+        <a href="#/coupon" href="javascript: void(0);" class="header-homepage"><div class="header-div-style comm home-share" ng-click="colorChangeTaotao($event)">每周分享</div></a>
+        <a href="#/community/index" class="header-homepage"><div class="header-div-style comm home-comm" ng-click="colorChangeComm($event)">淘交流</div></a>
+        <!--<a href="#/rewards" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeReward($event)">淘礼品</div></a>-->
     </div>
 </div>
 <div class="view-container">
