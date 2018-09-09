@@ -2,7 +2,7 @@
 <html ng-app="jk_backend">
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0" />
 <head ng-controller="defaultCtrl">
-  <title>【54淘淘】淘国内, 淘国外, 省钱返现就上54淘淘.</title>
+  <title>【54淘淘】先 领券 再 淘宝, 省的不是一点点, 省钱就上54淘淘</title>
   <meta name="description" content="【54淘淘】买国内！买国外！所有你想要的商品, 专业的54淘淘帮你精细挑选, 挑选最实惠的商品. 而且每天都有疯狂促销, 实惠省钱就上54淘淘. ">
   <link rel="icon" type="image/gif/png" href="img/taotao.png">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -31,7 +31,7 @@
 <div id="header" class="header" ng-controller="headerController">
   <div class="header-site">54淘淘</div>
   <div class="header_slogo">
-      先 <span style="font-size: 20px; color: red;">领券</span> 再 淘宝, 省的不是一点点, 省钱就上54淘淘
+      先 <span style="font-size: 20px; color: red;">领券</span> 再 淘宝, 省的不是一点点 (对接淘宝平台 优惠券100%真实有效)
   </div>
     <div class="header-right" ng-controller="LoginController">
         <div class="header-right-logout">
@@ -42,6 +42,7 @@
         </div>
     </div>
     <div class="nav_pages">
+
         <a href="#/" href="javascript: void(0);" class="header-homepage"><div class="header-div-style comm home-share" ng-click="colorChangeTaotao($event)">每周分享</div></a>
         <a href="#/coupon" class="header-homepage"><div class="header-div-style comm home-coupon" ng-click="colorChangeCoupon($event)">领券</div></a>
         <a href="#/community/index" class="header-homepage"><div class="header-div-style comm home-comm" ng-click="colorChangeComm($event)">淘交流</div></a>

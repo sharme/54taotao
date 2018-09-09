@@ -11,7 +11,6 @@
         <button ng-click="addLoginCheck()">发表</button>
     </div>
     </div>
-    <hr>
     <div class="community_topic" infinite-scroll="loadMore()" infinite-scroll-distance="2" infinite-scroll-disabled="isbusy" infinite-scroll-immediate-check="false">
         <div class="community_topic_main" ng-repeat="topic in topics track by $index">
             <div class="community_topic_main_title">
