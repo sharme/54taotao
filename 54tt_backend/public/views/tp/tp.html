@@ -18,7 +18,7 @@
                     <div style="position: absolute;" ng-if="trip.fs_discount">
                         <img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;">
                     </div>
-                    <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','small')}}"></image>
+                    <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','big')}}"></image>
                     <image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','small')}}"></image></div>
                 <div ng-if="trip.fs_disPic2 && checkMobile()">
                     <div style="position: absolute;" ng-if="trip.fs_discount"><img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;"></div>
@@ -45,10 +45,10 @@
             <!--<div class="trip_main_com">红包: ￥{{trip.fs_commission}}</div>-->
         </div>
             <a target="_blank" href="{{trip.fs_promo}}"><div class="trip_main_purchase">去领券</div></a>
-        <div class="trip_main_source">
+        <div class="trip_main_source" ng-if='checkMobile()'>
             <div class="trip_main_source_o"><img src="../../img/platform_taobao.png" ng-if="trip.fs_platform == '淘宝'"><span ></span></div>
             <div class="trip_main_copy">54淘淘</div>
-	</div>
+	    </div>
     </div>
     <div class="the_end">还没看够! 点击 <span><a style="color: red; text-decoration: underline;" target="_blank" href="#/">"领券"</a></span> 搜搜</div>
 </div>

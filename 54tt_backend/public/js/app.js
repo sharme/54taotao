@@ -31,7 +31,7 @@ buybs.config(function($routeProvider, $cssProvider){
     });
 
     $routeProvider.
-    when('/coupon', {
+    when('/', {
         templateUrl: 'views/tp/tp.html',
         controller: 'TripCtrl',
         css: [
@@ -44,7 +44,7 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
-    when('/', {
+    when('/coupon', {
         templateUrl: 'views/coupon/coupon.html',
         css: [
             {
