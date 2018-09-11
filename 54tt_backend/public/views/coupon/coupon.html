@@ -1,6 +1,8 @@
-<div style="-webkit-overflow-scrolling:touch; overflow: visible; ">
-<iframe id="iframeId" scrolling="yes" style="height: 500px; padding: 0px 2%;" marginwidth="0" marginheight="0" scrolling="auto" frameborder="0" src="https://temai.m.taobao.com/index.htm?pid=mm_15618150_46272195_1292558215">
+<div id="iframeDiv">
+
+<iframe id="iframeId"style="  marginwidth="0" marginheight="0" frameborder="0" src="https://temai.m.taobao.com/index.htm?pid=mm_15618150_46272195_1292558215">
 </iframe>
+
 </div>
 
 <style type="text/css">
@@ -8,12 +10,26 @@
         margin: 0px 0px;
         width: 100%;
         height: 100%;
-    }
+overflow: auto;	
+-webkit-overflow-scrolling: touch;    
+}
     iframe {
+ padding: 0px 2%;
         margin: 0px 0px;
         width: 100%;
-        height: 100%;
+        height: 2500px;
+border:none;
+overflow: auto;
     }
+
+iframeDiv {
+overflow: hidden;
+width:100%;
+height: 500px;
+border: none;
+background-color: #fff;
+}
+
 
 </style>
 
