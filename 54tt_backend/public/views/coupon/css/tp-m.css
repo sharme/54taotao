@@ -224,5 +224,5 @@
   height: 15px;
 }
 .view-frame {
-  -webkit-overflow-scrolling: auto;
+  -webkit-overflow-scrolling: touch;
 }
