@@ -983,6 +983,7 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     // $(".comm").css("height", "35px");
     $(comm.target).css("background-color", "coral");
     // $(comm.target).css("height", "50px");
+    $window.location.href = "#/community/index";
   };
   $scope.colorChangeAmazon = function (amazon) {
     $(".comm").css("background-color", "black");
@@ -1001,6 +1002,9 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     // $(".comm").css("height", "35px");
     $(coupon.target).css("background-color", "coral");
     // $(coupon.target).css("height", "50px");
+
+    $window.location.href = '#/';
+    
   };
   
 }]);
