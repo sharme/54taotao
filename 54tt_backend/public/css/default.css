@@ -53,7 +53,7 @@ button {
 #header .header_slogo {
   float: left;
   color: #AEAEAE;
-  font-size: 20px;
+  font-size: 18px;
 }
 #header .header-site {
   color: red;
@@ -173,7 +173,7 @@ button {
 .nav_pages {
   float: left;
   width: 98%;
-  height: 80px;
+  height: 50px;
   background-color: rebeccapurple;
   margin-bottom: 10px;
 }
