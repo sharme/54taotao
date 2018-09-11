@@ -31,20 +31,20 @@ buybs.config(function($routeProvider, $cssProvider){
     });
 
     $routeProvider.
+    // when('/', {
+    //     templateUrl: 'views/tp/tp.html',
+    //     controller: 'TripCtrl',
+    //     css: [
+    //         {
+    //             href: '../views/tp/css/tp-m.css',
+    //             breakpoint: 'mobile'
+    //         }, {
+    //             href: '../views/tp/css/tp.css',
+    //             breakpoint: 'desktop'
+    //         }
+    //     ]
+    // }).
     when('/', {
-        templateUrl: 'views/tp/tp.html',
-        controller: 'TripCtrl',
-        css: [
-            {
-                href: '../views/tp/css/tp-m.css',
-                breakpoint: 'mobile'
-            }, {
-                href: '../views/tp/css/tp.css',
-                breakpoint: 'desktop'
-            }
-        ]
-    }).
-    when('/coupon', {
         templateUrl: 'views/coupon/coupon.html',
         css: [
             {
