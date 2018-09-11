@@ -223,3 +223,6 @@
   width: 15px;
   height: 15px;
 }
+.view-frame {
+  -webkit-overflow-scrolling: touch;
+}
