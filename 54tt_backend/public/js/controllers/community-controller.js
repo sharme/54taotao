@@ -133,7 +133,7 @@ community.controller('CommunityCtrl', ['$scope', '$cookies', '$window', '$http',
             data: JSON.stringify(click)
         };
         $http(req).success(function(result){
-            $window.location.href = "#/community/topics/" + tp_id;
+            $window.location.href = "#/community/" + tp_id;
         }, function(error){
             console.log(error);
         });
@@ -143,7 +143,7 @@ community.controller('CommunityCtrl', ['$scope', '$cookies', '$window', '$http',
             $window.location.href = '#/login';
             return;
         } else {
-            $window.location.href = "#/community/topics/addTopic";
+            $window.location.href = "#/community/addTopic";
         }
     };
     $scope.renderHtml = function(value) {
@@ -199,10 +199,12 @@ community.controller('TopicCtrl', ['$scope', '$cookies', '$window', '$http','$ro
             console.log(error);
         });
     };
+
     $scope.editBtn = function(tp_id) {
         $window.location.href = '#/community/topics/editTopic?tp_id=' + tp_id;
         $window.location.reload();
     };
+    
     $scope.submit = function(){
         if($cookies.get('u_id') == undefined){
             $window.location.href = '#/login';
@@ -229,7 +231,7 @@ community.controller('TopicCtrl', ['$scope', '$cookies', '$window', '$http','$ro
         });
     };
     $scope.closeTopic = function() {
-        $window.location.href = '#/community/index';
+        $window.location.href = '#/community';
     };
     $scope.loginCheck = function(){
         if($cookies.get('u_id') == undefined){
@@ -246,7 +248,7 @@ community.controller('AddTopicCtrl', ['$scope', '$cookies', '$window', '$http','
             $scope.error = error;
         });
     $scope.closeTopic = function() {
-        $window.location.href = '#/community/index';
+        $window.location.href = '#/community';
     };
     $scope.topic = {
         u_id: '',
@@ -298,7 +300,7 @@ community.controller('AddTopicCtrl', ['$scope', '$cookies', '$window', '$http','
                 $('.topic_add_msg').html('发布失败');
             } else {
                 $('.topic_add_msg').html('发布成功');
-                $window.location.href= '#/community/index';
+                $window.location.href= '#/community';
             }
         }, function(error){
             console.log(error);
@@ -313,7 +315,7 @@ community.controller('editTopicCtrl', ['$scope', '$cookies', '$window', '$http',
             $scope.error = error;
         });
     $scope.closeTopic = function() {
-        $window.location.href = '#/community/index';
+        $window.location.href = '#/community';
     };
     $scope.renderHtml = function(value) {
         return $sce.trustAsHtml(value);
@@ -358,7 +360,7 @@ community.controller('editTopicCtrl', ['$scope', '$cookies', '$window', '$http',
                 alert("修改失败, 请稍后再试.");
             } else {
                 alert("修改成功");
-                $window.location.href= '#/community/index';
+                $window.location.href= '#/community';
             }
         }, function(error){
             console.log(error);

@@ -983,7 +983,7 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     // $(".comm").css("height", "35px");
     $(comm.target).css("background-color", "coral");
     // $(comm.target).css("height", "50px");
-    $window.location.href = "#/community/index";
+    $window.location.href = "#/community";
   };
   $scope.colorChangeWhy = function (amazon) {
     $(".comm").css("background-color", "black");

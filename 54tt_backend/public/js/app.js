@@ -306,7 +306,7 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
-    when('/community/index', {
+    when('/community', {
         controller: 'CommunityCtrl',
         templateUrl: 'views/community/index.html',
         css: [
@@ -319,7 +319,7 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
-    when('/community/topics/addTopic',{
+    when('/community/addTopic',{
         templateUrl: 'views/community/addTopic.html',
         controller: 'AddTopicCtrl',
         css: [
@@ -345,7 +345,7 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
-    when('/community/topics/:tp_id',{
+    when('/community/:tp_id',{
         templateUrl: 'views/community/topic.html',
         controller: 'TopicCtrl',
         css: [
