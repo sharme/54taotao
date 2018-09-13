@@ -172,6 +172,9 @@ button {
 .recommend {
   display: none;
 }
+.start {
+  display: none;
+}
 .nav_pages {
   float: left;
   width: 98%;

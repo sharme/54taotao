@@ -985,11 +985,12 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     // $(comm.target).css("height", "50px");
     $window.location.href = "#/community/index";
   };
-  $scope.colorChangeAmazon = function (amazon) {
+  $scope.colorChangeWhy = function (amazon) {
     $(".comm").css("background-color", "black");
     // $(".comm").css("height", "35px");
     $(amazon.target).css("background-color", "coral");
     // $(amazon.target).css("height", "50px");
+    $window.location.href = '#/start';
   };
   $scope.colorChangeReward = function (reward) {
     $(".comm").css("background-color", "black");

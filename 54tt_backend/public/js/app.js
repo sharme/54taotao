@@ -56,19 +56,19 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
-    // when('/rewards', {
-    //     templateUrl: 'views/rd/rd.html',
-    //     controller: 'RewardCtrl',
-    //     css: [
-    //         {
-    //             href: '../views/rd/css/tp-m.css',
-    //             breakpoint: 'mobile'
-    //         }, {
-    //             href: '../views/rd/css/tp.css',
-    //             breakpoint: 'desktop'
-    //         }
-    //     ]
-    // }).
+    when('/start', {
+        templateUrl: 'views/why54taotao/start.html',
+        // controller: 'RewardCtrl',
+        css: [
+            {
+                href: '../views/why54taotao/css/tp-m.css',
+                breakpoint: 'mobile'
+            }, {
+                href: '../views/why54taotao/css/tp.css',
+                breakpoint: 'desktop'
+            }
+        ]
+    }).
     when('/foot', {
         templateUrl: 'views/homepage.html',
         controller: 'FootstepsListCtrl',

@@ -1,0 +1,24 @@
+.start {
+  float: left;
+  width: 96%;
+  margin: 10px 2%;
+  display: block;
+}
+.start .start_title {
+  text-align: center;
+  font-size: 18px;
+  color: rebeccapurple;
+}
+.start .start_reason {
+  color: green;
+  text-align: center;
+  margin-top: 30px;
+}
+.start .start_step {
+  max-width: 800px;
+  margin-top: 46px;
+  margin-bottom: 80px;
+}
+.start .start_step img {
+  width: 100%;
+}
