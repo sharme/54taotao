@@ -31,34 +31,34 @@ buybs.config(function($routeProvider, $cssProvider){
     });
 
     $routeProvider.
-    // when('/', {
-    //     templateUrl: 'views/tp/tp.html',
-    //     controller: 'TripCtrl',
-    //     css: [
-    //         {
-    //             href: '../views/tp/css/tp-m.css',
-    //             breakpoint: 'mobile'
-    //         }, {
-    //             href: '../views/tp/css/tp.css',
-    //             breakpoint: 'desktop'
-    //         }
-    //     ]
-    // }).
     when('/', {
-        templateUrl: 'views/coupon/coupon.html',
+        templateUrl: 'views/cp/cp.html',
+        controller: 'CouponProductCtrl',
         css: [
             {
-                href: '../views/coupon/css/tp-m.css',
+                href: '../views/cp/css/cp-m.css',
                 breakpoint: 'mobile'
             }, {
-                href: '../views/coupon/css/tp.css',
+                href: '../views/cp/css/cp.css',
+                breakpoint: 'desktop'
+            }
+        ]
+    }).
+    when('/promo', {
+        templateUrl: 'views/tp/tp.html',
+        controller: 'TripCtrl',
+        css: [
+            {
+                href: '../views/tp/css/tp-m.css',
+                breakpoint: 'mobile'
+            }, {
+                href: '../views/tp/css/tp.css',
                 breakpoint: 'desktop'
             }
         ]
     }).
     when('/start', {
         templateUrl: 'views/why54taotao/start.html',
-        // controller: 'RewardCtrl',
         css: [
             {
                 href: '../views/why54taotao/css/tp-m.css',
@@ -69,28 +69,15 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
-    when('/foot', {
-        templateUrl: 'views/homepage.html',
-        controller: 'FootstepsListCtrl',
-        css: [
-            {
-                href: '../css/home/footstep-m.css',
-                breakpoint: 'mobile'
-            }, {
-                href: '../css/home/footstep.css',
-                breakpoint: 'desktop'
-            }
-        ]
-    }).
     when('/foot/:footId',{
-        templateUrl: 'views/footDetail.html',
-        controller: 'FootDetailCtrl',
+        templateUrl: 'views/pd/productDetail.html',
+        controller: 'ProductDetailCtrl',
         css: [
             {
-                href: '../css/home/footdetail-m.css',
+                href: '../views/pd/css/productDetail-m.css',
                 breakpoint: 'mobile'
             }, {
-                href: '../css/home/footdetail.css',
+                href: '../views/pd/css/productDetail.css',
                 breakpoint: 'desktop'
             }
         ]
@@ -268,14 +255,14 @@ buybs.config(function($routeProvider, $cssProvider){
         ]
     }).
     when('/tool/pixel',{
-        templateUrl: 'views/ptool/tool.html',
+        templateUrl: 'views/profile/pixel.html',
         controller: 'pixelController',
         css: [
             {
-                href: '../css/tool/pixel-m.css',
+                href: '../css/profile/pixel-m.css',
                 breakpoint: 'mobile'
             }, {
-                href: '../css/tool/pixel.css',
+                href: '../css/profile/pixel.css',
                 breakpoint: 'desktop'
             }
         ]

@@ -287,262 +287,6 @@ buybsControllers.controller('FootstepsListCtrl', ['$scope', '$http', '$cookies',
   }
 }]);
 
-buybsControllers.controller('FootDetailCtrl', ['$scope', '$routeParams', '$http', '$cookies', '$window','$css','$sce', function ($scope, $routeParams, $http, $cookies, $window,$css,$sce) {
-  if($(window).width() < mobileSize - 100) {
-    $scope.zoom = false;
-  } else {
-    $scope.zoom = true;
-  }
-  $scope.windowSize = $(window).width();
-  $scope.trustSrc = function(src){
-    return $sce.trustAsResourceUrl(src);
-  };
-  $scope.renderHtml = function(value) {
-    return $sce.trustAsHtml(value);
-  };
-  $scope.likeBtn = function(id, u_id){
-    if($cookies.get('u_id') == undefined){
-      $window.location.href = '#/login';
-      return;
-    }
-    $http({method: 'GET', url: ipAddress + '/likes/search', params: {fs_id: id, u_id: $cookies.get('u_id')}})
-        .success(function(data){
-          if(data.length > 0) {
-            var req = {
-              method: 'POST',
-              url: ipAddress + '/likes/delete',
-              header: {
-                'Content-Type': 'application/json'
-              },
-              data: {
-                'fs_id': id,
-                'u_id': $cookies.get('u_id')
-              }
-            };
-            $http(req).success(function(result){
-              $(".like_footstep").css("background-color","");
-              $http({method: 'GET', url: ipAddress + '/likes/search', params: {fs_id: id}})
-                  .success(function(data){
-                    $('.btnLikeNum' + id).html(data.length);
-                  });
-
-            }, function(error){
-              console.log(error);
-            })
-          } else {
-            var req = {
-              method: 'POST',
-              url: ipAddress + '/likes/add',
-              header: {
-                'Content-Type': 'application/json'
-              },
-              data: {
-                'fs_id': id,
-                'u_id': $cookies.get('u_id')
-              }
-            };
-            $http(req).success(function(result){
-              addEvent($http, $window, $cookies.get('u_id'),eLike,u_id,eFootstep,id, false);
-              $(".like_footstep").css("background-color","#43c17e");
-              $http({method: 'GET', url: ipAddress + '/likes/search', params: {fs_id: id}})
-                  .success(function(data){
-                    $('.btnLikeNum' + id).html(data.length);
-                  });
-            }, function(error){
-              console.log(error);
-            })
-          }
-        }, function(error){
-          $scope.error = error;
-        });
-  };  
-  $scope.delBtn = function(id,u_id) {
-    if($cookies.get('u_id') == undefined){
-      $window.location.href = '#';
-      return;
-    }
-      var req = {
-        method: 'POST',
-        url: ipAddress + '/footsteps/delete',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        data: {
-          'fs_id': id
-        }
-      };
-      $http(req).success(function(result){
-        if(result.errno) {
-          alert("操作失败, 请稍后再试");
-        } else {
-          alert("删除成功");
-          $window.location.href = '#/';
-        }
-      }, function(error){
-        console.log(error);
-      });
-  };
-  $scope.stickBtn = function(id, u_id){
-    if($cookies.get('u_id') == undefined){
-      $window.location.href = '#/login';
-      return;
-    }
-    $http({method: 'GET', url: ipAddress + '/sticks/search', params: {fs_id: id, u_id: $cookies.get('u_id')}})
-        .success(function(data){
-          if(data.length > 0 ) {
-            var req = {
-              method: 'POST',
-              url: ipAddress + '/sticks/delete',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              data: {
-                'fs_id': id,
-                'u_id': $cookies.get('u_id')
-              }
-            };
-            $http(req).success(function(result){
-              $(".stick_footstep").css("background-color","");
-              $http({method: 'GET', url: ipAddress + '/sticks/search', params: {fs_id: id}})
-                  .success(function(data){
-                    $('.btnStickNum' + id).html(data.length);
-                  });
-            }, function(error){
-              console.log(error);
-            });
-          } else {
-            var req = {
-              method: 'POST',
-              url: ipAddress + '/sticks/add',
-              headers: {
-                'Content-Type': 'application/json'
-              },
-              data: {
-                'fs_id': id,
-                'u_id': $cookies.get('u_id')
-              }
-            };
-            $http(req).success(function(result){
-              addEvent($http, $window, $cookies.get('u_id'),eCollect,u_id,eFootstep,id, false);
-              $(".stick_footstep").css("background-color","#43c17e");
-              $http({method: 'GET', url: ipAddress + '/sticks/search', params: {fs_id: id}})
-                  .success(function(data){
-                    $('.btnStickNum' + id).html(data.length);
-                  });
-            }, function(error){
-              console.log(error);
-            });
-          }
-        }, function(error){
-          console.log(error);
-        });
-  };
-  $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsDetail', params:{u_id: $cookies.get('u_id'), fs_id:$routeParams.footId}})
-      .success(function(data){
-        $scope.foot = data[0];
-        $scope.checkUser = $scope.foot.u_id == $cookies.get('u_id')?true:false;
-      }, function(error){
-        $scope.error = error;
-      });
-  $http({method: 'GET', url: ipAddress + '/comments/getCommentsByFSID', params:{fs_id:$routeParams.footId}})
-      .success(function(data){
-        $scope.comments = data;
-      }, function(error){
-        $scope.error = error;
-      });
-  $http({method: 'GET', url: ipAddress + '/sticks/getSticksByFSID', params:{fs_id:$routeParams.footId}})
-      .success(function(data){
-        $scope.sticks = data;
-      }, function(error){
-        $scope.error = error;
-      });
-  $scope.backHome = function () {
-    window.location.href = '#'
-  };
-  $scope.loginCheck = function(){
-    if($cookies.get('u_id') == undefined){
-      return true;
-    }
-  };
-  $scope.addComment = {
-    cm_content: '',
-    fs_id: '',
-    u_id: $cookies.get('u_id')
-  };
-  $scope.submit = function(){
-    if($cookies.get('u_id') == undefined){
-      $window.location.href = '#/login';
-      return;
-    }
-    $scope.addComment.fs_id = $scope.foot.fs_id;
-    $scope.addComment.cm_content = CKEDITOR.instances.editor1.getData();
-    var req = {
-      method: 'POST',
-      url: ipAddress + '/comments/add',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      data: JSON.stringify($scope.addComment)
-    };
-    $http(req).success(function(result){
-      console.log($scope.foot.u_id + " ; " + $scope.foot.fs_id);
-      addEvent($http, $window, $cookies.get('u_id'),eComment,$scope.foot.u_id,eFootstep,$scope.foot.fs_id, true);
-    }, function(error){
-      console.log(error);
-    });
-  };
-  $scope.index_number = 1;
-  $scope.switchPic = function(pic, index_number, judge) {
-    if(pic && judge) {
-      $('.picture-present').attr('src',pic);
-      $scope.index_number = index_number;
-    }
-    else {
-      console.log("index_number: " + index_number);
-      var maxIndex = false;
-      if (pic.fs_pic2) maxIndex = 2;
-      if (pic.fs_pic3) maxIndex = 3;
-      if (pic.fs_pic4) maxIndex = 4;
-      if (pic.fs_pic5) maxIndex = 5;
-      if (pic.fs_pic6) maxIndex = 6;
-      if (pic.fs_pic7) maxIndex = 7;
-      if(index_number == 0 && pic.fs_pic){
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic);
-      } else
-      if(index_number == 1 && pic.fs_pic2){
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic2);
-      } else
-      if(index_number == 2 && pic.fs_pic3) {
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic3);
-      } else
-      if(index_number == 3 && pic.fs_pic4) {
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic4);
-      } else
-      if(index_number == 4 && pic.fs_pic5) {
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic5);
-      } else
-      if(index_number == 5 && pic.fs_pic6) {
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic6);
-      } else
-      if(index_number == 6 && pic.fs_pic7) {
-        index_number ++;
-        $('.picture-present').attr('src',pic.fs_pic7);
-      } else
-      if(index_number == 7 && pic.fs_pic) {
-        index_number = 1;
-        $('.picture-present').attr('src',pic.fs_pic);
-      }
-      if (index_number == maxIndex) index_number = 0;
-        $scope.index_number = index_number;
-    }
-  };
-}]);
 buybsControllers.controller('ProfileController', ['$scope', '$http', '$window','$cookies','$routeParams','$css', function($scope, $http, $window, $cookies, $routeParams, $css) {
   $http({method: 'GET', url: ipAddress + '/footsteps/getFootstepsByUID', params:{u_id: $cookies.get("u_id"), index_start: 0, count: 12}})
       .success(function(data){
@@ -972,11 +716,12 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $window.location.reload();
   };
 
-  $scope.colorChangeTaotao = function (tao) {
+  $scope.colorChangeTaobao = function (tao) {
     $(".comm").css("background-color", "black");
     // $(".comm").css("height", "35px");
     $(tao.target).css("background-color", "coral");
     // $(tao.target).css("height", "50px");
+    $window.location.href = "#/";
   };
   $scope.colorChangeComm = function (comm) {
     $(".comm").css("background-color", "black");
@@ -1004,8 +749,9 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $(coupon.target).css("background-color", "coral");
     // $(coupon.target).css("height", "50px");
 
+    // $window.location.href = '#/coupon';
     $window.location.href = '#/';
-    
+
   };
   
 }]);

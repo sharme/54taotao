@@ -1,54 +1,31 @@
 <div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2">
-    <div class='find'><input placeholder='快速搜索' type="text" ng-keypress="tpFilter()" class='search_bar' maxlength='-1'/><div class="search_btn" ng-click="tpFilter()">搜索</div></div>
-    <!--<div class="sponsors">-->
-        <!--<div class="sponsor">-->
-            <!--<button class="sponsor_categories btn_f1" ng-click="btnFilter('btn_f1')" value="">全部</button>-->
-            <!--<button class="sponsor_categories btn_f2" ng-click="btnFilter('btn_f2')" value="女装尖货">女装尖货</button>-->
-            <!--<button class="sponsor_categories btn_f3" ng-click="btnFilter('btn_f3')" value="小背心/小吊带">小背心/小吊带</button>-->
-            <!--<button class="sponsor_categories btn_f4" ng-click="btnFilter('btn_f4')" value="促销/返现">促销/返现</button>-->
-        <!--</div>-->
-    <!--</div>-->
-    <div class="terms">
-        本站商品折扣价格以各平台实际价格为准
-    </div>
-    <div class='trip ' ng-repeat="trip in tripList track by $index" >
-        <div class='trip_main bgColorChange{{trip.fs_id}}' ng-click="loginCheck(trip.fs_id)" ng-mouseleave="bgColorRemove(trip.fs_id)" ng-mouseenter="bgColorChange(trip.fs_id)">
+    <div class='find'><input placeholder='快速搜索' type="text" ng-keypress="search()" class='search_bar' maxlength='-1'/><div class="search_btn" ng-click="search()">搜索</div></div>
+
+    <div class='trip ' ng-repeat="trip in tripList.results.n_tbk_item track by $index" >
+        <div class='trip_main bgColorChange{{trip.num_iid}}' ng-click="loginCheck(trip.num_iid)" ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
             <div class='trip_main_images'>
-                <div ng-if="trip.fs_disPic">
-                    <div style="position: absolute;" ng-if="trip.fs_discount">
-                        <img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;">
+                <div ng-if="trip.pict_url">
+                    <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.pict_url}}"></image>
+                    <image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string['0']}}"></image>
+                </div>
+                <div class="trip_main_city">
+                    {{trip.provcity}}
+                </div>
+                <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
+                <div class='trip_main_des' ng-if='!checkMobile()'>
+                    <div class="trip_main_des_title">
+                        {{trip.title}}
                     </div>
-                    <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','big')}}"></image>
-                    <image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.fs_disPic.replace('custom','small')}}"></image></div>
-                <div ng-if="trip.fs_disPic2 && checkMobile()">
-                    <div style="position: absolute;" ng-if="trip.fs_discount"><img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;"></div>
-                    <!--<image class='trip_main_images_image' ng-src="{{trip.fs_disPic2.replace('custom','small')}}"></image>-->
-                </div>
-                <div ng-if="trip.fs_disPic3 && checkMobile()">
-                    <div style="position: absolute;" ng-if="trip.fs_discount"><img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;">
-                </div>
-                    <!--<image class='trip_main_images_image' ng-src="{{trip.fs_disPic3.replace('custom', 'small')}}"></image>-->
-                </div>
-                <div ng-if="trip.fs_disPic4 && checkMobile()">
-                    <div style="position: absolute;" ng-if="trip.fs_discount">
-                        <img src="../../img/taotao.png" style="width: 25px;height: 25px;border-radius: 50%;margin: 5px;">
+                    <div class="trip_main_des_info">
+                        <div class="price">淘宝: {{trip.reserve_price}}</div>
+                        <div class="final_price">促销价: {{trip.zk_final_price}}</div>
                     </div>
-                    <!--<image class='trip_main_images_image' ng-src="{{trip.fs_disPic4.replace('custom','small')}}"></image>-->
                 </div>
+                <div class='trip_main_des' ng-if='!checkMobile()'>
+                    <text>{{trip.fs_des}}​​​​</text>
                 </div>
-            <div class='trip_main_title'><text>{{trip.fs_des}}​​​​</text></div>
-            <div class="trip_main_price">
-                <!--<div class="trip_main_price_l" ng-if="trip.fs_discount">¥ <span style="text-decoration: line-through;">{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>-->
-                <!--<div class="trip_main_price_l" ng-if="trip.fs_discount === '' ">¥ <span>{{trip.fs_price}}</span> &nbsp; <span style="color: red">{{trip.fs_discount}}</span></div>-->
-                <div class="trip_main_price_r">月销：{{trip.fs_sales}}</div>
             </div>
-            <!--<div class="trip_main_com">红包: ￥{{trip.fs_commission}}</div>-->
         </div>
-            <a target="_blank" href="{{trip.fs_promo}}"><div class="trip_main_purchase">去领券</div></a>
-        <div class="trip_main_source" ng-if='checkMobile()'>
-            <div class="trip_main_source_o"><img src="../../img/platform_taobao.png" ng-if="trip.fs_platform == '淘宝'"><span ></span></div>
-            <div class="trip_main_copy">54淘淘</div>
-	    </div>
     </div>
-    <div class="the_end">还没看够! 点击 <span><a style="color: red; text-decoration: underline;" target="_blank" href="#/coupon">"领券"</a></span> 搜搜</div>
+    <div class="the_end" ng-if="couponMsg">抱歉, 没有搜到相关的优惠券.</div>
 </div>

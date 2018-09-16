@@ -24,6 +24,8 @@
   <script src="../js/controllers/account-controller.js"></script>
   <script src="../js/controllers/community-controller.js"></script>
   <script src="../views/tp/js/tp.js"></script>
+  <script src="../views/cp/js/cp.js"></script>
+  <script src="../views/pd/js/pd.js"></script>
   <script src="../js/filters/filters.js"></script>
   <script src="../js/ckeditor/ckeditor.js"></script>
 <script>
@@ -45,12 +47,11 @@
         </div>
     </div>
     <div class="nav_pages">
-        <!--<a href="#/" href="javascript: void(0);" class="header-homepage" ng-click="colorChangeTaotao($event)"><div class="header-div-style comm home-share" >每周分享</div></a>-->
-        <button ng-click="colorChangeCoupon($event)" class="header-homepage header-div-style comm home-coupon" type="button">领券</button>
+        <!--<button ng-click="colorChangeTaobao($event)" class="header-homepage header-div-style comm home-coupon" type="button">促销</button>-->
+        <button ng-click="colorChangeCoupon($event)" class="header-homepage header-div-style comm home-share" >领券</button>
+        <!--<button ng-click="colorChangeCoupon($event)" class="header-homepage header-div-style comm home-share" >搜券</button>-->
         <button ng-click="colorChangeComm($event)" class="header-homepage header-div-style comm home-comm" type="button">淘交流</button>
         <button ng-click="colorChangeWhy($event)" class="header-homepage header-div-style comm home-comm" type="button">1分钟省钱教程</button>
-
-        <!--<a href="#/rewards" class="header-homepage"><div class="header-div-style comm" ng-click="colorChangeReward($event)">淘礼品</div></a>-->
     </div>
 </div>
 <div class="view-container">
@@ -63,33 +64,6 @@
     <div style="font-size: 14px; float: right; color: #AEAEAE;
     text-align: center;">54淘淘&nbsp;|&nbsp; 沪ICP备16054913号-2</div>
 </div>
-
-<!--<script>-->
-  <!--$(document).ready(function () {-->
-    <!--if($(window).width() < 800){-->
-        <!--$('.user-avatar').click(function(){-->
-            <!--if($('.notification').css('display') === 'block'){-->
-                <!--$('.notification').css('display','none');-->
-            <!--} else {-->
-                <!--$('.notification').css('width', '50%');-->
-                <!--$('.notification').css('margin', '60px 0px 0px 45%');-->
-                <!--$('.notification').css('display','block');-->
-            <!--}-->
-        <!--});-->
-    <!--} else {-->
-        <!--$('.user-avatar').mouseenter(function () {-->
-            <!--$('.notification').css('display', 'block');-->
-        <!--}).mouseout(function () {-->
-            <!--$('.notification').css('display', 'none');-->
-        <!--});-->
-        <!--$('.notification').mouseover(function () {-->
-            <!--$('.notification').css('display', 'block');-->
-        <!--}).mouseleave(function () {-->
-            <!--$('.notification').css('display', 'none');-->
-        <!--});-->
-    <!--}-->
-  <!--});-->
-<!--</script>-->
 
 </body>
 </html>
