@@ -5,11 +5,14 @@
         <a href="{{trip.coupon_click_url}}" target="#"><div class='trip_main bgColorChange{{trip.num_iid}}' ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
             <div class='trip_main_images'>
                 <div ng-if="trip.pict_url">
-                    <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.pict_url}}"></image>
-                    <image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string[0]}}"></image>
+                    <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
+                    <!--<image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string[0]}}"></image>-->
                 </div>
                 <div class="trip_main_city">
                     {{trip.coupon_info}}
+                </div>
+                <div class="trip_main_shop">
+                    店铺: {{trip.nick}}
                 </div>
                 <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
                 <div class='trip_main_des' ng-if='!checkMobile()'>
@@ -39,5 +42,5 @@
             </div>
         </div></a>
     </div>
-    <div class="the_end" ng-if="couponMsg">抱歉, 没有搜到相关的优惠券.</div>
+    <div class="the_end" ng-if="couponMsg">抱歉, 没有搜到相关的优惠券, 到底啦!</div>
 </div>

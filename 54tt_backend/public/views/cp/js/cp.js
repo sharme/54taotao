@@ -13,7 +13,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     $scope.page_no = 1;
     var init = false;
     $scope.txtValue = '女装';
-    $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '-1', page_size: $scope.checkMobile()?'4':'6'}})
+    $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '1', page_size: $scope.checkMobile()?'4':'6'}})
         .success(function(data){
             $scope.tripList = data;
             init = true;
@@ -31,21 +31,24 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                 url: ipAddress + '/taobao/getCouponProducts',
                 params: {q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'6'}
             }).success(function (data) {
-                if (data.results.tbk_coupon.length > 0) {
-                    for (var i = 0; i < data.results.tbk_coupon.length; i++) {
-                        $scope.tripList.results.tbk_coupon.push(data.results.tbk_coupon[i]);
+                if(!data.results)
+                    $scope.couponMsg = true;
+                else {
+                    if (data.results.tbk_coupon.length > 0) {
+                        for (var i = 0; i < data.results.tbk_coupon.length; i++) {
+                            $scope.tripList.results.tbk_coupon.push(data.results.tbk_coupon[i]);
+                        }
+                        $scope.page_no = $scope.page_no + 1;
+                        $scope.loadNext = true;
+                        if($scope.checkMobile())
+                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length * 426 + "px");
+                        else
+                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/4 * 426 + "px");
                     }
-                    $scope.page_no = $scope.page_no + 1;
-                    $scope.loadNext = true;
                 }
             }, function (error) {
                 $scope.error = error;
             });
-            if($scope.checkMobile)
-                heightDiv = heightDiv + 500;
-            else
-                heightDiv = heightDiv + 500;
-            $(".trip_list").css("height", heightDiv + "px");
         }
     };
 
@@ -56,10 +59,10 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         $(".bgColorChange" + divkey).css("background-color",'white');
     };
 
- 
     $scope.couponMsg = false;
     $scope.search = function(){
         $scope.couponMsg = false;
+        $scope.loadNext = true;
         $scope.txtValue = $('.search_bar').val();
         $scope.page_no = 1;
         $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
@@ -68,6 +71,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                     if(!data.results)
                         $scope.couponMsg = true;
                     $scope.tripList = data;
+                    init = true;
             }, function(error){
                 $scope.error = error;
             });

@@ -54,7 +54,7 @@
 .trip_list .trip .trip_main_images {
   margin-top: 2px;
   width: 340px;
-  height: 385px;
+  height: 426px;
 }
 .trip_list .trip .trip_main_images .trip_main_images_image {
   width: 324px;
@@ -71,6 +71,12 @@
   height: 50px;
   text-align: center;
   padding: 10px;
+}
+.trip_list .trip .trip_main_images .trip_main_shop {
+  z-index: 1;
+  position: absolute;
+  margin: 375px 0px 5px 165px;
+  width: 165px;
 }
 .trip_list .trip .trip_main_images .trip_main_volume {
   position: absolute;
