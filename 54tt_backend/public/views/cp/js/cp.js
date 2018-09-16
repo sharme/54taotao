@@ -13,7 +13,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     $scope.page_no = 1;
     var init = false;
     $scope.txtValue = '女装';
-    $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '-1', page_size: $scope.checkMobile()?'3':'6'}})
+    $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '-1', page_size: $scope.checkMobile()?'4':'6'}})
         .success(function(data){
             $scope.tripList = data;
             init = true;
@@ -29,7 +29,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
             $http({
                 method: 'GET',
                 url: ipAddress + '/taobao/getCouponProducts',
-                params: {q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'3':'6'}
+                params: {q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'6'}
             }).success(function (data) {
                 if (data.results.tbk_coupon.length > 0) {
                     for (var i = 0; i < data.results.tbk_coupon.length; i++) {
@@ -42,7 +42,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                 $scope.error = error;
             });
             if($scope.checkMobile)
-                heightDiv = heightDiv + 700;
+                heightDiv = heightDiv + 800;
             else
                 heightDiv = heightDiv + 500;
             $(".trip_list").css("height", heightDiv + "px");
@@ -63,7 +63,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         $scope.txtValue = $('.search_bar').val();
         $scope.page_no = 1;
         $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
-            params:{q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no, page_size: $scope.checkMobile()?'2':'6'}
+            params:{q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no, page_size: $scope.checkMobile()?'4':'6'}
         }).success(function(data){
                     if(!data.results)
                         $scope.couponMsg = true;
@@ -72,7 +72,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                 $scope.error = error;
             });
         if($scope.checkMobile())
-            heightDiv = 700;
+            heightDiv = 800;
         else
             heightDiv = 500;
         $(".trip_list").css("height", heightDiv + "px");
