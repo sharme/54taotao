@@ -34,9 +34,10 @@
       <file leaf-file-name="taobao.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/taobao.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1905">
-              <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
+            <state relative-caret-position="-600">
+              <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
               <folding>
+                <element signature="e#699#2477#0" expanded="false" />
                 <element signature="e#4063#5327#0" expanded="false" />
                 <element signature="e#5383#6722#0" expanded="false" />
                 <element signature="e#6788#8212#0" expanded="false" />
@@ -75,21 +76,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="package.json" pinned="false" current-in-tab="true">
+      <file leaf-file-name="package.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+            <state relative-caret-position="120">
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="cp.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="cp.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/views/cp/js/cp.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
+            <state relative-caret-position="244">
+              <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -204,10 +205,10 @@
         <option value="$PROJECT_DIR$/public/views/cp/css/cp-m.less" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/routes/taobao.js" />
-        <option value="$PROJECT_DIR$/public/views/cp/js/cp.js" />
         <option value="$PROJECT_DIR$/public/js/server/backend.js" />
         <option value="$PROJECT_DIR$/public/js/controllers.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/public/views/cp/js/cp.js" />
       </list>
     </option>
   </component>
@@ -795,12 +796,12 @@
       <workItem from="1531146347624" duration="3376000" />
       <workItem from="1536402886801" duration="21307000" />
       <workItem from="1536507578372" duration="8098000" />
-      <workItem from="1537010147483" duration="48614000" />
+      <workItem from="1537010147483" duration="48930000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1371770000" />
+    <option name="totallyTimeSpent" value="1372086000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1253,29 +1254,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/cp/js/cp.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="26" selection-start-line="19" selection-start-column="26" selection-end-line="19" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/taobao.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1905">
-          <caret line="127" column="47" selection-start-line="127" selection-start-column="47" selection-end-line="127" selection-end-column="47" />
-          <folding>
-            <element signature="e#4063#5327#0" expanded="false" />
-            <element signature="e#5383#6722#0" expanded="false" />
-            <element signature="e#6788#8212#0" expanded="false" />
-            <element signature="e#8266#8767#0" expanded="false" />
-            <element signature="e#8822#9232#0" expanded="false" />
-            <element signature="e#9290#9969#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/js/server/backend.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
@@ -1301,8 +1279,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="18" column="19" selection-start-line="18" selection-start-column="19" selection-end-line="18" selection-end-column="19" />
+        <state relative-caret-position="120">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/taobao.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-600">
+          <caret line="16" column="42" selection-start-line="16" selection-start-column="42" selection-end-line="16" selection-end-column="42" />
+          <folding>
+            <element signature="e#699#2477#0" expanded="false" />
+            <element signature="e#4063#5327#0" expanded="false" />
+            <element signature="e#5383#6722#0" expanded="false" />
+            <element signature="e#6788#8212#0" expanded="false" />
+            <element signature="e#8266#8767#0" expanded="false" />
+            <element signature="e#8822#9232#0" expanded="false" />
+            <element signature="e#9290#9969#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/cp/js/cp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="74" column="28" selection-start-line="74" selection-start-column="28" selection-end-line="74" selection-end-column="28" />
           <folding />
         </state>
       </provider>

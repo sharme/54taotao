@@ -42,7 +42,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                 $scope.error = error;
             });
             if($scope.checkMobile)
-                heightDiv = heightDiv + 800;
+                heightDiv = heightDiv + 500;
             else
                 heightDiv = heightDiv + 500;
             $(".trip_list").css("height", heightDiv + "px");
@@ -72,7 +72,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                 $scope.error = error;
             });
         if($scope.checkMobile())
-            heightDiv = 800;
+            heightDiv = 500;
         else
             heightDiv = 500;
         $(".trip_list").css("height", heightDiv + "px");
