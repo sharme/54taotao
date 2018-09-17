@@ -41,7 +41,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                         $scope.page_no = $scope.page_no + 1;
                         $scope.loadNext = true;
                         if($scope.checkMobile())
-                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length * 426 + "px");
+                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/2 * 426 + "px");
                         else
                             $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/4 * 426 + "px");
                     }
@@ -98,14 +98,24 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                         click_url: coupon_click_url
                     }
                 }
-                $('.couponCode').css('margin-top', index * 426 + 300 + "px");
+                $('.couponCode').css('margin-top', (index * 410)/2 + 80 + "px");
                 $('.couponCode').css('display', 'block');
             }, function (error) {
                 $scope.error = error;
             });
     };
-    $scope.close = function () {
-       $('.couponCode').css('display', "none");
+    $scope.close = function (val) {
+        if(val) {
+            const el = document.createElement('textarea');
+            el.value = val;
+            document.body.appendChild(el);
+            el.select();
+            document.execCommand('copy');
+            document.body.removeChild(el);
+            $('.couponCode').css('display', "none");
+        } else {
+            $('.couponCode').css('display', "none");
+        }
     }
 
 

@@ -34,9 +34,9 @@ button {
 .trip_list {display: none;}
 .footstep-list {display: none;}
 .footstep-list-div {display: none;}
-#header {
+.header {
   height: 100px;
-  padding: 15px 0% 0px 2%;
+  padding: 8px 0% 0px 1%;
   .header_slogo {float: left; color: #AEAEAE;font-size: 18px;}
   width: 100%;
   .header-site {
@@ -59,12 +59,26 @@ button {
     line-height: 2;
     margin: 0px 0px 2px 0px;
   }
+  .header-m-div-style {
+    min-width: 33%;
+    height: 35px;
+    color: white;
+    background-color: black;
+    text-align: center;
+    line-height: 2;
+    margin: 0px 0px 2px 0px;
+    border-radius: 0px;
+    outline: none;
+  }
   .header-homepage {
     float: left;
     list-style-type: none;
     font-size: 16px;
     color: white;
     outline: none;
+  }
+  .header-m-homepage {
+    float: left;
   }
   .header-right {
     float: right;
@@ -87,18 +101,44 @@ button {
     }
   }
 }
-#footer {
+.footer {
   height: 50px;
   width: 100%;
   float: left;
   line-height: 2;
-  //margin-top: 200px;
   padding: 0px 20px 0px 20px;
   background-color: lightgrey;
   bottom: 0;
   position: fixed;
   z-index: 1000;
   opacity: 0.9;
+}
+.footer-m {
+  height: 40px;
+  width: 100%;
+  float: left;
+  z-index: 1000;
+  opacity: 0.9;
+  font-size: 12px;
+  bottom: 0px;
+  position: fixed;
+  background-color: white;
+  .info {
+    float: left;
+    color: darkgray;
+    width: 100%;
+    text-align: center;
+    a {
+      text-decoration: underline;
+      color: red;
+    }
+  }
+  .claim {
+    float: right;
+    color: #AEAEAE;
+    text-align: center;
+    width: 100%;
+  }
 }
 .message {
   margin: 50px 10%;
@@ -144,6 +184,16 @@ button {
   background-color: rebeccapurple;
   margin-bottom: 10px;
 }
+.nav_m_pages {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
 input:focus{
   border: solid 1px black;
+}
+
+.header_m_title {
+  text-align: center;
+  color: grey;
 }

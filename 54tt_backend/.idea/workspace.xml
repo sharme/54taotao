@@ -21,29 +21,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="taobao.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/taobao.js">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="318" column="37" selection-start-line="318" selection-start-column="37" selection-end-line="318" selection-end-column="37" />
-              <folding>
-                <element signature="e#699#2477#0" expanded="false" />
-                <element signature="e#2541#4000#0" expanded="false" />
-                <element signature="e#4063#5327#0" expanded="false" />
-                <element signature="e#5383#6722#0" expanded="false" />
-                <element signature="e#6788#8212#0" expanded="false" />
-                <element signature="e#8845#9255#0" expanded="false" />
-                <element signature="e#9313#9992#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cp.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/cp/js/cp.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+            <state relative-caret-position="265">
+              <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -52,44 +34,26 @@
       <file leaf-file-name="controllers.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/js/controllers.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+            <state relative-caret-position="154">
+              <caret line="770" column="43" selection-start-line="770" selection-start-column="7" selection-end-line="770" selection-end-column="43" />
               <folding>
+                <element signature="e#3555#9702#0" expanded="false" />
                 <element signature="e#9883#14485#0" expanded="false" />
                 <element signature="e#14635#18564#0" expanded="false" />
                 <element signature="e#18720#21540#0" expanded="false" />
                 <element signature="e#21696#23328#0" expanded="false" />
-                <element signature="e#25329#25861#0" expanded="false" />
+                <element signature="e#23464#25327#0" expanded="false" />
+                <element signature="e#25785#26317#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="backend.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/js/server/backend.js">
+      <file leaf-file-name="default.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/default.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cp.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/views/cp/cp.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="cp-m.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/views/cp/css/cp-m.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="174">
-              <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
+            <state relative-caret-position="238">
+              <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -131,7 +95,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/public/css/community/community-m.less" />
         <option value="$PROJECT_DIR$/public/views/rd/tp.html" />
         <option value="$PROJECT_DIR$/public/views/rd/css/tp-m.less" />
         <option value="$PROJECT_DIR$/public/views/rd/rd.html" />
@@ -149,7 +112,6 @@
         <option value="$PROJECT_DIR$/public/views/account/services.html" />
         <option value="$PROJECT_DIR$/public/views/coupon/css/tp.less" />
         <option value="$PROJECT_DIR$/public/views/amazon/amazon.html" />
-        <option value="$PROJECT_DIR$/public/css/default.less" />
         <option value="$PROJECT_DIR$/public/views/why54taotao/css/tp-m.less" />
         <option value="$PROJECT_DIR$/public/views/why54taotao/css/tp.less" />
         <option value="$PROJECT_DIR$/public/js/controllers/community-controller.js" />
@@ -172,16 +134,18 @@
         <option value="$PROJECT_DIR$/public/views/tp/css/tp.less" />
         <option value="$PROJECT_DIR$/public/views/tp/tp.html" />
         <option value="$PROJECT_DIR$/public/views/tp/js/tp.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/js/app.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/public/views/cp/css/cp.less" />
-        <option value="$PROJECT_DIR$/public/views/cp/css/cp-m.less" />
-        <option value="$PROJECT_DIR$/public/views/cp/cp.html" />
-        <option value="$PROJECT_DIR$/public/js/server/backend.js" />
-        <option value="$PROJECT_DIR$/public/js/controllers.js" />
         <option value="$PROJECT_DIR$/routes/taobao.js" />
+        <option value="$PROJECT_DIR$/public/js/server/backend.js" />
+        <option value="$PROJECT_DIR$/public/css/community/community-m.less" />
+        <option value="$PROJECT_DIR$/public/views/cp/cp.html" />
         <option value="$PROJECT_DIR$/public/views/cp/js/cp.js" />
+        <option value="$PROJECT_DIR$/public/views/cp/css/cp-m.less" />
+        <option value="$PROJECT_DIR$/public/js/controllers.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/css/default.less" />
       </list>
     </option>
   </component>
@@ -196,8 +160,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="102" />
-    <option name="y" value="133" />
+    <option name="x" value="91" />
+    <option name="y" value="97" />
     <option name="width" value="1293" />
     <option name="height" value="712" />
   </component>
@@ -296,6 +260,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="pd" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="54tt_backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="54tt_backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="cp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -349,6 +335,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="css" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="54tt_backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="54tt_backend" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="public" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="community" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -450,7 +458,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="home" />
+              <option name="myItemId" value="community" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -693,12 +701,13 @@
       <workItem from="1531146347624" duration="3376000" />
       <workItem from="1536402886801" duration="21307000" />
       <workItem from="1536507578372" duration="8098000" />
-      <workItem from="1537010147483" duration="63426000" />
+      <workItem from="1537010147483" duration="66478000" />
+      <workItem from="1483228955888" duration="8736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1386582000" />
+    <option name="totallyTimeSpent" value="1398370000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -710,14 +719,13 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="102" y="133" width="1293" height="712" extended-state="0" />
+    <frame x="91" y="97" width="1293" height="712" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2240566" sideWeight="0.8364929" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2240566" sideWeight="0.82227486" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3292517" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22741936" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2240566" sideWeight="0.1635071" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="npm" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2240566" sideWeight="0.17772512" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22060767" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.4926931" order="1" side_tool="false" content_ui="tabs" />
@@ -730,6 +738,7 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Docker" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.22741936" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -778,21 +787,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/views/tp/css/tp-m.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="204" column="0" selection-start-line="204" selection-start-column="0" selection-end-line="212" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/account/services.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/coupon/css/tp.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -805,19 +799,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="24" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding>
-            <marker date="1536798988000" expanded="true" signature="7:76" placeholder="{...}" />
-            <marker date="1536798988000" expanded="true" signature="97:165" placeholder="{...}" />
-            <marker date="1536798988000" expanded="true" signature="187:248" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/default.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="137" column="27" selection-start-line="137" selection-start-column="27" selection-end-line="137" selection-end-column="27" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -873,13 +854,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/community/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/why54taotao/start.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -893,7 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="56">
           <caret line="28" column="15" selection-start-line="28" selection-start-column="15" selection-end-line="28" selection-end-column="15" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -909,7 +882,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="28" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -917,7 +889,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -925,7 +896,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,7 +903,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="660">
           <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -941,7 +910,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +917,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
           <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -957,7 +924,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="203">
           <caret line="24" column="7" selection-start-line="24" selection-start-column="7" selection-end-line="24" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -965,7 +931,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="61" column="19" selection-start-line="61" selection-start-column="10" selection-end-line="61" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -981,7 +946,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-151">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -989,15 +953,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-571">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#742#839#0" expanded="false" />
-            <element signature="e#1165#5282#0" expanded="false" />
-            <element signature="n#!!block;n#resize#0" expanded="false" />
-            <element signature="n#!!block;n#uploadFileToQiniu#0" expanded="false" />
-            <element signature="n#!!block;n#updateBigFileQiniu#0" expanded="false" />
-            <element signature="n#!!block;n#updateSmallFileQiniu#0" expanded="false" />
-            <element signature="n#!!block;n#updateMiniFileQiniu#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,10 +960,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-586">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#resizeSmallMini#0" expanded="false" />
-            <element signature="n#!!block;n#uploadFileQiniu#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1016,10 +967,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3867">
           <caret line="13" column="19" selection-start-line="13" selection-start-column="19" selection-end-line="13" selection-end-column="19" />
-          <folding>
-            <marker date="1529155524000" expanded="true" signature="1416:1429" placeholder="..." />
-            <marker date="1529155524000" expanded="true" signature="6775:6788" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1027,40 +974,15 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-4607">
           <caret line="40" column="22" selection-start-line="40" selection-start-column="16" selection-end-line="40" selection-end-column="22" />
-          <folding>
-            <marker date="1529155525000" expanded="true" signature="8720:8734" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/homepage.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/footDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/homepage.html" />
+    <entry file="file://$PROJECT_DIR$/public/views/footDetail.html" />
     <entry file="file://$PROJECT_DIR$/public/views/pd/css/productDetail.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
           <caret line="237" column="25" selection-start-line="237" selection-start-column="25" selection-end-line="237" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/pd/productDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -1085,7 +1007,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1101,13 +1022,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
           <caret line="445" column="18" selection-start-line="445" selection-start-column="18" selection-end-line="445" selection-end-column="18" />
-          <folding>
-            <element signature="e#1103#5540#0" expanded="false" />
-            <element signature="n#!!block;n#updateSmallFileQiniu#0" expanded="false" />
-            <element signature="n#!!block;n#updateCustomFileQiniu#0" expanded="false" />
-            <element signature="n#!!block;n#updateBigFileQiniu#0" expanded="false" />
-            <element signature="n#!!block;n#resize#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1115,15 +1029,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3">
           <caret line="65" column="11" selection-start-line="65" selection-start-column="11" selection-end-line="65" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="50" column="43" selection-start-line="50" selection-start-column="26" selection-end-line="50" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1143,64 +1048,104 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/cp/css/cp-m.less">
+    <entry file="file://$PROJECT_DIR$/routes/taobao.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="80" column="24" selection-start-line="80" selection-start-column="24" selection-end-line="80" selection-end-column="24" />
-          <folding />
+        <state relative-caret-position="274">
+          <caret line="318" column="37" selection-start-line="318" selection-start-column="37" selection-end-line="318" selection-end-column="37" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/js/server/backend.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+        <state relative-caret-position="45">
+          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/js/controllers.js">
+    <entry file="file://$PROJECT_DIR$/public/views/pd/productDetail.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#9883#14485#0" expanded="false" />
-            <element signature="e#14635#18564#0" expanded="false" />
-            <element signature="e#18720#21540#0" expanded="false" />
-            <element signature="e#21696#23328#0" expanded="false" />
-            <element signature="e#25329#25861#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="105">
+          <caret line="31" column="38" selection-start-line="31" selection-start-column="38" selection-end-line="31" selection-end-column="38" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/taobao.js">
+    <entry file="file://$PROJECT_DIR$/public/views/community/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="318" column="37" selection-start-line="318" selection-start-column="37" selection-end-line="318" selection-end-column="37" />
-          <folding>
-            <element signature="e#699#2477#0" expanded="false" />
-            <element signature="e#2541#4000#0" expanded="false" />
-            <element signature="e#4063#5327#0" expanded="false" />
-            <element signature="e#5383#6722#0" expanded="false" />
-            <element signature="e#6788#8212#0" expanded="false" />
-            <element signature="e#8845#9255#0" expanded="false" />
-            <element signature="e#9313#9992#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="270">
+          <caret line="27" column="60" selection-start-line="27" selection-start-column="60" selection-end-line="27" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/community/community-m.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="25" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/cp/css/cp-m.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="75" column="20" selection-start-line="75" selection-start-column="20" selection-end-line="75" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/cp/js/cp.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="87" column="59" selection-start-line="87" selection-start-column="59" selection-end-line="87" selection-end-column="59" />
+        <state relative-caret-position="1605">
+          <caret line="107" column="17" selection-start-line="107" selection-start-column="17" selection-end-line="107" selection-end-column="17" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/views/cp/cp.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="59" column="43" selection-start-line="59" selection-start-column="43" selection-end-line="59" selection-end-column="43" />
+        <state relative-caret-position="-1070">
+          <caret line="12" column="60" selection-start-line="12" selection-start-column="60" selection-end-line="12" selection-end-column="60" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/controllers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="770" column="43" selection-start-line="770" selection-start-column="7" selection-end-line="770" selection-end-column="43" />
+          <folding>
+            <element signature="e#3555#9702#0" expanded="false" />
+            <element signature="e#9883#14485#0" expanded="false" />
+            <element signature="e#14635#18564#0" expanded="false" />
+            <element signature="e#18720#21540#0" expanded="false" />
+            <element signature="e#21696#23328#0" expanded="false" />
+            <element signature="e#23464#25327#0" expanded="false" />
+            <element signature="e#25785#26317#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="265">
+          <caret line="73" column="7" selection-start-line="73" selection-start-column="7" selection-end-line="73" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/default.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="124" column="26" selection-start-line="124" selection-start-column="26" selection-end-line="124" selection-end-column="26" />
           <folding />
         </state>
       </provider>

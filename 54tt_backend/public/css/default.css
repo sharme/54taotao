@@ -45,28 +45,28 @@ button {
 .footstep-list-div {
   display: none;
 }
-#header {
+.header {
   height: 100px;
-  padding: 15px 0% 0px 2%;
+  padding: 8px 0% 0px 1%;
   width: 100%;
 }
-#header .header_slogo {
+.header .header_slogo {
   float: left;
   color: #AEAEAE;
   font-size: 18px;
 }
-#header .header-site {
+.header .header-site {
   color: red;
   float: left;
   font-size: 38px;
 }
-#header .qr_fmyoutu {
+.header .qr_fmyoutu {
   position: absolute;
   height: 100px;
   width: 100px;
   margin-left: 72%;
 }
-#header .header-div-style {
+.header .header-div-style {
   min-width: 90px;
   height: 35px;
   color: white;
@@ -75,21 +75,35 @@ button {
   line-height: 2;
   margin: 0px 0px 2px 0px;
 }
-#header .header-homepage {
+.header .header-m-div-style {
+  min-width: 33%;
+  height: 35px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  line-height: 2;
+  margin: 0px 0px 2px 0px;
+  border-radius: 0px;
+  outline: none;
+}
+.header .header-homepage {
   float: left;
   list-style-type: none;
   font-size: 16px;
   color: white;
   outline: none;
 }
-#header .header-right {
+.header .header-m-homepage {
+  float: left;
+}
+.header .header-right {
   float: right;
   padding: 5px 30px 10px 0px;
 }
-#header .header-right .header-right-logout {
+.header .header-right .header-right-logout {
   display: none;
 }
-#header .header-right .header-right-user-icon {
+.header .header-right .header-right-user-icon {
   background: url(../img/default_icon.png) -237px 6px no-repeat;
   width: 30px;
   height: 30px;
@@ -98,13 +112,13 @@ button {
   cursor: pointer;
   background-color: green;
 }
-#header .header-right .header-right-user-icon-hover {
+.header .header-right .header-right-user-icon-hover {
   position: fixed;
   top: 10px;
   left: 45%;
   z-index: 1;
 }
-#footer {
+.footer {
   height: 50px;
   width: 100%;
   float: left;
@@ -115,6 +129,33 @@ button {
   position: fixed;
   z-index: 1000;
   opacity: 0.9;
+}
+.footer-m {
+  height: 40px;
+  width: 100%;
+  float: left;
+  z-index: 1000;
+  opacity: 0.9;
+  font-size: 12px;
+  bottom: 0px;
+  position: fixed;
+  background-color: white;
+}
+.footer-m .info {
+  float: left;
+  color: darkgray;
+  width: 100%;
+  text-align: center;
+}
+.footer-m .info a {
+  text-decoration: underline;
+  color: red;
+}
+.footer-m .claim {
+  float: right;
+  color: #AEAEAE;
+  text-align: center;
+  width: 100%;
 }
 .message {
   margin: 50px 10%;
@@ -182,6 +223,15 @@ button {
   background-color: rebeccapurple;
   margin-bottom: 10px;
 }
+.nav_m_pages {
+  float: left;
+  width: 100%;
+  margin-bottom: 10px;
+}
 input:focus {
   border: solid 1px black;
+}
+.header_m_title {
+  text-align: center;
+  color: grey;
 }

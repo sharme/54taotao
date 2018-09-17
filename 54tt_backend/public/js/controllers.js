@@ -707,6 +707,15 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
   $scope.homepageBtn = function() {
     $window.location = '#/foot/';
   };
+
+  $scope.checkMobile = function () {
+    if($(window).width() < mobileSize - 100) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+  
   $scope.logout = function(){
     $cookies.remove('username');
     $cookies.remove('u_id');
@@ -754,6 +763,19 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
 
   };
   
+}]);
+
+buybsControllers.controller('defaultCtrl', ['$scope', '$cookies', '$window','$http', function($scope, $cookies, $window,$http){
+
+  $scope.checkMobile = function () {
+    if($(window).width() < mobileSize - 100) {
+      alert('acted');
+      return true;
+    } else {
+      return false;
+    }
+  };
+
 }]);
 
 buybsControllers.controller('MessageController', ['$scope', '$cookies', '$window', '$http', '$css', function($scope, $cookies, $window, $http, $css){

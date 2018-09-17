@@ -21,7 +21,7 @@
 }
 .couponCode {
   width: 76%;
-  z-index: 1000;
+  z-index: 1010;
   background-color: white;
   border: 1px solid grey;
   position: absolute;
@@ -65,75 +65,88 @@
 }
 .trip_list {
   margin: auto;
-  width: 96%;
+  width: 100%;
   display: block;
 }
 .trip_list .trip {
-  height: 420px;
+  height: 400px;
   margin-top: 10px;
   cursor: pointer;
-  width: 342px;
-  margin-left: 5px;
-  float: left;
-  padding-left: 1px;
-}
-.trip_list .trip .trip_main_images {
-  margin-top: 2px;
-  width: 340px;
-  height: 426px;
-}
-.trip_list .trip .trip_main_images .trip_main_images_image {
-  width: 324px;
-  max-height: 324px;
-  margin: 6px 3px 0px 6px;
+  width: 50%;
   float: left;
 }
-.trip_list .trip .trip_main_images .trip_main_city {
+.trip_list .trip .trip_main {
+  height: 372px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_images_image {
+  width: 96%;
+  margin: 3px 3px 0px 3px;
+  float: left;
+  max-height: 180px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_city {
   position: absolute;
   color: white;
-  margin: 310px 0px 20px 200px;
+  margin: 260px 0px 20px 3px;
+  height: 32px;
+  width: 48%;
   background-color: red;
   z-index: 1;
-  height: 50px;
   text-align: center;
-  padding: 10px;
+  padding: 5px;
 }
-.trip_list .trip .trip_main_images .trip_main_shop {
+.trip_list .trip .trip_main .trip_main_images .trip_main_shop {
   z-index: 1;
   position: absolute;
-  margin: 375px 0px 5px 165px;
-  width: 165px;
+  margin: 185px 0px 5px 3px;
+  width: 48%;
+  font-size: 12px;
 }
-.trip_list .trip .trip_main_images .trip_main_volume {
+.trip_list .trip .trip_main .trip_main_images .trip_main_volume {
   position: absolute;
-  margin: 255px 0px 0px 5px;
   background-color: white;
+  margin: 160px 0px 0px 3px;
+  font-size: 12px;
+  z-index: 1000;
+  padding: 0px 2px;
 }
-.trip_list .trip .trip_main_images .trip_main_des {
+.trip_list .trip .trip_main .trip_main_images .trip_main_des {
   height: auto;
   position: absolute;
-  width: 324px;
-  margin: 280px 0px 0px 6px;
+  width: 48%;
+  margin: 202px 0px 0px 3px;
   opacity: 0.9;
 }
-.trip_list .trip .trip_main_images .trip_main_des .trip_main_des_title {
-  color: white;
-  background-color: black;
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_title {
+  color: black;
+  background-color: white;
+  font-size: 12px;
+  padding: 5px 1px;
+  overflow: hidden;
+  height: 60px;
 }
-.trip_list .trip .trip_main_images .trip_main_des .trip_main_des_info {
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info {
   background-color: black;
   padding: 0px 0px 5px 0px;
+  margin-top: 28px;
 }
-.trip_list .trip .trip_main_images .trip_main_des .trip_main_des_info .price {
-  font-size: 22px;
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .price {
+  font-size: 18px;
   margin: 0px 5px;
   color: red;
+  text-align: center;
 }
-.trip_list .trip .trip_main_images .trip_main_des .trip_main_des_info .final_price {
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .final_price {
   color: white;
   margin: 0px 10px;
 }
-.trip_list .trip .trip_main_images .trip_main_des .trip_main_des_info .coupon .remain {
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .coupon .remain {
   color: green;
-  padding: 10px;
+  padding: 5px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .coupon .end_time {
+  color: gray;
+  margin-left: 5px;
+  font-size: 12px;
+  text-align: center;
 }
