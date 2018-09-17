@@ -43,6 +43,7 @@
   float: left;
   font-size: 12px;
   padding: 10px;
+  margin-bottom: 80px;
 }
 .community .community_topic .community_topic_main,
 .topic .community_topic .community_topic_main,
@@ -66,9 +67,10 @@
 .community .community_topic .community_topic_end,
 .topic .community_topic .community_topic_end,
 .topic_add .community_topic .community_topic_end {
-  text-align: center;
   color: lightgray;
   float: left;
+  width: 100%;
+  text-align: center;
 }
 .community .community_topic .community_topic_content_description,
 .topic .community_topic .community_topic_content_description,
