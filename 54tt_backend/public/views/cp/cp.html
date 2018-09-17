@@ -1,6 +1,6 @@
 <div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2">
     <div class='find'><input placeholder='复制 淘宝商品描述 搜索' type="text" ng-keypress="search()" class='search_bar' maxlength='-1'/><div class="search_btn" ng-click="search()">搜索</div></div>
-    <div class="couponCode" ng-if="coupon.model">
+    <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
         <div>【淘宝在售价】{{coupon.zk_final_price}} </div>
         <div>【优惠】 {{coupon.info}} </div>

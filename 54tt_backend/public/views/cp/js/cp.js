@@ -108,10 +108,13 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         if(val) {
             var input = document.createElement("input");
             input.value = val;
-            document.body.appendChild(input);
+            // document.body.appendChild(input);
+            document.getElementById('couponCode').appendChild(input);
             input.select();
             input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
-            document.body.removeChild(input);
+            // document.body.removeChild(input);
+            document.getElementById('couponCode').removeChild(input);
+
             $('.couponCode').css('display', "none");
         } else {
             $('.couponCode').css('display', "none");
