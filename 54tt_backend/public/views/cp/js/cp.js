@@ -106,16 +106,12 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     };
     $scope.close = function (val) {
         if(val) {
-            // var copyTxt = document.getElementById('taobaoCode');
-            // copyTxt.select();
-            // document.execCommand('copy');
-            
-            // var el = document.createElement('textarea');
-            // el.value = val;
-            // document.body.appendChild(el);
-            // el.select();
-            // document.execCommand('copy');
-            // document.body.removeChild(copyTxt);
+            var input = document.createElement("input");
+            input.value = val;
+            document.body.appendChild(input);
+            input.select();
+            input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
+            document.body.removeChild(input);
             $('.couponCode').css('display', "none");
         } else {
             $('.couponCode').css('display', "none");
