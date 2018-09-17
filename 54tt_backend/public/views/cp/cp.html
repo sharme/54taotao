@@ -55,7 +55,7 @@
             </div>
         </div></a>
 
-        <div ng-if="checkMobile()" ng-click="getCode(trip.coupon_click_url, trip.zk_final_price, trip.coupon_info, trip.title, $index)" class='trip_main bgColorChange{{trip.num_iid}}' ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
+        <div ng-if="checkMobile()" ng-click="getCode(trip.coupon_click_url, trip.zk_final_price, trip.coupon_info, trip.title, trip.pict_url, $index)" class='trip_main bgColorChange{{trip.num_iid}}' ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
             <div class='trip_main_images'>
                 <div ng-if="trip.pict_url">
                     <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>

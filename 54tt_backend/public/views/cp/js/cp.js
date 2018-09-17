@@ -82,10 +82,10 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         $(".trip_list").css("height", heightDiv + "px");
     };
 
-    $scope.getCode = function (coupon_click_url, zk_final_price, coupon_info, title, index) {
+    $scope.getCode = function (coupon_click_url, zk_final_price, coupon_info, title, logo, index) {
             $http({
                 method: 'GET', url: ipAddress + '/taobao/getCode',
-                params: {url: coupon_click_url}
+                params: {url: coupon_click_url, logo: logo}
             }).success(function (data) {
                 if (!data.data) {
                     $scope.coupon = data;

@@ -310,13 +310,13 @@ router.get('/getProductRecommend', function (req, res, next) {
 
 router.get('/getCode', function (req, res, next) {
 
-    if(req.param('url')) {
+    if(req.param('url') && req.param('logo')) {
 
         client.execute('taobao.tbk.tpwd.create', {
             // 'user_id':'123',
-            'text':'復·制这段描述, 打开手机淘宝',
-            'url': req.param('url'),
-            // 'logo':'https://uland.taobao.com/',
+            'text':'先 领券 再购物, 54淘淘为你省钱. 点击【打开】领取优惠券',
+            'url':req.param('url'),
+            'logo':req.param('logo'),
             'ext': '{}'
         }, function (error, response) {
             if (!error) res.send(response);
