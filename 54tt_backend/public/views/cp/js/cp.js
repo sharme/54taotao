@@ -82,6 +82,32 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         $(".trip_list").css("height", heightDiv + "px");
     };
 
+    $scope.getCode = function (coupon_click_url, zk_final_price, coupon_info, title, index) {
+            $http({
+                method: 'GET', url: ipAddress + '/taobao/getCode',
+                params: {url: coupon_click_url}
+            }).success(function (data) {
+                if (!data.data) {
+                    $scope.coupon = data;
+                } else {
+                    $scope.coupon = {
+                        model: data.data.model,
+                        title: title,
+                        info: coupon_info,
+                        zk_final_price: zk_final_price,
+                        click_url: coupon_click_url
+                    }
+                }
+                $('.couponCode').css('margin-top', index * 426 + 300 + "px");
+                $('.couponCode').css('display', 'block');
+            }, function (error) {
+                $scope.error = error;
+            });
+    };
+    $scope.close = function () {
+       $('.couponCode').css('display', "none");
+    }
+
 
 }]);
 

@@ -19,6 +19,31 @@
 .find {
   padding: 0px 25px;
 }
+.couponCode {
+  width: 76%;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid grey;
+  position: absolute;
+  padding: 20px;
+  margin: 10%;
+  overflow-wrap: break-word;
+}
+.couponCode .closeCode {
+  text-align: center;
+  margin-top: 20px;
+  height: 30px;
+  line-height: 2.5;
+  background-color: lightgrey;
+}
+.couponCode .continuePay {
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 10px;
+}
+.couponCode .continuePay a {
+  color: blue;
+}
 .terms {
   float: left;
   width: 100%;

@@ -20,6 +20,30 @@
 
 .find {padding: 0px 25px;}
 
+.couponCode {
+  width: 76%;
+  z-index: 1000;
+  background-color: white;
+  border: 1px solid grey;
+  position: absolute;
+  padding: 20px;
+  margin: 10%;
+  overflow-wrap: break-word;
+  .closeCode {
+    text-align: center;
+    margin-top: 20px;
+    height: 30px;
+    line-height: 2.5;
+    background-color: lightgrey;
+  }
+  .continuePay {
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 10px;
+    a { color: blue}
+  }
+}
+
 .terms {
   float: left; width: 100%;padding: 0 2.5%; color: lightgrey; font-size: 12px;
 }
@@ -54,6 +78,7 @@
       margin-top: 2px;
       width: 340px;
       height: 426px;
+      //cursor: pointer;
 
       .trip_main_images_image {
         width: 324px;
