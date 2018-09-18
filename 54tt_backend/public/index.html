@@ -25,6 +25,7 @@
   <script src="../js/controllers/account-controller.js"></script>
   <script src="../js/controllers/community-controller.js"></script>
   <script src="../views/tp/js/tp.js"></script>
+  <script src="../views/sp/js/sp.js"></script>
   <script src="../views/cp/js/cp.js"></script>
   <script src="../views/pd/js/pd.js"></script>
   <script src="../js/filters/filters.js"></script>
@@ -54,14 +55,15 @@
     <div class="nav_pages" ng-if="!checkMobile()">
         <!--<button ng-click="colorChangeTaobao($event)" class="header-homepage header-div-style comm home-coupon" type="button">促销</button>-->
         <button ng-click="colorChangeCoupon($event)" class="header-homepage header-div-style comm home-share" >领券</button>
-        <!--<button ng-click="colorChangeCoupon($event)" class="header-homepage header-div-style comm home-share" >搜券</button>-->
+        <button ng-click="colorChangeShare($event)" class="header-homepage header-div-style comm home-share" >好货拼团</button>
         <button ng-click="colorChangeComm($event)" class="header-homepage header-div-style comm home-comm" type="button">淘交流</button>
-        <button ng-click="colorChangeWhy($event)" class="header-homepage header-div-style comm home-comm" type="button">1分钟省钱教程</button>
+        <!--<button ng-click="colorChangeWhy($event)" class="header-homepage header-div-style comm home-comm" type="button">1分钟省钱教程</button>-->
     </div>
     <div class="nav_m_pages" ng-if="checkMobile()">
         <button ng-click="colorChangeCoupon($event)" class="header-m-homepage header-m-div-style comm home-share" >领券</button>
+        <button ng-click="colorChangeShare($event)" class="header-homepage header-div-style comm home-share" >好货拼团</button>
         <button ng-click="colorChangeComm($event)" class="header-m-homepage header-m-div-style comm home-comm" type="button">淘交流</button>
-        <button ng-click="colorChangeWhy($event)" class="header-m-homepage header-m-div-style comm home-comm" type="button">1分钟省钱教程</button>
+        <!--<button ng-click="colorChangeWhy($event)" class="header-m-homepage header-m-div-style comm home-comm" type="button">1分钟省钱教程</button>-->
     </div>
 </div>
 <div class="view-container">

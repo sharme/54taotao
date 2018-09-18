@@ -1,7 +1,7 @@
 'use strict';
 
 var couponProduct = angular.module('buybsControllers');
-couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
+couponProduct.controller('ShareProductCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
 
     $scope.checkMobile = function () {
         if($(window).width() < mobileSize - 100) {
@@ -12,8 +12,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     };
     $scope.page_no = 1;
     var init = false;
-    $scope.txtValue = '女装';
-    $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '1', page_size: $scope.checkMobile()?'4':'6'}})
+    $http({method: 'GET', url: ipAddress + '/taobao/getShareProducts', params:{page_no: '1', page_size: $scope.checkMobile()?'4':'6'}})
         .success(function(data){
             $scope.tripList = data;
             init = true;
@@ -28,22 +27,22 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
             $scope.loadNext = false;
             $http({
                 method: 'GET',
-                url: ipAddress + '/taobao/getCouponProducts',
-                params: {q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'6'}
+                url: ipAddress + '/taobao/getShareProducts',
+                params: {page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'6'}
             }).success(function (data) {
-                if(!data.results)
+                if(!data.result_list)
                     $scope.couponMsg = true;
                 else {
-                    if (data.results.tbk_coupon.length > 0) {
-                        for (var i = 0; i < data.results.tbk_coupon.length; i++) {
-                            $scope.tripList.results.tbk_coupon.push(data.results.tbk_coupon[i]);
+                    if (data.result_list.map_data.length > 0) {
+                        for (var i = 0; i < data.result_list.map_data.length; i++) {
+                            $scope.tripList.result_list.map_data.push(data.result_list.map_data[i]);
                         }
                         $scope.page_no = $scope.page_no + 1;
                         $scope.loadNext = true;
                         if($scope.checkMobile())
-                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/2 * 426 + "px");
+                            $(".trip_list").css("height", $scope.tripList.result_list.map_data.length/2 * 426 + "px");
                         else
-                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/4 * 426 + "px");
+                            $(".trip_list").css("height", $scope.tripList.result_list.map_data.length/4 * 426 + "px");
                     }
                 }
             }, function (error) {
@@ -60,32 +59,10 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     };
 
     $scope.couponMsg = false;
-    $scope.search = function(){
-        $scope.couponMsg = false;
-        $scope.loadNext = true;
-        $scope.txtValue = $('.search_bar').val();
-        $scope.page_no = 1;
-        $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
-            params:{q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no, page_size: $scope.checkMobile()?'4':'6'}
-        }).success(function(data){
-                    if(!data.results)
-                        $scope.couponMsg = true;
-                    $scope.tripList = data;
-                    init = true;
-            }, function(error){
-                $scope.error = error;
-            });
-        if($scope.checkMobile())
-            heightDiv = 500;
-        else
-            heightDiv = 500;
-        $(".trip_list").css("height", heightDiv + "px");
-    };
-
     $scope.getCode = function (coupon_click_url, zk_final_price, coupon_info, title, logo, index) {
             $http({
                 method: 'GET', url: ipAddress + '/taobao/getCode',
-                params: {url: coupon_click_url, logo: logo}
+                params: {url: "https:" + coupon_click_url, logo: logo}
             }).success(function (data) {
                 if (!data.data) {
                     $scope.coupon = data;
@@ -107,12 +84,10 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     $scope.close = function (val, title, price, oeprice) {
         if(val) {
             var input = document.createElement("input");
-            input.value =  title + "【淘宝在售价】" + price + "         " + "【54淘淘优惠券】" + oeprice + "          ----------------" + "复制这条信息, " + val + " ,打开【手机淘宝】即可下单";
-            // document.body.appendChild(input);
+            input.value =  title + "【淘宝在售价】" + price + "         " + "【拼团价】" + oeprice + "          ----------------" + "复制这条信息, " + val + " ,打开【手机淘宝】开始拼团";
             document.getElementById('couponCode').appendChild(input);
             input.select();
             input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
-            // document.body.removeChild(input);
             document.getElementById('couponCode').removeChild(input);
 
             $('.couponCode').css('display', "none");
@@ -120,8 +95,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
             $('.couponCode').css('display', "none");
         }
     }
-
-
+    
 }]);
 
 

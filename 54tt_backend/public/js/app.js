@@ -44,6 +44,19 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
+    when('/sp', {
+        templateUrl: 'views/sp/sp.html',
+        controller: 'ShareProductCtrl',
+        css: [
+            {
+                href: '../views/sp/css/sp-m.css',
+                breakpoint: 'mobile'
+            }, {
+                href: '../views/sp/css/sp.css',
+                breakpoint: 'desktop'
+            }
+        ]
+    }).
     when('/promo', {
         templateUrl: 'views/tp/tp.html',
         controller: 'TripCtrl',

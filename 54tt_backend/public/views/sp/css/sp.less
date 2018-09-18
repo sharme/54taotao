@@ -1,0 +1,144 @@
+.find {
+  padding: 0px 25px;
+  .search_bar {
+    border: solid 1px #AEAEAE;
+    width: 60%;
+    height: 45px;
+    text-align: center;
+    margin: 0px 0px 20px 20%;
+    float: left;
+  }
+
+  .search_btn {
+    height: 45px;
+    width: 80px;
+    float: left;
+    text-align: center;
+    line-height: 3;
+    background-color: palevioletred;
+    cursor: pointer;
+  }
+
+  .search_filter {
+    height: 20px;
+    float: left;
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+    width: 100%;
+    display: none;
+    button {
+      border-radius: 0px;
+      float: left;
+      background-color: white;
+      font-size: 12px;
+    }
+  }
+}
+
+.terms {
+  float: left; width: 100%;padding: 0 2.5%; color: lightgrey; font-size: 12px;
+}
+
+.header {height: 40px;}
+
+.the_end {
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 10px;
+  color: #AEAEAE;
+  float: left;
+}
+
+
+.trip_list {
+  margin: auto;
+  width: 96%;
+  display: block;
+
+  .trip {
+    height: 420px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 342px;
+    margin-left: 5px;
+    float: left;
+    padding-left: 1px;
+    .trip_main_images {
+      margin-top: 2px;
+      width: 340px;
+      height: 426px;
+
+      .trip_main_images_image {
+        width: 324px;
+        max-height: 324px;
+        margin: 6px 3px 0px 6px;
+        float: left;
+      }
+
+      .trip_main_city {
+        position: absolute;
+        color: white;
+        margin: 310px 0px 20px 200px;
+        background-color: red;
+        z-index: 1;
+        height: 50px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .trip_main_shop {
+        z-index: 1;
+        position: absolute;
+        margin: 375px 0px 5px 165px;
+        width: 165px;
+      }
+
+      .trip_main_volume {
+        position: absolute;
+        margin: 255px 0px 0px 5px;
+        background-color: white;
+      }
+
+      .trip_main_des {
+        height: auto;
+        position: absolute;
+        width: 324px;
+        margin: 280px 0px 0px 6px;
+        //background-color: white;
+        opacity: 0.9;
+
+        .trip_main_des_title {
+          color: white;
+          background-color: black;
+        }
+
+        .trip_main_des_info {
+          background-color: black;
+          padding: 0px 0px 5px 0px;
+          .price {
+            font-size: 22px;
+            margin: 0px 5px;
+            color: red;
+            //text-decoration: line-through;
+          }
+
+          .final_price {
+            color: white;
+            margin: 0px 10px;
+          }
+
+          .coupon {
+            .remain {
+              color: green;
+              padding: 10px;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+}

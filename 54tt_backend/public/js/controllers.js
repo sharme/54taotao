@@ -762,6 +762,12 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $window.location.href = '#/';
 
   };
+  $scope.colorChangeShare = function (coupon) {
+    $(".comm").css("background-color", "black");
+    $(coupon.target).css("background-color", "coral");
+    $window.location.href = '#/sp';
+
+  };
   
 }]);
 

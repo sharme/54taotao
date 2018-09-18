@@ -328,20 +328,80 @@ router.get('/getCode', function (req, res, next) {
             "error": "非法请求"
         });
     }
-
-
 });
 
-router.get('/getCoupon', function (req, res, next) {
+router.get('/getShareProducts', function (req, res, next) {
 
-    if(req.param('item_id')) {
-        client.execute('taobao.tbk.coupon.get', {
-            'item_id': req.param('item_id'),
-            'activity_id': '15618150'
-        }, function (error, response) {
-            if (!error) res.send(response);
-            else res.send(error);
-        })
+    var ipAddress = req.connection.remoteAddress;
+    if(req.header['x-forwarded-for']){
+        ipAddress = req.header['x-forwarded-for'];
+        console.log("x-forward-for ip: " + ipAddress)
+    }
+    var send = true;
+    console.log('Visitor IP: ' + ipAddress);
+    ips.push({ip: ipAddress});
+
+    var checkCount = 0;
+    ips.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                checkCount++;
+            }
+        }
+    });
+
+    blacklist.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                send = false;
+            }
+        }
+    });
+
+    if(checkCount > 500) {
+        blacklist.push({ip: ipAddress});
+    }
+
+    if(send) {
+        if(!req.param('q'))
+        {
+            client.execute('taobao.tbk.dg.optimus.material', {
+                'page_size': req.param('page_size'),
+                'adzone_id': '1292558215',
+                'page_no': req.param('page_no'),
+                'material_id': '4071'
+            }, function (error, response) {
+                if (!error) res.send(response);
+                else res.send(error);
+            })
+        } else
+        {
+            client.execute('taobao.tbk.dg.material.optional', {
+                'start_dsr': '100',
+                'page_size': '6',
+                'page_no': req.param('page_no'),
+                'platform': '1',
+                'end_tk_rate': '1534',
+                'start_tk_rate': '334',
+                'end_price': '200',
+                'start_price': '10',
+                'is_overseas': 'false',
+                'sort': 'tk_rate_sales',
+                'q': req.param('q'),
+                'material_id': '4071',
+                'has_coupon': 'false',
+                'adzone_id': '1292558215',
+                'need_free_shipment': 'true',
+                'need_prepay': 'true',
+                'include_pay_rate_30': 'true',
+                'include_good_rate': 'true',
+                'include_rfd_rate': 'true',
+                'npx_level': '2'
+            }, function (error, response) {
+                if (!error) res.send(response);
+                else res.send(error);
+            })
+        }
     } else {
         res.send({
             "code": "-1",
@@ -373,6 +433,54 @@ router.get('/getPromotion', function (req, res, next) {
     }
 
 });
+
+
+router.get('/getEvents', function (req, res, next) {
+
+    if(true) {
+        client.execute('taobao.tbk.uatm.event.get', {
+            'page_no':'1',
+            'page_size':'20',
+            'fields':'event_id,event_title,start_time,end_time'
+        }, function(error, response) {
+            if (!error) res.send(response);
+            else res.send(error);
+        })
+    } else  {
+        res.send({
+            "code": "-1",
+            "error": "非法请求"
+        });
+    }
+
+});
+
+router.get('/getDailyShopping', function (req, res, next) {
+
+    if(true) {
+        client.execute('taobao.tbk.ju.tqg.get', {
+            'adzone_id':'1292558215',
+            'fields':'click_url,pic_url,reserve_price,zk_final_price,total_amount,sold_num,title,category_name,start_time,end_time',
+            'start_time':'2018-09-18 00:00:00',
+            'end_time': '2018-09-18 23:59:59',
+            'page_no':'1',
+            'page_size':'40'
+        }, function(error, response) {
+            if (!error) res.send(response);
+            else res.send(error);
+        })
+    } else  {
+        res.send({
+            "code": "-1",
+            "error": "非法请求"
+        });
+    }
+
+});
+
+
+
+
 
 
 
