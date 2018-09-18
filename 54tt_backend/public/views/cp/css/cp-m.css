@@ -35,13 +35,16 @@
   font-size: 12px;
 }
 .couponCode {
-  width: 76%;
+  width: 70%;
+  font-size: 12px;
   z-index: 1010;
   background-color: white;
   border: 1px solid grey;
-  position: absolute;
-  padding: 20px;
-  margin: 10%;
+  position: fixed;
+  bottom: 100px;
+  color: seagreen;
+  padding: 12px;
+  margin: 10% 15%;
   overflow-wrap: break-word;
 }
 .couponCode .closeCode {
