@@ -1,13 +1,16 @@
-.search_bar {
+.find {
+  padding: 0px 25px;
+}
+.find .search_bar {
   border: solid 1px #AEAEAE;
   width: 100%;
-  height: 45px;
+  height: 35px;
   text-align: center;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 0px 1px 0px;
   float: left;
 }
-.search_btn {
-  height: 35px;
+.find .search_btn {
+  height: 30px;
   width: 40%;
   float: left;
   text-align: center;
@@ -15,9 +18,21 @@
   background-color: palevioletred;
   cursor: pointer;
   margin-left: 29.5%;
+  margin-top: 5px;
 }
-.find {
-  padding: 0px 25px;
+.find .search_filter {
+  height: 20px;
+  float: left;
+  overflow: hidden;
+  border-bottom: 1px solid gainsboro;
+  width: 100%;
+  display: none;
+}
+.find .search_filter button {
+  border-radius: 0px;
+  float: left;
+  background-color: white;
+  font-size: 12px;
 }
 .couponCode {
   width: 76%;
@@ -70,7 +85,7 @@
 }
 .trip_list .trip {
   height: 400px;
-  margin-top: 10px;
+  margin-top: 5px;
   cursor: pointer;
   width: 50%;
   float: left;

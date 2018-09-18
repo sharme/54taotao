@@ -1,4 +1,7 @@
-.search_bar {
+.find {
+  padding: 0px 25px;
+}
+.find .search_bar {
   border: solid 1px #AEAEAE;
   width: 60%;
   height: 45px;
@@ -6,7 +9,7 @@
   margin: 0px 0px 20px 20%;
   float: left;
 }
-.search_btn {
+.find .search_btn {
   height: 45px;
   width: 80px;
   float: left;
@@ -15,8 +18,19 @@
   background-color: palevioletred;
   cursor: pointer;
 }
-.find {
-  padding: 0px 25px;
+.find .search_filter {
+  height: 20px;
+  float: left;
+  overflow: hidden;
+  border-bottom: 1px solid gainsboro;
+  width: 100%;
+  display: none;
+}
+.find .search_filter button {
+  border-radius: 0px;
+  float: left;
+  background-color: white;
+  font-size: 12px;
 }
 .terms {
   float: left;

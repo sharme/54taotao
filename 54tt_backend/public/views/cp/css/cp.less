@@ -1,23 +1,39 @@
-.search_bar {
-  border: solid 1px #AEAEAE;
-  width: 60%;
-  height: 45px;
-  text-align: center;
-  margin: 0px 0px 20px 20%;
-  float: left;
-}
+.find {
+  padding: 0px 25px;
+  .search_bar {
+    border: solid 1px #AEAEAE;
+    width: 60%;
+    height: 45px;
+    text-align: center;
+    margin: 0px 0px 20px 20%;
+    float: left;
+  }
 
-.search_btn {
-  height: 45px;
-  width: 80px;
-  float: left;
-  text-align: center;
-  line-height: 3;
-  background-color: palevioletred;
-  cursor: pointer;
-}
+  .search_btn {
+    height: 45px;
+    width: 80px;
+    float: left;
+    text-align: center;
+    line-height: 3;
+    background-color: palevioletred;
+    cursor: pointer;
+  }
 
-.find {padding: 0px 25px;}
+  .search_filter {
+    height: 20px;
+    float: left;
+    overflow: hidden;
+    border-bottom: 1px solid gainsboro;
+    width: 100%;
+    display: none;
+    button {
+      border-radius: 0px;
+      float: left;
+      background-color: white;
+      font-size: 12px;
+    }
+  }
+}
 
 .terms {
   float: left; width: 100%;padding: 0 2.5%; color: lightgrey; font-size: 12px;

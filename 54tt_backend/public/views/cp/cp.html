@@ -1,5 +1,21 @@
 <div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2">
-    <div class='find'><input placeholder='复制 淘宝商品描述 搜索' type="text" ng-keypress="search()" class='search_bar' maxlength='-1'/><div class="search_btn" ng-click="search()">搜索</div></div>
+    <div class='find'>
+        <input placeholder='复制 淘宝商品描述 搜索' type="text" ng-keypress="search()" class='search_bar' maxlength='-1'/>
+        <div class="search_filter">
+            <button class="category1" ng-click="move(1)">综合</button>
+            <button class="category2" ng-click="move(2)">女装</button>
+            <button class="category3" ng-click="move(3)">家居家装</button>
+            <button class="category4" ng-click="move(4)">数码家电</button>
+            <button class="category5" ng-click="move(5)">母婴</button>
+            <button class="category6" ng-click="move(6)">食品</button>
+            <button class="category7" ng-click="move(7)">鞋包配饰</button>
+            <button class="category8" ng-click="move(8)">美妆个护</button>
+            <button class="category9" ng-click="move(9)">男装</button>
+            <button class="category10" ng-click="move(10)">内衣</button>
+            <button class="category11" ng-click="move(11)">运动户外</button>
+        </div>
+        <div class="search_btn" ng-click="search()">搜索</div>
+    </div>
     <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
         <div>【淘宝在售价】{{coupon.zk_final_price}} </div>

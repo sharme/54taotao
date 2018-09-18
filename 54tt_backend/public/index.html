@@ -2,15 +2,16 @@
 <html ng-app="jk_backend">
 <head>
   <meta name="viewport" user-scalable="no" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-  <title>【54淘淘】先 领券 再 淘宝, 省的不是一点点, 省钱就上54淘淘</title>
-  <meta name="description" content="【54淘淘】买国内！买国外！所有你想要的商品, 54淘淘帮你精细挑选, 挑选最实惠的商品. 而且每天都有疯狂促销, 实惠省钱就上54淘淘. ">
+  <title>【54淘淘】口袋里的省钱专家, 随时随地找优惠</title>
+  <meta name="description" content="【54淘淘】买国内！买国外！汇集最实惠的优惠, 汇集大量优惠券, 每天都有疯狂促销, 实惠省钱就上54淘淘, 您口袋里的省钱专家. ">
+  <meta property="og:image" content="http://img.alicdn.com/tfscom/i1/639295044/O1CN011n8CDNR1OTCmLnB_!!639295044.jpg">
+  <meta name=”robots” content=”index, follow”>
   <link rel="icon" type="image/gif/png" href="img/taotao.png">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" type="text/css" href="css/default.css">
   <link rel="stylesheet" href="css/jquery-ui.min.css" media="print">
   <link rel=”alternate” hreflang=”zh” href=”http://www.54taotao.cn/”/>
   <link rel=”canonical” href=”http://www.54taotao.cn/” />
-  <meta name=”robots” content=”index, follow”>
   <script src="../js/common/jquery.min.js"></script>
   <script src="../js/common/angular.min.js"></script>
   <script src="../js/common/angular-cookies.min.js"></script>
@@ -32,11 +33,14 @@
   CKEDITOR.timestamp = 'ABCD';
 </script>
 </head>
+<div style="display: none">
+    <img src="http://img.alicdn.com/tfscom/i1/639295044/O1CN011n8CDNR1OTCmLnB_!!639295044.jpg">
+</div>
 <body>
 <div class="header" ng-controller="headerController">
   <div class="header-site" ng-if="!checkMobile()">54淘淘</div>
   <div class="header_slogo" ng-if="!checkMobile()">
-      先 <span style="font-size: 20px; color: red;">领券</span> 再 淘宝, 省的不是一点点 (对接淘宝平台 优惠券100%真实有效)
+      口袋里的省钱专家, 随时随地找优惠.
   </div>
     <div class="header_m_title" ng-if="checkMobile()">54淘淘 口袋里的省钱专家, 随时随地找优惠.</div>
     <div class="header-right" ng-controller="LoginController" ng-if="!checkMobile()">
