@@ -799,8 +799,8 @@ buybsControllers.controller('MessageController', ['$scope', '$cookies', '$window
       data: JSON.stringify($scope.message)
     };
     $http(req).success(function(result){
-      alert("留言发送成功.");
-      $window.history.back();
+      $scope.msgSucceed = "留言发送成功, 我们将很快处理.";
+      $('.message-content').val('');
     }, function(error){
       console.log(error);
     });

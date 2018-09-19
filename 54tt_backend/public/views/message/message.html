@@ -2,9 +2,15 @@
     <div class="message">
         <!--<span class="closeTopic" ng-click="closeTopic()">X</span>-->
         <form ng-controller="MessageController" method="POST" ng-submit="submit()">
-        <div class="message-title" style="color: #AEAEAE;"><p> 发信给54淘淘团队 (微信请加: wang123456lolman)</p></div>
+        <div class="message-title" style="color: #AEAEAE;"><p> 商业合作请私信给: 54.taotao@my.com</p></div>
+            <div class="info" style="margin-bottom: 10px;">
+                如有任何版权问题, 请留言. 我们将尽快下架处理.
+            </div>
+            <div style="color: red; margin: 10px 0px;">
+                {{msgSucceed}}
+            </div>
         <p><textarea class="message-content" cols="60" rows="15" ng-model="message.m_content"></textarea></p>
-        <input type="submit" class="message-submit" value="创建">
+        <input type="submit" class="message-submit" value="留言">
         </form>
     </div>
 </div>

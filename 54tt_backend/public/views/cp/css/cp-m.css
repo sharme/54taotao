@@ -1,5 +1,6 @@
 .find {
   padding: 0px 25px;
+  margin-top: 5px;
 }
 .find .search_bar {
   border: solid 1px #AEAEAE;
@@ -33,6 +34,32 @@
   float: left;
   background-color: white;
   font-size: 12px;
+}
+.ad_div {
+  float: left;
+  min-height: 70px;
+  margin-bottom: 5px;
+}
+.ad_div img {
+  max-height: 60px;
+}
+.scroll_div {
+  margin: 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ffffff;
+}
+.scroll_div img {
+  width: 100%;
+}
+#scroll_begin,
+#scroll_end,
+#scroll_begin ul,
+#scroll_end ul,
+#scroll_begin ul li,
+#scroll_end ul li {
+  display: inline;
+  list-style: none;
 }
 .couponCode {
   width: 70%;
