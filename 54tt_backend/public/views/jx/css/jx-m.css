@@ -1,0 +1,214 @@
+.find {
+  padding: 0px 25px;
+}
+.find .search_bar {
+  border: solid 1px #AEAEAE;
+  width: 100%;
+  height: 35px;
+  text-align: center;
+  margin: 0px 0px 1px 0px;
+  float: left;
+}
+.find .search_btn {
+  height: 30px;
+  width: 40%;
+  float: left;
+  text-align: center;
+  line-height: 2.2;
+  background-color: palevioletred;
+  cursor: pointer;
+  margin-left: 29.5%;
+  margin-top: 5px;
+}
+.find .search_filter {
+  height: 20px;
+  float: left;
+  overflow: hidden;
+  border-bottom: 1px solid gainsboro;
+  width: 100%;
+  display: none;
+}
+.find .search_filter button {
+  border-radius: 0px;
+  float: left;
+  background-color: white;
+  font-size: 12px;
+}
+.ad_div {
+  float: left;
+  min-height: 70px;
+  margin-bottom: 5px;
+}
+.ad_div img {
+  max-height: 60px;
+}
+.scroll_div {
+  margin: 0 0;
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ffffff;
+}
+.scroll_div img {
+  width: 100%;
+}
+#scroll_begin,
+#scroll_end,
+#scroll_begin ul,
+#scroll_end ul,
+#scroll_begin ul li,
+#scroll_end ul li {
+  display: inline;
+  list-style: none;
+}
+.couponCode {
+  width: 70%;
+  font-size: 12px;
+  z-index: 1010;
+  background-color: white;
+  border: 1px solid grey;
+  position: fixed;
+  bottom: 100px;
+  color: seagreen;
+  padding: 12px;
+  margin: 10% 15%;
+  overflow-wrap: break-word;
+}
+.couponCode .closeCode {
+  text-align: center;
+  margin-top: 20px;
+  height: 30px;
+  line-height: 2.5;
+  background-color: lightgrey;
+}
+.couponCode .continuePay {
+  text-decoration: underline;
+  text-align: center;
+  margin-top: 10px;
+}
+.couponCode .continuePay a {
+  color: blue;
+}
+.terms {
+  float: left;
+  width: 100%;
+  padding: 0 2.5%;
+  color: lightgrey;
+  font-size: 12px;
+}
+.header {
+  height: 40px;
+}
+.the_end {
+  height: 200px;
+  width: 100%;
+  text-align: center;
+  margin-top: 50px;
+  padding-top: 10px;
+  color: #AEAEAE;
+  float: left;
+}
+.trip_list {
+  margin: auto;
+  width: 100%;
+  display: block;
+}
+.trip_list .group {
+  width: 140px;
+  height: 180px;
+  margin: auto;
+}
+.trip_list .group .group_item {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  color: white;
+  overflow-wrap: break-word;
+  padding: 10px;
+  margin: 5px;
+  float: left;
+  cursor: pointer;
+}
+.trip_list .trip {
+  height: 400px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 50%;
+  float: left;
+}
+.trip_list .trip .trip_main {
+  height: 372px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_images_image {
+  width: 96%;
+  margin: 3px 3px 0px 3px;
+  float: left;
+  max-height: 180px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_city {
+  position: absolute;
+  color: white;
+  margin: 260px 0px 20px 3px;
+  height: 32px;
+  width: 48%;
+  background-color: red;
+  z-index: 1;
+  text-align: center;
+  padding: 5px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_shop {
+  z-index: 1;
+  position: absolute;
+  margin: 185px 0px 5px 3px;
+  width: 48%;
+  font-size: 12px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_volume {
+  position: absolute;
+  background-color: white;
+  margin: 160px 0px 0px 3px;
+  font-size: 12px;
+  z-index: 1000;
+  padding: 0px 2px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des {
+  height: auto;
+  position: absolute;
+  width: 48%;
+  margin: 202px 0px 0px 3px;
+  opacity: 0.9;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_title {
+  color: black;
+  background-color: white;
+  font-size: 12px;
+  padding: 5px 1px;
+  overflow: hidden;
+  height: 60px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info {
+  background-color: black;
+  padding: 0px 0px 5px 0px;
+  margin-top: 28px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .price {
+  font-size: 18px;
+  margin: 0px 5px;
+  color: red;
+  text-align: center;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .final_price {
+  color: white;
+  margin: 0px 10px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .coupon .remain {
+  color: green;
+  padding: 5px;
+}
+.trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .coupon .end_time {
+  color: gray;
+  margin-left: 5px;
+  font-size: 12px;
+  text-align: center;
+}

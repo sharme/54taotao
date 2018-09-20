@@ -1,12 +1,7 @@
 'use strict';
 
-var couponProduct = angular.module('buybsControllers');
-
-// var adSwitch = setInterval(function(){
-//     ips = [];
-// },2000);
-
-couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
+var highQualityProduct = angular.module('buybsControllers');
+highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
 
 
     ScrollImgLeft();
@@ -19,9 +14,9 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         }
     };
     $scope.page_no = 1;
+    $scope.group_id = '18595332';
     var init = false;
-    $scope.txtValue = '女装';
-    $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '1', page_size: $scope.checkMobile()?'4':'8'}})
+    $http({method: 'GET', url: ipAddress + '/taobao/getFavorites', params:{page_no: '1', page_size: $scope.checkMobile()?'4':'8', group_id: $scope.group_id}})
         .success(function(data){
             $scope.tripList = data;
             init = true;
@@ -36,22 +31,22 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
             $scope.loadNext = false;
             $http({
                 method: 'GET',
-                url: ipAddress + '/taobao/getCouponProducts',
-                params: {q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'8'}
+                url: ipAddress + '/taobao/getFavorites',
+                params: {page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'8', group_id: $scope.group_id}
             }).success(function (data) {
                 if(!data.results)
                     $scope.couponMsg = true;
                 else {
-                    if (data.results.tbk_coupon.length > 0) {
-                        for (var i = 0; i < data.results.tbk_coupon.length; i++) {
-                            $scope.tripList.results.tbk_coupon.push(data.results.tbk_coupon[i]);
+                    if (data.results.uatm_tbk_item.length > 0) {
+                        for (var i = 0; i < data.results.uatm_tbk_item.length; i++) {
+                            $scope.tripList.results.uatm_tbk_item.push(data.results.uatm_tbk_item[i]);
                         }
                         $scope.page_no = $scope.page_no + 1;
                         $scope.loadNext = true;
                         if($scope.checkMobile())
-                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/2 * 426 + "px");
+                            $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/2 * 426 + "px");
                         else
-                            $(".trip_list").css("height", $scope.tripList.results.tbk_coupon.length/4 * 426 + "px");
+                            $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/8 * 426 + "px");
                     }
                 }
             }, function (error) {
@@ -68,28 +63,6 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     };
 
     $scope.couponMsg = false;
-    $scope.search = function(){
-        $scope.couponMsg = false;
-        $scope.loadNext = true;
-        $scope.txtValue = $('.search_bar').val();
-        $scope.page_no = 1;
-        $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
-            params:{q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no, page_size: $scope.checkMobile()?'4':'8'}
-        }).success(function(data){
-                    if(!data.results)
-                        $scope.couponMsg = true;
-                    $scope.tripList = data;
-                    init = true;
-            }, function(error){
-                $scope.error = error;
-            });
-        if($scope.checkMobile())
-            heightDiv = 500;
-        else
-            heightDiv = 500;
-        $(".trip_list").css("height", heightDiv + "px");
-    };
-
     $scope.getCode = function (coupon_click_url, zk_final_price, coupon_info, title, logo, index) {
             $http({
                 method: 'GET', url: ipAddress + '/taobao/getCode',
@@ -115,12 +88,10 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     $scope.close = function (val, title, price, oeprice) {
         if(val) {
             var input = document.createElement("input");
-            input.value =  title + "【淘宝在售价】" + price + "         " + "          【54淘淘优惠券】" + oeprice + "          ----------------" + "复制这条信息, " + val + " ,打开【手机淘宝】即可下单";
-            // document.body.appendChild(input);
+            input.value =  title + "【淘宝在售价】" + price + "         " + "           【54淘淘优惠券】" + oeprice + "          ----------------" + "复制这条信息, " + val + " ,打开【手机淘宝】开始抢购";
             document.getElementById('couponCode').appendChild(input);
             input.select();
             input.setSelectionRange(0, input.value.length), document.execCommand('Copy');
-            // document.body.removeChild(input);
             document.getElementById('couponCode').removeChild(input);
 
             $('.couponCode').css('display', "none");
@@ -128,7 +99,25 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
             $('.couponCode').css('display', "none");
         }
     }
+    
+    
+    $scope.groupFilter = function (g_id) {
+
+        $http({method: 'GET', url: ipAddress + '/taobao/getFavorites', params:{page_no: '1', page_size: $scope.checkMobile()?'4':'8', group_id: g_id}})
+            .success(function(data){
+                $scope.tripList = data;
+                init = true;
+                $scope.group_id = g_id;
+                $scope.page_no = 1;
+                $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/8 * 426 + "px");
+            },function(error){
+                $scope.error = error;
+        });
+        
+    }
+    
 }]);
+
 
 function ScrollImgLeft(){
     var speed=10;
@@ -157,8 +146,5 @@ function ScrollImgLeft(){
         MyMar=setInterval(Marquee,speed);
     }
 }
-
-
-
 
 

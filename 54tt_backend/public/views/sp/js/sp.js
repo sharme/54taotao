@@ -12,7 +12,7 @@ couponProduct.controller('ShareProductCtrl', ['$scope', '$cookies', '$window', '
     };
     $scope.page_no = 1;
     var init = false;
-    $http({method: 'GET', url: ipAddress + '/taobao/getShareProducts', params:{page_no: '1', page_size: $scope.checkMobile()?'4':'6'}})
+    $http({method: 'GET', url: ipAddress + '/taobao/getShareProducts', params:{page_no: '1', page_size: $scope.checkMobile()?'4':'8'}})
         .success(function(data){
             $scope.tripList = data;
             init = true;
@@ -28,7 +28,7 @@ couponProduct.controller('ShareProductCtrl', ['$scope', '$cookies', '$window', '
             $http({
                 method: 'GET',
                 url: ipAddress + '/taobao/getShareProducts',
-                params: {page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'6'}
+                params: {page_no: $scope.page_no + 1, page_size: $scope.checkMobile()?'4':'8'}
             }).success(function (data) {
                 if(!data.result_list)
                     $scope.couponMsg = true;
@@ -84,7 +84,7 @@ couponProduct.controller('ShareProductCtrl', ['$scope', '$cookies', '$window', '
     $scope.close = function (val, title, price, oeprice) {
         if(val) {
             var input = document.createElement("input");
-            input.value =  title + "【淘宝在售价】" + price + "         " + "【拼团价】" + oeprice + "          ----------------" + "复制这条信息, " + val + " ,打开【手机淘宝】开始拼团";
+            input.value =  title + "【淘宝在售价】" + price + "         " + "            【拼团价】" + oeprice + "          ----------------" + "复制这条信息, " + val + " ,打开【手机淘宝】开始拼团";
             document.getElementById('couponCode').appendChild(input);
             input.select();
             input.setSelectionRange(0, input.value.length), document.execCommand('Copy');

@@ -32,6 +32,31 @@
   background-color: white;
   font-size: 12px;
 }
+.ad_div {
+  float: left;
+  min-height: 80px;
+  margin-bottom: 100px;
+}
+.ad_div img {
+  max-height: 300px;
+}
+.scroll_div {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ffffff;
+}
+.scroll_div img {
+  width: 100%;
+}
+#scroll_begin,
+#scroll_end,
+#scroll_begin ul,
+#scroll_end ul,
+#scroll_begin ul li,
+#scroll_end ul li {
+  display: inline;
+  list-style: none;
+}
 .terms {
   float: left;
   width: 100%;
@@ -56,6 +81,25 @@
   width: 96%;
   display: block;
 }
+.trip_list .group {
+  width: 140px;
+  height: 180px;
+  margin: 340px 40%;
+  position: absolute;
+}
+.trip_list .group .group_item {
+  width: 60px;
+  height: 60px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: rebeccapurple;
+  color: white;
+  overflow-wrap: break-word;
+  padding: 10px;
+  margin: 5px;
+  float: left;
+  cursor: pointer;
+}
 .trip_list .trip {
   height: 420px;
   margin-top: 10px;
@@ -79,7 +123,7 @@
 .trip_list .trip .trip_main_images .trip_main_city {
   position: absolute;
   color: white;
-  margin: 310px 0px 20px 226px;
+  margin: 310px 0px 20px 200px;
   background-color: red;
   z-index: 1;
   height: 50px;
@@ -89,7 +133,7 @@
 .trip_list .trip .trip_main_images .trip_main_shop {
   z-index: 1;
   position: absolute;
-  margin: 380px 0px 5px 185px;
+  margin: 375px 0px 5px 165px;
   width: 165px;
 }
 .trip_list .trip .trip_main_images .trip_main_volume {

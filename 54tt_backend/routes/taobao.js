@@ -478,6 +478,61 @@ router.get('/getDailyShopping', function (req, res, next) {
 
 });
 
+router.get('/getFavorites', function (req, res, next) {
+
+    var ipAddress = req.connection.remoteAddress;
+    if(req.header['x-forwarded-for']){
+        ipAddress = req.header['x-forwarded-for'];
+        console.log("x-forward-for ip: " + ipAddress)
+    }
+    var send = true;
+    console.log('Visitor IP: ' + ipAddress);
+    ips.push({ip: ipAddress});
+
+    var checkCount = 0;
+    ips.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                checkCount++;
+            }
+        }
+    });
+
+    blacklist.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                send = false;
+            }
+        }
+    });
+
+    if(checkCount > 500) {
+        blacklist.push({ip: ipAddress});
+    }
+
+    if(send) {
+
+        client.execute('taobao.tbk.uatm.favorites.item.get', {
+            'platform': '1',
+            'page_size': req.param('page_size'),
+            'adzone_id': '1292558215',
+            // 'unid':'3456',
+            'favorites_id': req.param('group_id'),
+            'page_no': req.param('page_no'),
+            'fields': 'provcity,coupon_click_url,coupon_end_time,coupon_info,coupon_remain_count,num_iid,title,pict_url,small_images,reserve_price,zk_final_price,user_type,provcity,item_url,seller_id,volume,nick,shop_title,zk_final_price_wap,event_start_time,event_end_time,tk_rate,status,type'
+        }, function (error, response) {
+            if (!error) res.send(response);
+            else res.send(error);
+        })
+    } else {
+        res.send({
+            "code": "-1",
+            "error": "非法请求"
+        });
+    }
+
+});
+
 
 
 

@@ -57,6 +57,19 @@ buybs.config(function($routeProvider, $cssProvider){
             }
         ]
     }).
+    when('/jx', {
+        templateUrl: 'views/jx/jx.html',
+        controller: 'HighQualityProductCtrl',
+        css: [
+            {
+                href: '../views/jx/css/jx-m.css',
+                breakpoint: 'mobile'
+            }, {
+                href: '../views/jx/css/jx.css',
+                breakpoint: 'desktop'
+            }
+        ]
+    }).
     when('/promo', {
         templateUrl: 'views/tp/tp.html',
         controller: 'TripCtrl',

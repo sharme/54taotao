@@ -1,8 +1,8 @@
 'use strict';
 
 var buybsControllers = angular.module('buybsControllers',[]);
-var ipAddress = 'http://180.76.152.112:8090';
-// var ipAddress = 'http://localhost:8090';
+// var ipAddress = 'http://180.76.152.112:8090';
+var ipAddress = 'http://localhost:8090';
 var mobileSize = 550;
 var eLike = 1;
 var eFollow = 2;
@@ -766,6 +766,13 @@ buybsControllers.controller('headerController', ['$scope', '$cookies', '$window'
     $(".comm").css("background-color", "black");
     $(coupon.target).css("background-color", "coral");
     $window.location.href = '#/sp';
+
+  };
+
+  $scope.colorChangeJx = function (coupon) {
+    $(".comm").css("background-color", "black");
+    $(coupon.target).css("background-color", "coral");
+    $window.location.href = '#/jx';
 
   };
   

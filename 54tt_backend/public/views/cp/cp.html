@@ -46,7 +46,7 @@
         <div class="closeCode" ng-click="close()">【关闭】</div>
     </div>
     <div class='trip ' ng-repeat="trip in tripList.results.tbk_coupon track by $index" >
-       <a href="{{trip.coupon_click_url}}" ng-if="!checkMobile()" target="_blank"> <div ng-click="checkMobile()?getCode(trip.coupon_click_url, trip.zk_final_price, trip.coupon_info, trip.title, $index):false" class='trip_main bgColorChange{{trip.num_iid}}' ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
+       <a href="{{trip.coupon_click_url}}" ng-if="!checkMobile()" target="_blank"> <div ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
             <div class='trip_main_images'>
                 <div ng-if="trip.pict_url">
                     <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
