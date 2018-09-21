@@ -41,6 +41,10 @@ function addEvent($http, $window, u_id, at_id, nf_to, tp_id, c_id, reload){
 }
 // Controllers for community.
 community.controller('CommunityCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
+
+    $(".comm").css("background-color", "black");
+    $(".home-comm").css("background-color", "coral");
+
     $http({method: 'GET', url: ipAddress + '/topics/getTopics', params:{index_start: 0, count: 12, u_id: $cookies.get('u_id')}})
         .success(function(data){
             $scope.topics = data;
@@ -152,6 +156,10 @@ community.controller('CommunityCtrl', ['$scope', '$cookies', '$window', '$http',
 }]);
 
 community.controller('TopicCtrl', ['$scope', '$cookies', '$window', '$http','$routeParams','$css','$sce', function($scope, $cookies, $window, $http, $routeParams, $css,$sce){
+
+    $(".comm").css("background-color", "black");
+    $(".home-comm").css("background-color", "coral");
+    
     $http({method: 'GET', url: ipAddress + '/topics/getTopicsByTPID', params:{tp_id: $routeParams.tp_id}})
         .success(function(data){
             $scope.topic = data[0];

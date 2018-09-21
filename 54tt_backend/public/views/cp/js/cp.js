@@ -11,6 +11,9 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
 
     ScrollImgLeft();
 
+    $(".comm").css("background-color", "black");
+    $(".home-cp").css("background-color", "coral");
+
     $scope.checkMobile = function () {
         if($(window).width() < mobileSize - 100) {
             return true;

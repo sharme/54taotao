@@ -5,6 +5,9 @@ couponProduct.controller('ShareProductCtrl', ['$scope', '$cookies', '$window', '
 
     ScrollImgLeft();
 
+    $(".comm").css("background-color", "black");
+    $(".home-sp").css("background-color", "coral");
+
     $scope.checkMobile = function () {
         if($(window).width() < mobileSize - 100) {
             return true;

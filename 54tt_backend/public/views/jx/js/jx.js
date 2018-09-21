@@ -1,10 +1,13 @@
 'use strict';
 
 var highQualityProduct = angular.module('buybsControllers');
-highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '$window', '$http', '$css', '$sce', function($scope, $cookies, $window, $http, $css, $sce){
+highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '$routeParams', '$window', '$http', '$css', '$sce', function($scope, $cookies, $routeParams, $window, $http, $css, $sce){
 
 
     ScrollImgLeft();
+
+    $(".comm").css("background-color", "black");
+    $('.home-jx').css("background-color", "coral");
 
     $scope.checkMobile = function () {
         if($(window).width() < mobileSize - 100) {
@@ -13,8 +16,14 @@ highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '
             return false;
         }
     };
+    
     $scope.page_no = 1;
     $scope.group_id = '18595332';
+    if($routeParams.groupId){
+        $scope.group_id = $routeParams.groupId;
+        $(".group_item").css("background-color", "rebeccapurple");
+        $(".id-"+$routeParams.groupId).css("background-color", "coral");
+    }
     var init = false;
     $http({method: 'GET', url: ipAddress + '/taobao/getFavorites', params:{page_no: '1', page_size: $scope.checkMobile()?'4':'8', group_id: $scope.group_id}})
         .success(function(data){
@@ -113,6 +122,9 @@ highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '
             },function(error){
                 $scope.error = error;
         });
+
+        $(".group_item").css("background-color", "rebeccapurple");
+        $(".id-"+g_id).css("background-color", "coral");
         
     }
     
