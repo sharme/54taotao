@@ -32,6 +32,32 @@
   background-color: white;
   font-size: 12px;
 }
+.ad_div {
+  float: left;
+  min-height: 80px;
+  margin-bottom: 100px;
+}
+.ad_div img {
+  max-height: 300px;
+}
+.scroll_div {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #ffffff;
+  width: 1050px;
+}
+.scroll_div img {
+  width: 100%;
+}
+#scroll_begin,
+#scroll_end,
+#scroll_begin ul,
+#scroll_end ul,
+#scroll_begin ul li,
+#scroll_end ul li {
+  display: inline;
+  list-style: none;
+}
 .terms {
   float: left;
   width: 100%;
@@ -53,7 +79,7 @@
 }
 .trip_list {
   margin: auto;
-  width: 96%;
+  width: 1050px;
   display: block;
 }
 .trip_list .trip {

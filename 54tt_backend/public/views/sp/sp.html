@@ -1,4 +1,17 @@
 <div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2">
+
+    <div id="scroll_div" class="scroll_div ad_div">
+        <div id="scroll_begin">
+            <ul>
+                <li><img class="ad_image" src="https://img.alicdn.com/tps/i4/TB1tyZqLVXXXXXKXFXXx6Mp7VXX-1440-380.png"></li>
+                <li><img class="ad_image" src="https://img.alicdn.com/tps/i2/TB1v9XRMXXXXXcgXVXXx6Mp7VXX-1440-380.png"></li>
+                <li><img class="ad_image" src="https://img.alicdn.com/tps/i4/TB1sIJTMXXXXXbFXVXXx6Mp7VXX-1440-380.png"></li>
+                <li><img class="ad_image" src="https://img.alicdn.com/tps/TB12PovKpXXXXXcXXXXXXXXXXXX-1440-380.png"></li>
+            </ul>
+        </div>
+        <div id="scroll_end"></div>
+    </div>
+
     <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
         <div>【淘宝在售价】{{coupon.zk_final_price}} 元</div>

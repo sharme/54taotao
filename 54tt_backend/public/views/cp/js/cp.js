@@ -148,14 +148,14 @@ function ScrollImgLeft(){
     }
     var MyMar=setInterval(Marquee,speed);
 
-    scroll_div.onmouseover = function()
-    {
-        clearInterval(MyMar);
-    }
-    scroll_div.onmouseout=function()
-    {
-        MyMar=setInterval(Marquee,speed);
-    }
+    // scroll_div.onmouseover = function()
+    // {
+    //     clearInterval(MyMar);
+    // }
+    // scroll_div.onmouseout=function()
+    // {
+    //     MyMar=setInterval(Marquee,speed);
+    // }
 }
 
 

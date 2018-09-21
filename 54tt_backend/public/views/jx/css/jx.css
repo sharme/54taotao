@@ -44,6 +44,7 @@
   overflow: hidden;
   white-space: nowrap;
   background: #ffffff;
+  width: 1050px;
 }
 .scroll_div img {
   width: 100%;
@@ -78,18 +79,20 @@
 }
 .trip_list {
   margin: auto;
-  width: 96%;
+  width: 1050px;
   display: block;
 }
 .trip_list .group {
-  width: 140px;
-  height: 180px;
-  margin: 340px 40%;
+  width: 560px;
+  height: 360px;
+  margin: 320px 260px;
   position: absolute;
 }
 .trip_list .group .group_item {
-  width: 60px;
-  height: 60px;
+  line-height: 5;
+  font-size: 18px;
+  width: 120px;
+  height: 120px;
   text-align: center;
   border-radius: 50%;
   background-color: rebeccapurple;

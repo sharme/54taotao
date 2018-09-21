@@ -35,6 +35,19 @@
   background-color: white;
   font-size: 12px;
 }
+.learn {
+  position: fixed;
+  color: black;
+  background-color: white;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 12px;
+  margin: 60% 0px 0px 80%;
+  z-index: 10000;
+  padding: 13px 5px 0px;
+  cursor: pointer;
+}
 .ad_div {
   float: left;
   min-height: 70px;
