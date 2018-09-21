@@ -5,7 +5,7 @@
   display: block;
 }
 .start .gallery {
-  min-height: 400px;
+  min-height: 260px;
   background: url('../img/background.jpg');
   background-size: cover;
 }
@@ -39,6 +39,12 @@
 }
 .start .shym-option .container .row {
   margin-left: -15px;
+}
+.start .shym-option .container .row .qr_code {
+  text-align: center;
+}
+.start .shym-option .container .row .qr_code img {
+  height: 120px;
 }
 .start .shym-option .container .row .shym-option-container {
   padding: 0 20px;
