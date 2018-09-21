@@ -69,6 +69,12 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
 
     $scope.couponMsg = false;
     $scope.search = function(){
+
+        if($('.search_bar').val().length > 10)
+            $('.search_bar').css('height','80px');
+        else
+            $('.search_bar').css('height','35px');
+
         $scope.couponMsg = false;
         $scope.loadNext = true;
         $scope.txtValue = $('.search_bar').val();
