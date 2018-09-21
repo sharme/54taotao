@@ -53,6 +53,14 @@
         <span id="header-right-login-span"><a href="#/login">登陆 </a><a href="#/register">注册</a></span>
         </div>
     </div>
+
+    <div class="adv-div" ng-if="!checkMobile()">
+        <div class="adv-div-item">优惠券</div>
+        <div class="adv-div-item">专业导购</div>
+        <div class="adv-div-item">人工精选</div>
+        <div class="adv-div-item">淘宝付款</div>
+    </div>
+
     <div class="nav_pages" ng-if="!checkMobile()">
         <!--<button ng-click="colorChangeTaobao($event)" class="header-homepage header-div-style comm home-coupon" type="button">促销</button>-->
         <button ng-click="colorChangeCoupon($event)" class="header-homepage header-div-style comm home-share" >领券</button>

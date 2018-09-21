@@ -1,8 +1,88 @@
 .start {
   float: left;
   width: 96%;
-  margin: 10px 2%;
+  margin: -40px 2%;
   display: block;
+}
+.start .gallery {
+  min-height: 400px;
+  background: url('../img/background.jpg');
+  background-size: cover;
+}
+.start .gallery .home-caption {
+  position: absolute;
+  width: 100%;
+  padding: 10%;
+  text-align: center;
+  top: 120px;
+  left: 0;
+}
+.start .gallery .home-caption .home-title {
+  text-transform: uppercase;
+  font-size: 40px;
+  color: #fff;
+  font-weight: bold;
+}
+.start .gallery .home-caption .home-subtitle {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  padding-bottom: 20px;
+  font-weight: bold;
+}
+.start .shym-option {
+  overflow: hidden;
+}
+.start .shym-option .container {
+  margin: 0 auto;
+}
+.start .shym-option .container .row {
+  margin-left: -15px;
+}
+.start .shym-option .container .row .shym-option-container {
+  padding: 0 20px;
+  text-align: center;
+}
+.start .picture-information {
+  background: #fff;
+  color: #000;
+  overflow: hidden;
+}
+.start .picture-information .container {
+  margin: 0 auto;
+}
+.start .picture-information .container .row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.start .picture-information .container .row .shym-text-center {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.start .picture-information .container .row .col-md-12 {
+  width: 100%;
+}
+.start .picture-information .container .row .col-md-12 .picture-info {
+  margin-bottom: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.start .picture-information .container .row .col-md-12 .picture-info img {
+  height: 320px;
+}
+.start .quote {
+  background: #070707;
+  overflow: hidden;
+}
+.start .quote .container {
+  text-align: center;
+  padding: 70px 0;
+  color: #ccc;
+}
+.start .quote .container .row {
+  margin-right: -15px;
+  margin-left: -15px;
 }
 .start .start_title {
   text-align: center;
