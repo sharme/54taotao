@@ -137,7 +137,7 @@ router.get('/followers', function(req, res, next) {
 router.post('/create', urlencodeParser, function(req, res, next) {
   
   var createSQL = "insert into jk_users(u_phone_num,u_pwd,u_name,u_status,u_link,u_create_time,u_update_time) values (?,?,?,1,?,?,?)";
-  var inserts = [req.body.phoneNumber, req.body.password, req.body.username,"www.buybs.com/"+ req.body.username,date,date];
+  var inserts = [req.body.phoneNumber, req.body.password, req.body.username,"www.54taotao.cn/"+ req.body.username,date,date];
   createSQL = mysql.format(createSQL, inserts);
   console.log(createSQL);
   connection.query(createSQL, function (err, result) {
@@ -234,8 +234,8 @@ router.post('/email', function (req, res, next) {
   if(req.body.u_email && req.body.u_pwd) {
     res.mailer.send('email', {
       to: u_email,
-      subject: '欢迎加入有图',
-      link: 'http://www.fmyoutu.com/users/email_verify?email=' + u_email+"&secret=" + auth.encrypt(u_email) ,
+      subject: '欢迎加入54淘淘',
+      link: 'http://www.54taotao.cn/users/email_verify?email=' + u_email+"&secret=" + auth.encrypt(u_email) ,
       otherProperty: 'Other Property'
     }, function (err) {
       if (err) {
@@ -275,14 +275,14 @@ router.get('/email_verify', function(req, res, next) {
     var followSQL = mysql.format("update jk_users set u_status=0 where u_email=?", [req.param('email')]);
     console.log(followSQL);
     connection.query(followSQL, function (err, result) {
-      if (err) {
-        res.send(err);
+      if (err || result.length < 1) {
+        res.send("<div style='padding: 20px;'>验证失败</div>");
       } else {
-        res.send("<div style='padding: 20px;'>验证成功, <a href='http://www.fmyoutu.com/#/email_login'>点击登陆<a/></div>");
+        res.send("<div style='padding: 20px;'>验证成功, <a href='http://www.54taotao.cn/#/email_login'>点击登陆<a/></div>");
       }
     })
   } else {
-    res.send({errno: 1003, code:'access denied, please contact administrator.'});
+    res.send("<div style='padding: 20px;'>验证失败, 非法请求.</div>");
   }
 
 });
@@ -344,7 +344,7 @@ router.post('/email_recovery', urlencodeParser, function(req,res, next) {
     res.mailer.send('recovery', {
       to: u_email,
       subject: '重置密码',
-      link: 'http://www.fmyoutu.com/#/email_reset?u_email=' + u_email+"&secret=" + auth.encrypt(u_email) ,
+      link: 'http://www.54taotao.cn/#/email_reset?u_email=' + u_email+"&secret=" + auth.encrypt(u_email) ,
       otherProperty: 'Other Property'
     }, function (err) {
       if (err) {

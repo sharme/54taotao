@@ -95,7 +95,7 @@ router.get('/email', function (req, res, next) {
 
     res.mailer.send('email', {
       to: u_email,
-      subject: '欢迎加入有图', // REQUIRED.
+      subject: '欢迎加入54淘淘', // REQUIRED.
       link: 'http://180.76.152.112/email/verify?code=qweuoqrwqqe234s2342',
       otherProperty: 'Other Property'
     }, function (err) {

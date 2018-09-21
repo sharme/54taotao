@@ -240,7 +240,7 @@ account.controller('RegisterCtrl', ['$scope', '$cookies', '$window','$http','$cs
             $('.validation_msg').html("密码长度不能低于8位");
             return;
         }
-        if($scope.scCode) {
+        if($scope.scCode == '') {
             $('.validation_msg').html("验证码不能为空");
             return;
         }
@@ -268,7 +268,7 @@ account.controller('RegisterCtrl', ['$scope', '$cookies', '$window','$http','$cs
                 };
                 $http(req).success(function (result) {
                     if(result.errno){
-                        $('.validation_msg').html("注册失败, 请联系管理员.");
+                        $('.validation_msg').html("注册失败, 请联系管理员. 54.taotao@my.com");
                     } else {
                         alert("注册成功, 进行登录");
                         $window.location.href = '#/login';
@@ -282,6 +282,7 @@ account.controller('RegisterCtrl', ['$scope', '$cookies', '$window','$http','$cs
         });
     };
     $scope.sendVerifyCode = function() {
+        $('.validation_msg').html('');
         if ($('#register-form-phoneNumber').val().length == 11 && $('#register-form-password').val().length >= 8 && $('#register-form-username').val().length > 2 ) {
             var req = {
                 method: 'GET',
@@ -304,11 +305,11 @@ account.controller('RegisterCtrl', ['$scope', '$cookies', '$window','$http','$cs
                         }
                     }, 1000);
                 } else if ("02" == result) {
-                    alert("验证码发送频繁.")
+                    $('.validation_msg').html("验证码发送频繁.");
                 } else if ("03" == result) {
-                    alert("发送异常, 请联系管理员.");
+                    $('.validation_msg').html("发送异常, 请联系管理员.");
                 } else {
-                    alert("发送失败. 再试一次");
+                    $('.validation_msg').html("发送失败. 再试一次.");
                 }
             }, function (error) {
                 console.log(error);

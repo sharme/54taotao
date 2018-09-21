@@ -444,11 +444,15 @@ var clearTempCodeList = setInterval(function(){
 
 var clearCodeList = setInterval(function(){
     codeList = [];
-},1000*60*60);
+},1000*60*5);
 
 var clearIpsList = setInterval(function(){
     ips = [];
-},1000*60*60);
+},1000*60*5);
+
+var clearBlackList = setInterval(function(){
+    blacklist = [];
+},1000*60*60*24);
 
 var blacklist = [];
 var whitelist = [];
@@ -637,7 +641,7 @@ router.get('/checkCode', function (req, res, next) {
     var scCode = req.param('scCode');
     var secret = req.param('secret');
     var check = true;
-    console.log("codeList=" + JSON.stringify(codeList)  +"key=" + to + " ;val=" + scCode);
+    console.log("codeList=" + JSON.stringify(codeList)  +" key=" + to + " ;val=" + scCode);
     codeList.forEach(function(item, index){
         var toVal = false;
         var scVal = false;
