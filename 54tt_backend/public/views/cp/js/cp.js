@@ -95,10 +95,12 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
                 }
             }).success(function (data) {
                 if (!data.results) {
-                    $scope.recommMsg = '正在寻找相关推荐...';
                     $scope.couponMsg = true;
                     $scope.tripList = data;
-                    lookRecomm($('.search_bar').val());
+                    if($('.search_bar').val().length < 50) {
+                        $scope.recommMsg = '正在寻找相关推荐...';
+                        lookRecomm($('.search_bar').val());
+                    }
 
                 } else {
                     $scope.recommList = {};

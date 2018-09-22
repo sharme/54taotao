@@ -310,7 +310,37 @@ router.get('/getProductRecommend', function (req, res, next) {
 
 router.get('/getCode', function (req, res, next) {
 
-    if(req.param('url') && req.param('logo')) {
+    var ipAddress = req.connection.remoteAddress;
+    if(req.header['x-forwarded-for']){
+        ipAddress = req.header['x-forwarded-for'];
+        console.log("x-forward-for ip: " + ipAddress)
+    }
+    var send = true;
+    console.log('Visitor IP: ' + ipAddress);
+    ips.push({ip: ipAddress});
+
+    var checkCount = 0;
+    ips.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                checkCount++;
+            }
+        }
+    });
+
+    blacklist.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                send = false;
+            }
+        }
+    });
+
+    if(checkCount > 500) {
+        blacklist.push({ip: ipAddress});
+    }
+    
+    if(req.param('url') && req.param('logo') && send) {
 
         client.execute('taobao.tbk.tpwd.create', {
             // 'user_id':'123',
@@ -413,7 +443,37 @@ router.get('/getShareProducts', function (req, res, next) {
 
 router.get('/getPromotion', function (req, res, next) {
 
-    if(req.param('start_time') && req.param('start_time')) {
+    var ipAddress = req.connection.remoteAddress;
+    if(req.header['x-forwarded-for']){
+        ipAddress = req.header['x-forwarded-for'];
+        console.log("x-forward-for ip: " + ipAddress)
+    }
+    var send = true;
+    console.log('Visitor IP: ' + ipAddress);
+    ips.push({ip: ipAddress});
+
+    var checkCount = 0;
+    ips.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                checkCount++;
+            }
+        }
+    });
+
+    blacklist.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                send = false;
+            }
+        }
+    });
+
+    if(checkCount > 500) {
+        blacklist.push({ip: ipAddress});
+    }
+    
+    if(req.param('start_time') && req.param('start_time') && send) {
         client.execute('taobao.tbk.ju.tqg.get', {
             'adzone_id': '1292558215',
             'fields': 'click_url,pic_url,reserve_price,zk_final_price,total_amount,sold_num,title,category_name,start_time,end_time',
@@ -437,7 +497,37 @@ router.get('/getPromotion', function (req, res, next) {
 
 router.get('/getEvents', function (req, res, next) {
 
-    if(true) {
+    var ipAddress = req.connection.remoteAddress;
+    if(req.header['x-forwarded-for']){
+        ipAddress = req.header['x-forwarded-for'];
+        console.log("x-forward-for ip: " + ipAddress)
+    }
+    var send = true;
+    console.log('Visitor IP: ' + ipAddress);
+    ips.push({ip: ipAddress});
+
+    var checkCount = 0;
+    ips.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                checkCount++;
+            }
+        }
+    });
+
+    blacklist.forEach(function(item, index){
+        for (key in item){
+            if(key === 'ip' && item[key] === ipAddress){
+                send = false;
+            }
+        }
+    });
+
+    if(checkCount > 500) {
+        blacklist.push({ip: ipAddress});
+    }
+
+    if(true && send) {
         client.execute('taobao.tbk.uatm.event.get', {
             'page_no':'1',
             'page_size':'20',
