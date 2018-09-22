@@ -116,10 +116,92 @@
   height: 200px;
   width: 100%;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 90px;
   padding-top: 10px;
   color: #AEAEAE;
   float: left;
+}
+.the_end .trip {
+  height: 400px;
+  margin-top: 5px;
+  cursor: pointer;
+  width: 50%;
+  float: left;
+}
+.the_end .trip .trip_main {
+  height: 372px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_images_image {
+  width: 96%;
+  margin: 3px 3px 0px 3px;
+  float: left;
+  max-height: 180px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_city {
+  position: absolute;
+  color: white;
+  margin: 260px 0px 20px 3px;
+  height: 32px;
+  width: 48%;
+  background-color: red;
+  z-index: 1;
+  text-align: center;
+  padding: 5px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_shop {
+  z-index: 1;
+  position: absolute;
+  margin: 185px 0px 5px 3px;
+  width: 48%;
+  font-size: 12px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_volume {
+  position: absolute;
+  background-color: white;
+  margin: 160px 0px 0px 3px;
+  font-size: 12px;
+  z-index: 1000;
+  padding: 0px 2px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des {
+  height: auto;
+  position: absolute;
+  width: 48%;
+  margin: 202px 0px 0px 3px;
+  opacity: 0.9;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_title {
+  color: black;
+  background-color: white;
+  font-size: 12px;
+  padding: 5px 1px;
+  overflow: hidden;
+  height: 60px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info {
+  background-color: black;
+  padding: 0px 0px 5px 0px;
+  margin-top: 28px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .price {
+  font-size: 18px;
+  margin: 0px 5px;
+  color: red;
+  text-align: center;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .final_price {
+  color: white;
+  margin: 0px 10px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .coupon .remain {
+  color: green;
+  padding: 5px;
+}
+.the_end .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info .coupon .end_time {
+  color: gray;
+  margin-left: 5px;
+  font-size: 12px;
+  text-align: center;
 }
 .trip_list {
   margin: auto;

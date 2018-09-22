@@ -17,7 +17,7 @@
     </div>
     <a href="#/start"><div class="learn">&nbsp;&nbsp;&nbsp;点我！学会省钱</div></a>
     <div class='find'>
-        <textarea placeholder='复制 淘宝商品描述 找优惠' type="text" ng-keypress="search()" ng-focus="" class='search_bar' maxlength='-1'/>
+        <textarea placeholder='复制 淘宝商品描述 找优惠' type="text" ng-focus="" class='search_bar' maxlength='-1'/>
         <div class="search_filter">
             <button class="category1" ng-click="move(1)">综合</button>
             <button class="category2" ng-click="move(2)">女装</button>
@@ -31,7 +31,7 @@
             <button class="category10" ng-click="move(10)">内衣</button>
             <button class="category11" ng-click="move(11)">运动户外</button>
         </div>
-        <div class="search_btn" ng-click="search()">搜索</div>
+        <div class="search_btn" ng-click="search(event)">搜索</div>
     </div>
     <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
@@ -130,7 +130,92 @@
         </div>
 
     </div>
-    <div class="the_end" ng-if="couponMsg">抱歉, 没有搜到相关的优惠券, 到底啦!</div>
+    <div class="the_end" ng-if="couponMsg">
+        <div>抱歉, 没有搜到描述相关的优惠券, 到底啦!</div>
+        <div class="recommList" style="margin: 10px 0px;">{{recommMsg}}</div>
+        <div class='trip ' ng-repeat="trip in recommList.results.tbk_coupon track by $index" >
+            <a href="{{trip.coupon_click_url}}" ng-if="!checkMobile()" target="_blank"> <div ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
+                <div class='trip_main_images'>
+                    <div ng-if="trip.pict_url">
+                        <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
+                        <!--<image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string[0]}}"></image>-->
+                    </div>
+                    <div class="trip_main_city">
+                        {{trip.coupon_info}}
+                    </div>
+                    <div class="trip_main_shop">
+                        店铺: {{trip.nick}}
+                    </div>
+                    <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
+                    <div class='trip_main_des' ng-if='!checkMobile()'>
+                        <div class="trip_main_des_title">
+                            {{trip.title}}
+                        </div>
+                        <div class="trip_main_des_info">
+                            <div class="price">淘宝现价:{{trip.zk_final_price}}</div>
+                            <div class="coupon">
+                                <div class="end_time">结束时间: {{trip.coupon_end_time}}</div>
+                                <div class="remain">剩余: {{trip.coupon_remain_count}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='trip_main_des' ng-if='checkMobile()'>
+                        <div class="trip_main_des_title">
+                            {{trip.title}}
+                        </div>
+                        <div class="trip_main_des_info">
+                            <div class="price">淘宝现价:{{trip.zk_final_price}}</div>
+                            <div class="coupon">
+                                <div class="end_time">结束时间: {{trip.coupon_end_time}}</div>
+                                <div class="remain">剩余: {{trip.coupon_remain_count}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div></a>
+
+            <div ng-if="checkMobile()" ng-click="getCode(trip.coupon_click_url, trip.zk_final_price, trip.coupon_info, trip.title, trip.pict_url, $index)" class='trip_main bgColorChange{{trip.num_iid}}' ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
+                <div class='trip_main_images'>
+                    <div ng-if="trip.pict_url">
+                        <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
+                        <!--<image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string[0]}}"></image>-->
+                    </div>
+                    <div class="trip_main_city">
+                        {{trip.coupon_info}}
+                    </div>
+                    <div class="trip_main_shop">
+                        店铺: {{trip.nick}}
+                    </div>
+                    <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
+                    <div class='trip_main_des' ng-if='!checkMobile()'>
+                        <div class="trip_main_des_title">
+                            {{trip.title}}
+                        </div>
+                        <div class="trip_main_des_info">
+                            <div class="price">淘宝现价:{{trip.zk_final_price}}</div>
+                            <div class="coupon">
+                                <div class="end_time">结束时间: {{trip.coupon_end_time}}</div>
+                                <div class="remain">剩余: {{trip.coupon_remain_count}}</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='trip_main_des' ng-if='checkMobile()'>
+                        <div class="trip_main_des_title">
+                            {{trip.title}}
+                        </div>
+                        <div class="trip_main_des_info">
+                            <div class="price">淘宝现价:{{trip.zk_final_price}}</div>
+                            <div class="coupon">
+                                <div class="end_time">结束时间: {{trip.coupon_end_time}}</div>
+                                <div class="remain">剩余: {{trip.coupon_remain_count}}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="the_end" ng-if="recommList.results.tbk_coupon">到底啦!</div>
+    </div>
 </div>
 
 <!--<javascript>-->

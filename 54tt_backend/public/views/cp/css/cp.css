@@ -91,6 +91,81 @@
   color: #AEAEAE;
   float: left;
 }
+.the_end .trip {
+  height: 420px;
+  margin-top: 10px;
+  cursor: pointer;
+  width: 342px;
+  margin-left: 5px;
+  float: left;
+  padding-left: 1px;
+}
+.the_end .trip .trip_main_images {
+  margin-top: 2px;
+  width: 340px;
+  height: 426px;
+}
+.the_end .trip .trip_main_images .trip_main_images_image {
+  width: 324px;
+  max-height: 324px;
+  margin: 6px 3px 0px 6px;
+  float: left;
+}
+.the_end .trip .trip_main_images .trip_main_city {
+  position: absolute;
+  color: white;
+  margin: 310px 0px 20px 200px;
+  background-color: red;
+  z-index: 1;
+  height: 50px;
+  text-align: center;
+  padding: 10px;
+}
+.the_end .trip .trip_main_images .trip_main_shop {
+  z-index: 1;
+  position: absolute;
+  margin: 375px 0px 5px 165px;
+  width: 165px;
+}
+.the_end .trip .trip_main_images .trip_main_volume {
+  position: absolute;
+  margin: 255px 0px 0px 5px;
+  background-color: white;
+}
+.the_end .trip .trip_main_images .trip_main_des {
+  height: auto;
+  position: absolute;
+  width: 324px;
+  margin: 280px 0px 0px 6px;
+  opacity: 0.9;
+}
+.the_end .trip .trip_main_images .trip_main_des .trip_main_des_title {
+  color: white;
+  background-color: black;
+  text-align: left;
+}
+.the_end .trip .trip_main_images .trip_main_des .trip_main_des_info {
+  background-color: black;
+  padding: 0px 0px 5px 0px;
+  text-align: left;
+}
+.the_end .trip .trip_main_images .trip_main_des .trip_main_des_info .price {
+  font-size: 22px;
+  margin: 0px 5px;
+  color: red;
+  text-align: left;
+}
+.the_end .trip .trip_main_images .trip_main_des .trip_main_des_info .final_price {
+  color: white;
+  margin: 0px 10px;
+}
+.the_end .trip .trip_main_images .trip_main_des .trip_main_des_info .coupon {
+  text-align: left;
+}
+.the_end .trip .trip_main_images .trip_main_des .trip_main_des_info .coupon .remain {
+  color: green;
+  padding: 10px;
+}
 .trip_list {
   margin: auto;
   width: 1050px;

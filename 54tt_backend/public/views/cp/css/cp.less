@@ -90,16 +90,8 @@
   padding-top: 10px;
   color: #AEAEAE;
   float: left;
-}
 
-
-.trip_list {
-  margin: auto;
-  //width: 96%;
-  width: 1050px;
-  display: block;
-
-  .trip {
+  .trip{
     height: 420px;
     margin-top: 10px;
     cursor: pointer;
@@ -149,6 +141,103 @@
         width: 324px;
         margin: 280px 0px 0px 6px;
         //background-color: white;
+        opacity: 0.9;
+
+        .trip_main_des_title {
+          color: white;
+          background-color: black;
+          text-align: left;
+        }
+
+        .trip_main_des_info {
+          background-color: black;
+          padding: 0px 0px 5px 0px;
+          text-align: left;
+          .price {
+            font-size: 22px;
+            margin: 0px 5px;
+            color: red;
+            text-align: left;
+            //text-decoration: line-through;
+          }
+
+          .final_price {
+            color: white;
+            margin: 0px 10px;
+          }
+
+          .coupon {
+            text-align: left;
+            .remain {
+              color: green;
+              padding: 10px;
+            }
+          }
+
+        }
+
+      }
+    }
+  }
+
+}
+
+
+.trip_list {
+  margin: auto;
+  //width: 96%;
+  width: 1050px;
+  display: block;
+
+  .trip{
+    height: 420px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 342px;
+    margin-left: 5px;
+    float: left;
+    padding-left: 1px;
+    .trip_main_images {
+      margin-top: 2px;
+      width: 340px;
+      height: 426px;
+
+      .trip_main_images_image {
+        width: 324px;
+        max-height: 324px;
+        margin: 6px 3px 0px 6px;
+        float: left;
+      }
+
+      .trip_main_city {
+        position: absolute;
+        color: white;
+        margin: 310px 0px 20px 200px;
+        background-color: red;
+        z-index: 1;
+        height: 50px;
+        text-align: center;
+        padding: 10px;
+      }
+
+      .trip_main_shop {
+        z-index: 1;
+        position: absolute;
+        margin: 375px 0px 5px 165px;
+        width: 165px;
+      }
+
+      .trip_main_volume {
+        position: absolute;
+        margin: 255px 0px 0px 5px;
+        background-color: white;
+      }
+
+      .trip_main_des {
+        height: auto;
+        position: absolute;
+        width: 324px;
+        margin: 280px 0px 0px 6px;
         opacity: 0.9;
 
         .trip_main_des_title {

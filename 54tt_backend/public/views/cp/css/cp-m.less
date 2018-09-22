@@ -117,41 +117,20 @@
   height: 200px;
   width: 100%;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 90px;
   padding-top: 10px;
   color: #AEAEAE;
   float: left;
-}
-
-
-.trip_list {
-  margin: auto;
-  //width: 96%;
-  width: 100%;
-  display: block;
-
-  .trip {
-    //height: 420px;
-    //margin-left: 5px;
-    //padding-left: 1px;
+  .trip{
     height: 400px;
     margin-top: 5px;
     cursor: pointer;
-    //width: 342px;
     width: 50%;
     float: left;
-    .trip_main {
+    .trip_main{
       height: 372px;
-
       .trip_main_images {
-        //margin-top: 2px;
-        //width: 340px;
-        //height: 426px;
-
         .trip_main_images_image {
-          //width: 324px;
-          //max-height: 324px;
-          //margin: 6px 3px 0px 6px;
           width: 96%;
           margin: 3px 3px 0px 3px;
           float: left;
@@ -161,9 +140,6 @@
         .trip_main_city {
           position: absolute;
           color: white;
-          //margin: 310px 0px 20px 200px;
-          //height: 50px;
-          //padding: 10px;
           margin: 260px 0px 20px 3px;
           height: 32px;
           width: 48%;
@@ -176,8 +152,6 @@
         .trip_main_shop {
           z-index: 1;
           position: absolute;
-          //margin: 375px 0px 5px 165px;
-          //width: 165px;
           margin: 185px 0px 5px 3px;
           width: 48%;
           font-size: 12px;
@@ -185,24 +159,18 @@
 
         .trip_main_volume {
           position: absolute;
-          //margin: 255px 0px 0px 5px;
           background-color: white;
           margin: 160px 0px 0px 3px;
           font-size: 12px;
           z-index: 1000;
           padding: 0px 2px;
         }
-
         .trip_main_des {
           height: auto;
           position: absolute;
-          //width: 324px;
-          //margin: 280px 0px 0px 6px;
           width: 48%;
           margin: 202px 0px 0px 3px;
-          //background-color: white;
           opacity: 0.9;
-
           .trip_main_des_title {
             color: black;
             background-color: white;
@@ -211,25 +179,119 @@
             overflow: hidden;
             height: 60px;
           }
-
           .trip_main_des_info {
             background-color: black;
             padding: 0px 0px 5px 0px;
             margin-top: 28px;
             .price {
-              //font-size: 22px;
               font-size: 18px;
               margin: 0px 5px;
               color: red;
               text-align: center;
-              //text-decoration: line-through;
             }
-
             .final_price {
               color: white;
               margin: 0px 10px;
             }
+            .coupon {
+              .remain {
+                color: green;
+                //padding: 10px;
+                padding: 5px;
+              }
+              .end_time {
+                color: gray;
+                margin-left: 5px;
+                font-size: 12px;
+                text-align: center;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
 
+
+.trip_list {
+  margin: auto;
+  //width: 96%;
+  width: 100%;
+  display: block;
+
+  .trip{
+    height: 400px;
+    margin-top: 5px;
+    cursor: pointer;
+    width: 50%;
+    float: left;
+    .trip_main{
+      height: 372px;
+      .trip_main_images {
+        .trip_main_images_image {
+          width: 96%;
+          margin: 3px 3px 0px 3px;
+          float: left;
+          max-height: 180px;
+        }
+
+        .trip_main_city {
+          position: absolute;
+          color: white;
+          margin: 260px 0px 20px 3px;
+          height: 32px;
+          width: 48%;
+          background-color: red;
+          z-index: 1;
+          text-align: center;
+          padding: 5px;
+        }
+
+        .trip_main_shop {
+          z-index: 1;
+          position: absolute;
+          margin: 185px 0px 5px 3px;
+          width: 48%;
+          font-size: 12px;
+        }
+
+        .trip_main_volume {
+          position: absolute;
+          background-color: white;
+          margin: 160px 0px 0px 3px;
+          font-size: 12px;
+          z-index: 1000;
+          padding: 0px 2px;
+        }
+        .trip_main_des {
+          height: auto;
+          position: absolute;
+          width: 48%;
+          margin: 202px 0px 0px 3px;
+          opacity: 0.9;
+          .trip_main_des_title {
+            color: black;
+            background-color: white;
+            font-size: 12px;
+            padding: 5px 1px;
+            overflow: hidden;
+            height: 60px;
+          }
+          .trip_main_des_info {
+            background-color: black;
+            padding: 0px 0px 5px 0px;
+            margin-top: 28px;
+            .price {
+              font-size: 18px;
+              margin: 0px 5px;
+              color: red;
+              text-align: center;
+            }
+            .final_price {
+              color: white;
+              margin: 0px 10px;
+            }
             .coupon {
               .remain {
                 color: green;

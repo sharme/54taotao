@@ -11,6 +11,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
 
     ScrollImgLeft();
 
+
     $(".comm").css("background-color", "black");
     $(".home-cp").css("background-color", "coral");
 
@@ -27,6 +28,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts', params:{ q: $scope.txtValue, page_no: '1', page_size: $scope.checkMobile()?'4':'8'}})
         .success(function(data){
             $scope.tripList = data;
+            $scope.recommList = {};
             init = true;
         },function(error){
             $scope.error = error;
@@ -71,33 +73,66 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
     };
 
     $scope.couponMsg = false;
-    $scope.search = function(){
+    $scope.search = function(event){
 
-        if($('.search_bar').val().length > 10)
-            $('.search_bar').css('height','80px');
-        else
-            $('.search_bar').css('height','35px');
+        // if($scope.checkMobile()?event.keyCode === 13:false) {
 
-        $scope.couponMsg = false;
-        $scope.loadNext = true;
-        $scope.txtValue = $('.search_bar').val();
-        $scope.page_no = 1;
-        $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
-            params:{q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no, page_size: $scope.checkMobile()?'4':'8'}
-        }).success(function(data){
-                    if(!data.results)
-                        $scope.couponMsg = true;
+            if ($('.search_bar').val().length > 10)
+                $('.search_bar').css('height', '80px');
+            else
+                $('.search_bar').css('height', '35px');
+
+            $scope.couponMsg = false;
+            $scope.loadNext = true;
+            $scope.txtValue = $('.search_bar').val();
+            $scope.page_no = 1;
+            $http({
+                method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
+                params: {
+                    q: $scope.txtValue == '' ? '女装' : $scope.txtValue,
+                    page_no: $scope.page_no,
+                    page_size: $scope.checkMobile() ? '4' : '8'
+                }
+            }).success(function (data) {
+                if (!data.results) {
+                    $scope.recommMsg = '正在寻找相关推荐...';
+                    $scope.couponMsg = true;
                     $scope.tripList = data;
-                    init = true;
-            }, function(error){
+                    lookRecomm($('.search_bar').val());
+
+                } else {
+                    $scope.recommList = {};
+                    $scope.recommMsg = '';
+                    $scope.tripList = data;
+                }
+                init = true;
+            }, function (error) {
                 $scope.error = error;
             });
-        if($scope.checkMobile())
-            heightDiv = 500;
-        else
-            heightDiv = 500;
-        $(".trip_list").css("height", heightDiv + "px");
+            if ($scope.checkMobile())
+                heightDiv = 500;
+            else
+                heightDiv = 500;
+            $(".trip_list").css("height", heightDiv + "px");
+        // }
     };
+
+    function lookRecomm(val) {
+
+        val = val.toString().substring(0, val.toString().length > 1? val.toString().length -1 : 1);
+        $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
+            params:{q: val, page_no: 1, page_size: 20}
+        }).success(function(data){
+            if(!data.results) {
+                lookRecomm(val);
+            } else {
+                $scope.recommList = data;
+                $scope.recommMsg = '54淘淘为你推荐以下宝贝';
+            }
+        }, function(error){
+            console.log(error);
+        });
+    }
 
     $scope.getCode = function (coupon_click_url, zk_final_price, coupon_info, title, logo, index) {
             $http({
@@ -138,6 +173,7 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         }
     }
 }]);
+
 
 function ScrollImgLeft(){
     var speed=10;
