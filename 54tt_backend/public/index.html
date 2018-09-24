@@ -2,9 +2,10 @@
 <html ng-app="jk_backend">
 <head>
   <meta name="viewport" user-scalable="no" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
-  <title>【54淘淘】口袋里的省钱专家, 随时随地找优惠</title>
-  <meta name="description" content="54淘淘 国内领先的实惠信息导购平台, 54淘淘汇集了淘宝, 天猫, 飞猪, 携程等各大平台的商品实时促销信息, 折扣优惠. 实实在在帮你省钱, 54淘淘的目标是为你省1000元！ 实惠省钱就上54淘淘, 口袋里的省钱专家. ">
-  <meta property="og:image" content="img/share_tt.png">
+  <!--<title>【54淘淘】口袋里的省钱专家, 随时随地找优惠</title>-->
+  <title>【54淘淘】手机淘宝找商品, 54淘淘找优惠 能省钱.</title>
+  <meta name="description"
+        content="54淘淘 国内领先的优惠信息导购平台, 54淘淘汇集了淘宝, 天猫, 飞猪等各大平台的商品实时促销信息, 折扣优惠. 实实在在帮你省钱, 54淘淘的目标是为你省1000元！ 随时随地找优惠就上54淘淘, 口袋里的省钱专家. "> <meta property="og:image" content="img/share_tt.png">
   <meta name=”robots” content=”index, follow”>
   <link rel="icon" type="image/gif/png" href="img/taotao.png">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -42,9 +43,9 @@
 <div class="header" ng-controller="headerController">
   <div class="header-site" ng-if="!checkMobile()">54淘淘</div>
   <div class="header_slogo" ng-if="!checkMobile()">
-      口袋里的省钱专家, 随时随地找优惠.
+      手机淘宝找商品, 54淘淘找优惠, 能省钱.
   </div>
-    <div class="header_m_title" ng-if="checkMobile()">54淘淘 口袋里的省钱专家, 随时随地找优惠.</div>
+    <div class="header_m_title" ng-if="checkMobile()">54淘淘 手机淘宝找商品, 54淘淘找优惠, 能省钱.</div>
     <div class="header-right" ng-controller="LoginController" ng-if="!checkMobile()">
         <div class="header-right-logout">
         <span id="login_username"></span><span style="line-height: 2;"> <a ng-click="logout()" href="javascript: void(0);">登出</a></span>
