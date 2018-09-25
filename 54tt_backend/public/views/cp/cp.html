@@ -36,7 +36,7 @@
     <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
         <div>【淘宝在售价】{{coupon.zk_final_price}} </div>
-        <div>【54淘淘】 {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}} </div>
+        <div>【54淘淘】 {{(coupon.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}} </div>
         <div>【下单链接】</div>
         <div class="continuePay"> <a href="{{coupon.click_url}}" target="_blank">浏览器继续下单请点击这里</a> </div>
         <div>----------------------</div>
@@ -59,7 +59,7 @@
                     {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
                 </div>
                 <div class="trip_main_shop">
-                    店铺: {{trip.nick}}
+                    店铺: {{trip.shop_title}}
                 </div>
                 <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
                 <div class='trip_main_des' ng-if='!checkMobile()'>
@@ -99,7 +99,7 @@
                     {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
                 </div>
                 <div class="trip_main_shop">
-                    店铺: {{trip.nick}}
+                    店铺: {{trip.shop_title}}
                 </div>
                 <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
                 <div class='trip_main_des' ng-if='!checkMobile()'>
@@ -144,7 +144,7 @@
                         {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
                     </div>
                     <div class="trip_main_shop">
-                        店铺: {{trip.nick}}
+                        店铺: {{trip.shop_title}}
                     </div>
                     <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
                     <div class='trip_main_des' ng-if='!checkMobile()'>
@@ -184,7 +184,7 @@
                         {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
                     </div>
                     <div class="trip_main_shop">
-                        店铺: {{trip.nick}}
+                        店铺: {{trip.shop_title}}
                     </div>
                     <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
                     <div class='trip_main_des' ng-if='!checkMobile()'>
