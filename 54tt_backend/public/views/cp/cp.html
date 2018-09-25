@@ -96,7 +96,7 @@
                     <!--<image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string[0]}}"></image>-->
                 </div>
                 <div class="trip_main_city">
-                    {{trip.coupon_info}}
+                    {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','省')}}
                 </div>
                 <div class="trip_main_shop">
                     店铺: {{trip.nick}}
