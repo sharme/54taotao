@@ -24,7 +24,7 @@
     <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
         <div>【淘宝在售价】{{coupon.zk_final_price}} 元</div>
-        <div>【54淘淘优惠券】 {{coupon.info}} </div>
+        <div>【54淘淘】 {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}} </div>
         <div>【下单链接】</div>
         <div class="continuePay"> <a href="{{coupon.click_url}}" target="_blank">浏览器继续下单请点击这里</a> </div>
         <div>----------------------</div>
@@ -43,7 +43,7 @@
                     <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
                 </div>
                 <div class="trip_main_city">
-                    {{trip.coupon_info}}
+                    {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
                 </div>
                 <div class="trip_main_shop">
                     店铺: {{trip.shop_title}}
@@ -82,7 +82,7 @@
                     <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
                 </div>
                 <div class="trip_main_city">
-                    {{trip.coupon_info}}
+                    {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
                 </div>
                 <div class="trip_main_shop">
                     店铺: {{trip.nick}}人成团
