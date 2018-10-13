@@ -1,6 +1,6 @@
 
 // var ipaddress = 'http://localhost:8090';
-var ipaddress = 'http://180.76.152.112:8090';
+var ipaddress = 'https://54taotao.cn';
 
 var menuId = $( "ul.nav" ).first().attr( "id" );
 
