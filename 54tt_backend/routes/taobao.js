@@ -135,8 +135,8 @@ router.get('/getCouponProducts', function (req, res, next) {
         })
     } else {
         res.send({
-            "total_results": 100,
-            "request_id": "hexkj4qh3dc8"
+            "code": "-1",
+            "error": "非法请求, 请再次尝试."
         });
     }
 
@@ -189,8 +189,8 @@ router.get('/getProductDetail', function (req, res, next) {
         })
     } else {
         res.send({
-            "total_results": 100,
-            "request_id": "hexkj4qh3dc8"
+            "code": "-1",
+            "error": "非法请求, 请再次尝试."
         });
     }
 
