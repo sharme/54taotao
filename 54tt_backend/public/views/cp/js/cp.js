@@ -125,8 +125,11 @@ couponProduct.controller('CouponProductCtrl', ['$scope', '$cookies', '$window', 
         $http({method: 'GET', url: ipAddress + '/taobao/getCouponProducts',
             params:{q: val, page_no: 1, page_size: 20}
         }).success(function(data){
-            if(!data.results) {
+            if(!data.results & val.length > 1) {
                 lookRecomm(val);
+            } else if (!data.results & val.length <=1){
+                $scope.recommList = data;
+                $scope.recommMsg = '没有找到相关推荐';
             } else {
                 $scope.recommList = data;
                 $scope.recommMsg = '54淘淘为你推荐以下宝贝';
