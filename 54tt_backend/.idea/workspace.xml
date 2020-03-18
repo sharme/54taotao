@@ -31,11 +31,29 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="start.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/views/why54taotao/start.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tp.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/views/tp/tp.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="79" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="79" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="88" column="7" lean-forward="true" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+            <state relative-caret-position="195">
+              <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -69,6 +87,7 @@
       <find>register-content-wrapper-main-form</find>
       <find>.register-content-wrapper-main-form</find>
       <find>ScrollImgLeft</find>
+      <find>54</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -112,7 +131,6 @@
         <option value="$PROJECT_DIR$/public/views/jx/js/jx.js" />
         <option value="$PROJECT_DIR$/public/views/why54taotao/css/tp.less" />
         <option value="$PROJECT_DIR$/public/views/why54taotao/css/tp-m.less" />
-        <option value="$PROJECT_DIR$/public/views/why54taotao/start.html" />
         <option value="$PROJECT_DIR$/public/js/controllers/account-controller.js" />
         <option value="$PROJECT_DIR$/views/email.jade" />
         <option value="$PROJECT_DIR$/views/recovery.jade" />
@@ -128,6 +146,7 @@
         <option value="$PROJECT_DIR$/routes/taobao.js" />
         <option value="$PROJECT_DIR$/public/views/cp/js/cp.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
+        <option value="$PROJECT_DIR$/public/views/why54taotao/start.html" />
       </list>
     </option>
   </component>
@@ -215,6 +234,13 @@
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="tp" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="54tt_backend" type="b2602c69:ProjectViewProjectNode" />
+              <item name="54tt_backend" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="why54taotao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="54tt_backend" type="b2602c69:ProjectViewProjectNode" />
@@ -438,12 +464,12 @@
       <workItem from="1539414499831" duration="2864000" />
       <workItem from="1539426486623" duration="3781000" />
       <workItem from="1539447464874" duration="2797000" />
-      <workItem from="1584431912982" duration="8137000" />
+      <workItem from="1584431912982" duration="8583000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1509090000" />
+    <option name="totallyTimeSpent" value="1509536000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,7 +482,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1449" y="23" width="1285" height="858" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7945493" visible="true" weight="0.22547469" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3292517" />
@@ -712,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/why54taotao/start.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-end-line="94" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/why54taotao/css/tp-m.less">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -845,13 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/views/tp/tp.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="79" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="79" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/views/sp/sp.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="67">
@@ -879,10 +890,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/tp/tp.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="79" selection-start-line="1" selection-start-column="73" selection-end-line="1" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="88" column="7" lean-forward="true" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
+        <state relative-caret-position="195">
+          <caret line="80" column="36" selection-start-line="80" selection-start-column="36" selection-end-line="80" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/views/why54taotao/start.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="94" lean-forward="true" selection-start-line="94" selection-end-line="94" />
         </state>
       </provider>
     </entry>
