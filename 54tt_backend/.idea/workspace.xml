@@ -34,8 +34,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="453">
-              <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+            <state relative-caret-position="353">
+              <caret line="88" column="7" lean-forward="true" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -126,8 +126,8 @@
         <option value="$PROJECT_DIR$/routes/api.js" />
         <option value="$PROJECT_DIR$/public/js/controllers.js" />
         <option value="$PROJECT_DIR$/routes/taobao.js" />
-        <option value="$PROJECT_DIR$/public/index.html" />
         <option value="$PROJECT_DIR$/public/views/cp/js/cp.js" />
+        <option value="$PROJECT_DIR$/public/index.html" />
       </list>
     </option>
   </component>
@@ -438,12 +438,12 @@
       <workItem from="1539414499831" duration="2864000" />
       <workItem from="1539426486623" duration="3781000" />
       <workItem from="1539447464874" duration="2797000" />
-      <workItem from="1584431912982" duration="7512000" />
+      <workItem from="1584431912982" duration="8137000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1508465000" />
+    <option name="totallyTimeSpent" value="1509090000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -456,6 +456,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1449" y="23" width="1285" height="858" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7945493" visible="true" weight="0.22547469" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3292517" />
@@ -521,13 +522,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/taobao.js</url>
-          <line>138</line>
+          <line>136</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="24" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/routes/taobao.js</url>
-          <line>134</line>
+          <line>132</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="27" />
         </line-breakpoint>
@@ -880,8 +881,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="453">
-          <caret line="58" column="36" lean-forward="true" selection-start-line="58" selection-start-column="36" selection-end-line="58" selection-end-column="36" />
+        <state relative-caret-position="353">
+          <caret line="88" column="7" lean-forward="true" selection-start-line="88" selection-start-column="7" selection-end-line="88" selection-end-column="7" />
         </state>
       </provider>
     </entry>
