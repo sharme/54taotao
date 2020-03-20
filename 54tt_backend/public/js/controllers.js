@@ -1,8 +1,8 @@
 'use strict';
 
 var buybsControllers = angular.module('buybsControllers',[]);
-// var ipAddress = 'https://54taotao.cn';
-var ipAddress = 'http://localhost:8090';
+var ipAddress = 'https://54taotao.cn';
+// var ipAddress = 'http://localhost:8090';
 var mobileSize = 550;
 var eLike = 1;
 var eFollow = 2;

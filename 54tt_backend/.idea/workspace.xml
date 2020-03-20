@@ -204,8 +204,8 @@
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="83" />
-    <option name="y" value="24" />
+    <option name="x" value="224" />
+    <option name="y" value="176" />
     <option name="width" value="1132" />
     <option name="height" value="747" />
   </component>
@@ -535,12 +535,12 @@
       <workItem from="1539426486623" duration="3781000" />
       <workItem from="1539447464874" duration="2797000" />
       <workItem from="1584431912982" duration="18424000" />
-      <workItem from="1584614308663" duration="1804000" />
+      <workItem from="1584614308663" duration="2485000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1521181000" />
+    <option name="totallyTimeSpent" value="1521862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -552,17 +552,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="83" y="24" width="1132" height="747" extended-state="0" />
+    <frame x="224" y="176" width="1132" height="747" extended-state="0" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.7945493" visible="true" weight="0.25652567" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3292517" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50315034" side_tool="true" visible="true" weight="0.38923076" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50315034" side_tool="true" visible="true" weight="0.6276923" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info id="npm" order="2" sideWeight="0.20545073" side_tool="true" weight="0.2240566" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.22" />
       <window_info id="Structure" order="1" sideWeight="0.4926931" side_tool="true" weight="0.25" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4968497" visible="true" weight="0.38923076" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="7" sideWeight="0.4968497" visible="true" weight="0.6276923" />
       <window_info id="Favorites" order="2" sideWeight="0.5073069" side_tool="true" weight="0.2240566" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49864987" weight="0.4" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
