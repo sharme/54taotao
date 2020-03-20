@@ -18,7 +18,7 @@ highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '
     };
     
     $scope.page_no = 1;
-    $scope.group_id = '18595332';
+    $scope.group_id = '2012414017';
     if($routeParams.groupId){
         $scope.group_id = $routeParams.groupId;
         $(".group_item").css("background-color", "rebeccapurple");
@@ -118,7 +118,11 @@ highQualityProduct.controller('HighQualityProductCtrl', ['$scope', '$cookies', '
                 init = true;
                 $scope.group_id = g_id;
                 $scope.page_no = 1;
-                $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/8 * 426 + "px");
+                if($scope.checkMobile())
+                    $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/2 * 426 + "px");
+                else
+                    $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/8 * 426 + "px");
+                // $(".trip_list").css("height", $scope.tripList.results.uatm_tbk_item.length/8 * 426 + "px");
             },function(error){
                 $scope.error = error;
         });

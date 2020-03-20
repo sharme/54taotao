@@ -154,6 +154,7 @@
 .trip_list .trip .trip_main_images .trip_main_des .trip_main_des_title {
   color: white;
   background-color: black;
+  height: 40px;
 }
 .trip_list .trip .trip_main_images .trip_main_des .trip_main_des_info {
   background-color: black;

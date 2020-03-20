@@ -14,23 +14,23 @@
     </div>
 
     <div class="group">
-        <div class="group_item id-18595332" ng-click="groupFilter('18595332')">女装尖货</div>
-        <div class="group_item id-18595757" ng-click="groupFilter('18595757')">特价好货</div>
-        <div class="group_item id-18595526" ng-click="groupFilter('18595526')">母婴热推</div>
-        <div class="group_item id-18595900" ng-click="groupFilter('18595900')">淘宝DIY</div>
-        <div class="group_item id-17710057" ng-click="groupFilter('17710057')">超值9块9</div>
+        <div class="group_item id-2012414017" style="background-color: coral;" ng-click="groupFilter('2012414017')">乐高</div>
+        <div class="group_item id-2012406021" ng-click="groupFilter('2012406021')">游戏机</div>
+        <div class="group_item id-2012382023" ng-click="groupFilter('2012382023')">玩具</div>
+        <!--<div class="group_item id-18595900" ng-click="groupFilter('18595900')">淘宝DIY</div>-->
+        <!--<div class="group_item id-17710057" ng-click="groupFilter('17710057')">超值9块9</div>-->
     </div>
 
     <div class="couponCode" id="couponCode" ng-if="coupon.model">
         <div> {{coupon.title}} </div>
         <div>【淘宝在售价】{{coupon.zk_final_price}} 元</div>
         <div>【54淘淘】 {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}} </div>
-        <div>【下单链接】</div>
-        <div class="continuePay"> <a href="{{coupon.click_url}}" target="_blank">浏览器继续下单请点击这里</a> </div>
+        <div>【浏览器继续】</div>
+        <div class="continuePay"> <a href="{{coupon.click_url}}" style="color:grey;" target="_blank">浏览器继续下单请点击这里</a> </div>
         <div>----------------------</div>
         <div class="taobaoCode">
-            复制这条信息, {{coupon.model}} , 打开【手机淘宝】开始抢购</div>
-        <div class="closeCode" ng-click="close(coupon.model, coupon.title, coupon.zk_final_price, coupon.info)">【一键复制并关闭】</div>
+            先复制这条信息, {{coupon.model}} , 再打开【手机淘宝】</div>
+        <div class="closeCode" ng-click="close(coupon.model, coupon.title, coupon.zk_final_price, coupon.info)">【点这里复制, 再打开淘宝】</div>
     </div>
     <div class="couponCode" ng-if="coupon.sub_code">
         <div>抱歉, 当前优惠券已经结束. 去挑挑别的吧.</div>

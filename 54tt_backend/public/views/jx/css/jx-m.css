@@ -113,15 +113,13 @@
   display: block;
 }
 .trip_list .group {
-  width: 240px;
+  width: 340px;
   height: 180px;
   margin: auto;
 }
 .trip_list .group .group_item {
-  width: 60px;
-  height: 60px;
   text-align: center;
-  border-radius: 50%;
+  border-radius: 5%;
   background-color: rebeccapurple;
   color: white;
   overflow-wrap: break-word;
@@ -185,7 +183,7 @@
   font-size: 12px;
   padding: 5px 1px;
   overflow: hidden;
-  height: 60px;
+  height: 40px;
 }
 .trip_list .trip .trip_main .trip_main_images .trip_main_des .trip_main_des_info {
   background-color: black;
