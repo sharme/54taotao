@@ -1,29 +1,29 @@
 <div class='trip_list' infinite-scroll="loadMore()" infinite-scroll-distance="2">
     <div class='find'><input placeholder='快速搜索' type="text" ng-keypress="search()" class='search_bar' maxlength='-1'/><div class="search_btn" ng-click="search()">搜索</div></div>
 
-    <div class='trip ' ng-repeat="trip in tripList.results.n_tbk_item track by $index" >
-        <div class='trip_main bgColorChange{{trip.num_iid}}' ng-click="loginCheck(trip.num_iid)" ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
+    <div class='trip ' ng-repeat="trip in tripList.results.n_tbk_shop track by $index" >
+        <div class='trip_main bgColorChange{{trip.user_id}}' ng-click="loginCheck(trip.user_id)" ng-mouseleave="bgColorRemove(trip.user_id)" ng-mouseenter="bgColorChange(trip.user_id)">
             <div class='trip_main_images'>
                 <div ng-if="trip.pict_url">
                     <image class='trip_main_images_image' ng-if='!checkMobile()' ng-src="{{trip.pict_url}}"></image>
-                    <image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string['0']}}"></image>
+                    <image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.pict_url}}"></image>
                 </div>
-                <div class="trip_main_city">
-                    {{trip.provcity}}
-                </div>
-                <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
+                <!--<div class="trip_main_city">-->
+                    <!--{{trip.provcity}}-->
+                <!--</div>-->
+                <!--<div class="trip_main_volume">30天销量: {{trip.volume}}</div>-->
                 <div class='trip_main_des' ng-if='!checkMobile()'>
                     <div class="trip_main_des_title">
-                        {{trip.title}}
+                        {{trip.shop_title}}
                     </div>
                     <div class="trip_main_des_info">
-                        <div class="price">淘宝: {{trip.reserve_price}}</div>
-                        <div class="final_price">促销价: {{trip.zk_final_price}}</div>
+                        <!--<div class="price">淘宝: {{trip.reserve_price}}</div>-->
+                        <!--<div class="final_price">促销价: {{trip.zk_final_price}}</div>-->
                     </div>
                 </div>
-                <div class='trip_main_des' ng-if='!checkMobile()'>
-                    <text>{{trip.fs_des}}​​​​</text>
-                </div>
+                <!--<div class='trip_main_des' ng-if='!checkMobile()'>-->
+                    <!--<text>{{trip.fs_des}}​​​​</text>-->
+                <!--</div>-->
             </div>
         </div>
     </div>

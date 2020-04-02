@@ -27,9 +27,9 @@ community.controller('TripCtrl', ['$scope', '$cookies', '$window', '$http', '$cs
                 url: ipAddress + '/taobao/getProducts',
                 params: {q: $scope.txtValue == ''?'女装': $scope.txtValue, page_no: $scope.page_no + 1}
             }).success(function (data) {
-                if (data.results.n_tbk_item.length > 0) {
-                    for (var i = 0; i < data.results.n_tbk_item.length; i++) {
-                        $scope.tripList.results.n_tbk_item.push(data.results.n_tbk_item[i]);
+                if (data.results.n_tbk_shop.length > 0) {
+                    for (var i = 0; i < data.results.n_tbk_shop.length; i++) {
+                        $scope.tripList.results.n_tbk_shop.push(data.results.n_tbk_shop[i]);
                     }
                     $scope.page_no = $scope.page_no + 1;
                     $scope.loadNext = true;

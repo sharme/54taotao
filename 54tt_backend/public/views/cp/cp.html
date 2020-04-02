@@ -48,32 +48,32 @@
         <div>抱歉, 当前优惠券已经结束. 去挑挑别的吧.</div>
         <div class="closeCode" ng-click="close()">【关闭】</div>
     </div>
-    <div class='trip ' ng-repeat="trip in tripList.results.tbk_coupon track by $index" >
+    <div class='trip ' ng-repeat="trip in tripList.results.n_tbk_shop track by $index" >
        <a href="{{trip.coupon_click_url}}" ng-if="!checkMobile()" target="_blank"> <div ng-mouseleave="bgColorRemove(trip.num_iid)" ng-mouseenter="bgColorChange(trip.num_iid)">
             <div class='trip_main_images'>
                 <div ng-if="trip.pict_url">
                     <image class='trip_main_images_image' ng-src="{{trip.pict_url}}"></image>
                     <!--<image class='trip_main_images_image' ng-if='checkMobile()' ng-src="{{trip.small_images.string[0]}}"></image>-->
                 </div>
-                <div class="trip_main_city">
-                    {{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}
-                </div>
+                <!--<div class="trip_main_city">-->
+                    <!--{{(trip.coupon_info.substr(trip.coupon_info.indexOf('减'))).replace('减','再省')}}-->
+                <!--</div>-->
                 <div class="trip_main_shop">
                     店铺: {{trip.shop_title}}
                 </div>
-                <div class="trip_main_volume">30天销量: {{trip.volume}}</div>
-                <div class='trip_main_des' ng-if='!checkMobile()'>
-                    <div class="trip_main_des_title">
-                        {{trip.title}}
-                    </div>
-                    <div class="trip_main_des_info">
-                        <div class="price">淘宝现价:{{trip.zk_final_price}}</div>
-                        <div class="coupon">
-                            <div class="end_time">结束时间: {{trip.coupon_end_time}}</div>
-                            <div class="remain">剩余: {{trip.coupon_remain_count}}</div>
-                        </div>
-                    </div>
-                </div>
+                <!--<div class="trip_main_volume">30天销量: {{trip.volume}}</div>-->
+                <!--<div class='trip_main_des' ng-if='!checkMobile()'>-->
+                    <!--<div class="trip_main_des_title">-->
+                        <!--{{trip.title}}-->
+                    <!--</div>-->
+                    <!--<div class="trip_main_des_info">-->
+                        <!--<div class="price">淘宝现价:{{trip.zk_final_price}}</div>-->
+                        <!--<div class="coupon">-->
+                            <!--<div class="end_time">结束时间: {{trip.coupon_end_time}}</div>-->
+                            <!--<div class="remain">剩余: {{trip.coupon_remain_count}}</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
                 <div class='trip_main_des' ng-if='checkMobile()'>
                     <div class="trip_main_des_title">
                         {{trip.title}}
